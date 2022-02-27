@@ -1,0 +1,37 @@
+modLoader="javafml"
+loaderVersion="[39,)"
+license="Custom"
+# issueTrackerURL=""
+
+[[mods]]
+modId="missinglinks" 
+version="1.0.0"
+displayName="Missing Links"
+# updateJSONURL=""
+# displayURL=""
+# logoFile="" 
+authors="Willatendo"
+description='''
+Adds some weird oversites that Mojang forgot about!
+'''
+
+[[dependencies.missinglinks]] 
+    modId="forge" 
+    mandatory=true 
+    versionRange="[39,)" 
+    ordering="NONE"
+    side="BOTH"
+    
+[[dependencies.missinglinks]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.1,1.19)"
+    ordering="NONE"
+    side="BOTH"
+    
+[[dependencies.missinglinks]]
+    modId="tyrannotitanlib"
+    mandatory=true
+    versionRange="[v4.0.0,)"
+    ordering="NONE"
+    side="BOTH"
