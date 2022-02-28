@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "missinglinks:calcite_stairs",
+    "missinglinks:tuff_stairs",
+    "missinglinks:dripstone_stairs",
+    "missinglinks:smooth_basalt_stairs",
+    "missinglinks:end_stone_stairs",
+    "missinglinks:quartz_brick_stairs",
+    "missinglinks:smooth_stone_stairs"
+  ]
+}

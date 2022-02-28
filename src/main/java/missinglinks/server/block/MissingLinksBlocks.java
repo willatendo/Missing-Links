@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
 public class MissingLinksBlocks {
-	public static final BlockGroup CACLITE = BlockGroup.makeStairsSlabWall(Blocks.CALCITE);
+	public static final BlockGroup CALCITE = BlockGroup.makeStairsSlabWall(Blocks.CALCITE);
 	public static final BlockGroup TUFF = BlockGroup.makeStairsSlabWall(Blocks.TUFF);
 	public static final BlockGroup DRIPSTONE_BLOCK = BlockGroup.makeStairsSlabWall(Blocks.DRIPSTONE_BLOCK);
 	public static final BlockGroup SMOOTH_BASALT = BlockGroup.makeStairsSlabWall(Blocks.SMOOTH_BASALT);
@@ -23,7 +23,7 @@ public class MissingLinksBlocks {
 	public static final BlockGroup NETHER_BRICKS = new BlockGroup(Blocks.NETHER_BRICKS, new Block[] { new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_BRICKS)) }, new String[] { "fence_gate" });
 
 	public static void init() {
-		CACLITE.init();
+		CALCITE.init();
 		TUFF.init();
 		DRIPSTONE_BLOCK.init();
 		SMOOTH_BASALT.init();

@@ -12,9 +12,9 @@ public class MissingLinksLangProvider extends LanguageProvider {
 
 	@Override
 	protected void addTranslations() {
-		this.add(MissingLinksBlocks.CACLITE.blocks()[0], "Calcite Stairs");
-		this.add(MissingLinksBlocks.CACLITE.blocks()[1], "Calcite Slab");
-		this.add(MissingLinksBlocks.CACLITE.blocks()[2], "Calcite Wall");
+		this.add(MissingLinksBlocks.CALCITE.blocks()[0], "Calcite Stairs");
+		this.add(MissingLinksBlocks.CALCITE.blocks()[1], "Calcite Slab");
+		this.add(MissingLinksBlocks.CALCITE.blocks()[2], "Calcite Wall");
 		this.add(MissingLinksBlocks.TUFF.blocks()[0], "Tuff Stairs");
 		this.add(MissingLinksBlocks.TUFF.blocks()[1], "Tuff Slab");
 		this.add(MissingLinksBlocks.TUFF.blocks()[2], "Tuff Wall");

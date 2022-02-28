@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "missinglinks:calcite_wall",
+    "missinglinks:tuff_wall",
+    "missinglinks:dripstone_wall",
+    "missinglinks:smooth_basalt_wall",
+    "missinglinks:end_stone_wall",
+    "missinglinks:quartz_brick_wall",
+    "missinglinks:quartz_wall",
+    "missinglinks:smooth_quartz_wall",
+    "missinglinks:smooth_red_sandstone_wall",
+    "missinglinks:smooth_sandstone_wall",
+    "missinglinks:smooth_stone_wall"
+  ]
+}
