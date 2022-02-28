@@ -36,8 +36,21 @@ minecraft {
                 }
             }
         }
+        
+        data {
+            workingDirectory project.file('run')
+            args '--mod', 'missinglinks', '--all', '--output', file('src/generated/resources/')
+            
+            mods {
+                missinglinks {
+                    source sourceSets.main
+                }
+            }
+        }
     }
 }
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 mixin {
 	add sourceSets.main, "terrablender.refmap.json"

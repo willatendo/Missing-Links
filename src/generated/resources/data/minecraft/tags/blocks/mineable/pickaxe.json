@@ -1,0 +1,31 @@
+{
+  "replace": false,
+  "values": [
+    "missinglinks:calcite_stairs",
+    "missinglinks:calcite_slab",
+    "missinglinks:calcite_wall",
+    "missinglinks:tuff_stairs",
+    "missinglinks:tuff_slab",
+    "missinglinks:tuff_wall",
+    "missinglinks:dripstone_stairs",
+    "missinglinks:dripstone_slab",
+    "missinglinks:dripstone_wall",
+    "missinglinks:smooth_basalt_stairs",
+    "missinglinks:smooth_basalt_slab",
+    "missinglinks:smooth_basalt_wall",
+    "missinglinks:end_stone_stairs",
+    "missinglinks:end_stone_slab",
+    "missinglinks:end_stone_wall",
+    "missinglinks:quartz_brick_stairs",
+    "missinglinks:quartz_brick_slab",
+    "missinglinks:quartz_brick_wall",
+    "missinglinks:quartz_wall",
+    "missinglinks:smooth_quartz_wall",
+    "missinglinks:smooth_red_sandstone_wall",
+    "missinglinks:smooth_sandstone_wall",
+    "missinglinks:smooth_stone_stairs",
+    "missinglinks:smooth_stone_wall",
+    "missinglinks:red_nether_brick_fence",
+    "missinglinks:red_nether_brick_fence_gate"
+  ]
+}
