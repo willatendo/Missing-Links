@@ -26,6 +26,7 @@
     "missinglinks:smooth_stone_stairs",
     "missinglinks:smooth_stone_wall",
     "missinglinks:red_nether_brick_fence",
-    "missinglinks:red_nether_brick_fence_gate"
+    "missinglinks:red_nether_brick_fence_gate",
+    "missinglinks:nether_brick_fence_gate"
   ]
 }
