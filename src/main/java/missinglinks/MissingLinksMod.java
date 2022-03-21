@@ -11,7 +11,7 @@ import tyrannotitanlib.core.content.UtilitiesRegistry;
 @Mod(MissingLinksMod.ID)
 public class MissingLinksMod {
 	public static final String ID = "missinglinks";
-	public static final UtilitiesRegistry MISSING_LINKS_UTILS = new UtilitiesRegistry(ID);
+	public static final UtilitiesRegistry UTILS = new UtilitiesRegistry(ID);
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ID);
 
 	public MissingLinksMod() {

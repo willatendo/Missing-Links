@@ -1,6 +1,14 @@
 {
   "replace": false,
   "values": [
+    "missinglinks:polished_calcite",
+    "missinglinks:polished_calcite_stairs",
+    "missinglinks:polished_calcite_slab",
+    "missinglinks:polished_calcite_wall",
+    "missinglinks:polished_tuff",
+    "missinglinks:polished_tuff_stairs",
+    "missinglinks:polished_tuff_slab",
+    "missinglinks:polished_tuff_wall",
     "missinglinks:calcite_stairs",
     "missinglinks:calcite_slab",
     "missinglinks:calcite_wall",

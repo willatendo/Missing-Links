@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+    "missinglinks:polished_calcite_stairs",
+    "missinglinks:polished_tuff_stairs",
     "missinglinks:calcite_stairs",
     "missinglinks:tuff_stairs",
     "missinglinks:dripstone_stairs",

@@ -5,7 +5,7 @@ issueTrackerURL="https://github.com/willatendo/Missing-Links/issues"
 
 [[mods]]
 modId="missinglinks" 
-version="1.1.0"
+version="1.2.0"
 displayName="Missing Links"
 updateJSONURL="https://github.com/willatendo/Missing-Links/raw/main/updates.json"
 displayURL="https://github.com/willatendo/Missing-Links"
