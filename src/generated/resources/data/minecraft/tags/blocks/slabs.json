@@ -2,7 +2,9 @@
   "replace": false,
   "values": [
     "missinglinks:polished_calcite_slab",
-    "missinglinks:polished_tuff_stairs",
+    "missinglinks:polished_calcite_bricks_slab",
+    "missinglinks:polished_tuff_slab",
+    "missinglinks:polished_tuff_bricks_slab",
     "missinglinks:calcite_slab",
     "missinglinks:tuff_slab",
     "missinglinks:dripstone_slab",

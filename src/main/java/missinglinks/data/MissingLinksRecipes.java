@@ -18,7 +18,9 @@ public class MissingLinksRecipes extends RecipeProvider {
 	@Override
 	protected void buildCraftingRecipes(Consumer<FinishedRecipe> recipes) {
 		MissingLinksBlocks.POLISHED_CALCITE.makeBlockStairsSlabWallRecipes(recipes, Blocks.CALCITE);
+		MissingLinksBlocks.POLISHED_CALCITE_BRICKS.makeBlockStairsSlabWallRecipes(recipes, Blocks.CALCITE);
 		MissingLinksBlocks.POLISHED_TUFF.makeBlockStairsSlabWallRecipes(recipes, Blocks.TUFF);
+		MissingLinksBlocks.POLISHED_TUFF_BRICKS.makeBlockStairsSlabWallRecipes(recipes, Blocks.TUFF);
 		MissingLinksBlocks.CALCITE.makeStairsSlabWallRecipes(recipes);
 		MissingLinksBlocks.TUFF.makeStairsSlabWallRecipes(recipes);
 		MissingLinksBlocks.DRIPSTONE_BLOCK.makeStairsSlabWallRecipes(recipes);

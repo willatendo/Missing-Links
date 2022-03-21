@@ -17,7 +17,9 @@ public class MissingLinksBlockStateProvider extends BlockStateProvider {
 	@Override
 	protected void registerStatesAndModels() {
 		MissingLinksBlocks.POLISHED_CALCITE.makeBlockStairsSlabWallBlockStatesAndModels(this);
+		MissingLinksBlocks.POLISHED_CALCITE_BRICKS.makeBlockStairsSlabWallBlockStatesAndModels(this);
 		MissingLinksBlocks.POLISHED_TUFF.makeBlockStairsSlabWallBlockStatesAndModels(this);
+		MissingLinksBlocks.POLISHED_TUFF_BRICKS.makeBlockStairsSlabWallBlockStatesAndModels(this);
 		MissingLinksBlocks.CALCITE.makeStairsSlabWallBlockStatesAndModels(this);
 		MissingLinksBlocks.TUFF.makeStairsSlabWallBlockStatesAndModels(this);
 		MissingLinksBlocks.DRIPSTONE_BLOCK.makeStairsSlabWallBlockStatesAndModels(this);

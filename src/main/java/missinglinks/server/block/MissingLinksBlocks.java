@@ -7,6 +7,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Item.Properties;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
@@ -21,7 +22,9 @@ import net.minecraftforge.registries.RegistryObject;
 @EventBusSubscriber(bus = Bus.MOD, modid = MissingLinksMod.ID)
 public class MissingLinksBlocks {
 	public static final BlockGroup POLISHED_CALCITE = BlockGroup.makeBlockStairsSlabWall("polished_calcite", BlockBehaviour.Properties.copy(Blocks.CALCITE));
+	public static final BlockGroup POLISHED_CALCITE_BRICKS = BlockGroup.makeBlockStairsSlabWall("polished_calcite_bricks", BlockBehaviour.Properties.copy(Blocks.CALCITE));
 	public static final BlockGroup POLISHED_TUFF = BlockGroup.makeBlockStairsSlabWall("polished_tuff", BlockBehaviour.Properties.copy(Blocks.TUFF));
+	public static final BlockGroup POLISHED_TUFF_BRICKS = BlockGroup.makeBlockStairsSlabWall("polished_tuff_bricks", BlockBehaviour.Properties.copy(Blocks.TUFF));
 
 	public static final BlockGroup CALCITE = BlockGroup.makeStairsSlabWall(Blocks.CALCITE);
 	public static final BlockGroup TUFF = BlockGroup.makeStairsSlabWall(Blocks.TUFF);
@@ -45,7 +48,14 @@ public class MissingLinksBlocks {
 		final IForgeRegistry<Item> registry = event.getRegistry();
 
 		MissingLinksMod.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(block -> {
-			Properties properties = new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS);
+			Properties properties;
+			if (block instanceof WallBlock || block instanceof FenceBlock) {
+				properties = new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS);
+			} else if (block instanceof FenceGateBlock) {
+				properties = new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE);
+			} else {
+				properties = new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS);
+			}
 			BlockItem blockItem = new ModBlockItem(() -> block, properties);
 			blockItem.setRegistryName(block.getRegistryName());
 			registry.register(blockItem);

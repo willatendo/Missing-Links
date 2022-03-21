@@ -14,7 +14,9 @@ public class MissingLinksItemProvider extends ItemModelProvider {
 	@Override
 	protected void registerModels() {
 		MissingLinksBlocks.POLISHED_CALCITE.makeBlockStairsSlabWallItemModels(this);
+		MissingLinksBlocks.POLISHED_CALCITE_BRICKS.makeBlockStairsSlabWallItemModels(this);
 		MissingLinksBlocks.POLISHED_TUFF.makeBlockStairsSlabWallItemModels(this);
+		MissingLinksBlocks.POLISHED_TUFF_BRICKS.makeBlockStairsSlabWallItemModels(this);
 		MissingLinksBlocks.CALCITE.makeStairsSlabWallItemModels(this);
 		MissingLinksBlocks.TUFF.makeStairsSlabWallItemModels(this);
 		MissingLinksBlocks.DRIPSTONE_BLOCK.makeStairsSlabWallItemModels(this);

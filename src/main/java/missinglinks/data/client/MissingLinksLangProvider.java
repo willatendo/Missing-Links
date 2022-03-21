@@ -16,10 +16,18 @@ public class MissingLinksLangProvider extends LanguageProvider {
 		this.add(MissingLinksBlocks.POLISHED_CALCITE.blocks()[1].get(), "Polished Calcite Stairs");
 		this.add(MissingLinksBlocks.POLISHED_CALCITE.blocks()[2].get(), "Polished Calcite Slab");
 		this.add(MissingLinksBlocks.POLISHED_CALCITE.blocks()[3].get(), "Polished Calcite Wall");
+		this.add(MissingLinksBlocks.POLISHED_CALCITE_BRICKS.blocks()[0].get(), "Polished Calcite Bricks");
+		this.add(MissingLinksBlocks.POLISHED_CALCITE_BRICKS.blocks()[1].get(), "Polished Calcite Brick Stairs");
+		this.add(MissingLinksBlocks.POLISHED_CALCITE_BRICKS.blocks()[2].get(), "Polished Calcite Brick Slab");
+		this.add(MissingLinksBlocks.POLISHED_CALCITE_BRICKS.blocks()[3].get(), "Polished Calcite Brick Wall");
 		this.add(MissingLinksBlocks.POLISHED_TUFF.blocks()[0].get(), "Polished Tuff");
 		this.add(MissingLinksBlocks.POLISHED_TUFF.blocks()[1].get(), "Polished Tuff Stairs");
 		this.add(MissingLinksBlocks.POLISHED_TUFF.blocks()[2].get(), "Polished Tuff Slab");
 		this.add(MissingLinksBlocks.POLISHED_TUFF.blocks()[3].get(), "Polished Tuff Wall");
+		this.add(MissingLinksBlocks.POLISHED_TUFF_BRICKS.blocks()[0].get(), "Polished Tuff Bricks");
+		this.add(MissingLinksBlocks.POLISHED_TUFF_BRICKS.blocks()[1].get(), "Polished Tuff Brick Stairs");
+		this.add(MissingLinksBlocks.POLISHED_TUFF_BRICKS.blocks()[2].get(), "Polished Tuff Brick Slab");
+		this.add(MissingLinksBlocks.POLISHED_TUFF_BRICKS.blocks()[3].get(), "Polished Tuff Brick Wall");
 		this.add(MissingLinksBlocks.CALCITE.blocks()[0].get(), "Calcite Stairs");
 		this.add(MissingLinksBlocks.CALCITE.blocks()[1].get(), "Calcite Slab");
 		this.add(MissingLinksBlocks.CALCITE.blocks()[2].get(), "Calcite Wall");
