@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:tuff"
-  },
-  "result": "missinglinks:polished_tuff_bricks_slab",
-  "count": 1
-}

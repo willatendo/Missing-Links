@@ -1,15 +1,11 @@
 {
   "replace": false,
   "values": [
-    "missinglinks:polished_calcite_slab",
-    "missinglinks:polished_calcite_bricks_slab",
-    "missinglinks:polished_tuff_slab",
-    "missinglinks:polished_tuff_bricks_slab",
     "missinglinks:calcite_slab",
     "missinglinks:tuff_slab",
     "missinglinks:dripstone_slab",
     "missinglinks:smooth_basalt_slab",
     "missinglinks:end_stone_slab",
-    "missinglinks:quartz_brick_stairs"
+    "missinglinks:quartz_brick_slab"
   ]
 }

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "missinglinks:polished_calcite"
-  },
-  "result": "missinglinks:calcite_slab",
-  "count": 1
-}

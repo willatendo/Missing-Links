@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "side": "missinglinks:block/polished_calcite",
-    "bottom": "missinglinks:block/polished_calcite",
-    "top": "missinglinks:block/polished_calcite"
-  }
-}

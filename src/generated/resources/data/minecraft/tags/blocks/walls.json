@@ -1,10 +1,6 @@
 {
   "replace": false,
   "values": [
-    "missinglinks:polished_calcite_wall",
-    "missinglinks:polished_calcite_bricks_wall",
-    "missinglinks:polished_tuff_wall",
-    "missinglinks:polished_tuff_bricks_wall",
     "missinglinks:calcite_wall",
     "missinglinks:tuff_wall",
     "missinglinks:dripstone_wall",

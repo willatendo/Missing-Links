@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "missinglinks:polished_tuff"
-  },
-  "result": "missinglinks:polished_tuff_stairs",
-  "count": 1
-}

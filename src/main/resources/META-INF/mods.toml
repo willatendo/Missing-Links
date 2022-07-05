@@ -28,10 +28,3 @@ Adds some weird oversites that Mojang forgot about!
     versionRange="[1.18.2,1.19)"
     ordering="NONE"
     side="BOTH"
-    
-[[dependencies.missinglinks]]
-    modId="tyrannotitanlib"
-    mandatory=true
-    versionRange="[v4.1.0,)"
-    ordering="NONE"
-    side="BOTH"

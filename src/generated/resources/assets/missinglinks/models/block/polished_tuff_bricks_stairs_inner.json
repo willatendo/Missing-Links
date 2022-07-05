@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "side": "missinglinks:block/polished_tuff_bricks",
-    "bottom": "missinglinks:block/polished_tuff_bricks",
-    "top": "missinglinks:block/polished_tuff_bricks"
-  }
-}
