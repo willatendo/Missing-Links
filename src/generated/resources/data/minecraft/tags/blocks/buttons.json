@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "missinglinks:andesite_button",
+    "missinglinks:diorite_button",
+    "missinglinks:granite_button",
+    "missinglinks:calcite_button",
+    "missinglinks:tuff_button",
+    "missinglinks:dripstone_button",
+    "missinglinks:smooth_basalt_button",
+    "missinglinks:end_stone_button"
+  ]
+}

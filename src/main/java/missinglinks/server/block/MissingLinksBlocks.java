@@ -1,5 +1,7 @@
 package missinglinks.server.block;
 
+import java.util.List;
+
 import com.tterrag.registrate.util.entry.BlockEntry;
 
 import missinglinks.MissingLinksMod;
@@ -10,6 +12,7 @@ import net.minecraft.data.recipes.SingleItemRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
@@ -20,12 +23,16 @@ import net.minecraft.world.level.block.WallBlock;
 public class MissingLinksBlocks {
 	private static final MissingLinksRegistrate REGISTRATE = MissingLinksMod.getRegistrate().creativeModeTab(() -> CreativeModeTab.TAB_BUILDING_BLOCKS);
 
-//	public static final BlockGroup POLISHED_CALCITE = BlockGroup.makeBlockStairsSlabWall("polished_calcite", BlockBehaviour.Properties.copy(Blocks.CALCITE), Blocks.CALCITE);
-//	public static final BlockGroup POLISHED_CALCITE_BRICKS = BlockGroup.makeBlockStairsSlabWall("polished_calcite_bricks", BlockBehaviour.Properties.copy(Blocks.CALCITE), Blocks.CALCITE);
-//	public static final BlockGroup POLISHED_TUFF = BlockGroup.makeBlockStairsSlabWall("polished_tuff", BlockBehaviour.Properties.copy(Blocks.TUFF), Blocks.TUFF);
-//	public static final BlockGroup POLISHED_TUFF_BRICKS = BlockGroup.makeBlockStairsSlabWall("polished_tuff_bricks", BlockBehaviour.Properties.copy(Blocks.TUFF), Blocks.TUFF);
-	
-	
+	public static final BlockGroup ANDESITE = BlockGroup.makeButtonPressurePlate(Blocks.ANDESITE);
+	public static final BlockGroup DIORITE = BlockGroup.makeButtonPressurePlate(Blocks.DIORITE);
+	public static final BlockGroup GRANITE = BlockGroup.makeButtonPressurePlate(Blocks.GRANITE);
+	public static final BlockGroup CALCITE_REDSTONE = BlockGroup.makeButtonPressurePlate(Blocks.CALCITE);
+	public static final BlockGroup TUFF_REDSTONE = BlockGroup.makeButtonPressurePlate(Blocks.TUFF);
+	public static final BlockGroup DRIPSTONE_BLOCK_REDSTONE = BlockGroup.makeButtonPressurePlate(Blocks.DRIPSTONE_BLOCK);
+	public static final BlockGroup SMOOTH_BASALT_REDSTONE = BlockGroup.makeButtonPressurePlate(Blocks.SMOOTH_BASALT);
+	public static final BlockGroup END_STONE_REDSTONE = BlockGroup.makeButtonPressurePlate(Blocks.END_STONE);
+
+	public static final List<BlockGroup> CONCRETE = BlockGroup.makeStairsSlabWallForEnumValues("concrete", DyeColor.values());
 
 	public static final BlockGroup CALCITE = BlockGroup.makeStairsSlabWall(Blocks.CALCITE);
 	public static final BlockGroup TUFF = BlockGroup.makeStairsSlabWall(Blocks.TUFF);

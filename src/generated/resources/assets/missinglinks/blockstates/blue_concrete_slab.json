@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "missinglinks:block/blue_concrete_slab_top"
+    },
+    "type=bottom": {
+      "model": "missinglinks:block/blue_concrete_slab"
+    },
+    "type=double": {
+      "model": "minecraft:block/blue_concrete"
+    }
+  }
+}
