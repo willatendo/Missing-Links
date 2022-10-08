@@ -77,4 +77,18 @@ jar {
     }
 }
 
+shadowJar {
+	classifier = ''
+	configurations = [project.configurations.shade]
+	relocate 'com.tterrag.registrate', 'missinglinks.repack.registrate'
+}
+
+reobf {
+	shadowJar {}
+}
+
+build.dependsOn shadowJar
+build.dependsOn reobfShadowJar
+
+
 jar.finalizedBy('reobfJar') 
