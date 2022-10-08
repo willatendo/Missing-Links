@@ -7,7 +7,7 @@ plugins {
 
 apply plugin: 'net.minecraftforge.gradle'
 
-version = '3.0.0'
+version = '3.1.0'
 group = 'missinglinks'
 archivesBaseName = 'missinglinks'
 
@@ -68,7 +68,7 @@ jar {
         attributes([
             "Specification-Title": "missinglinks",
             "Specification-Vendor": "Willatendo",
-            "Specification-Version": "3.0.0",
+            "Specification-Version": "3.1.0",
             "Implementation-Title": project.name,
             "Implementation-Version": "${version}",
             "Implementation-Vendor" :"Willatendo",
