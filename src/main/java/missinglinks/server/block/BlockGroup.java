@@ -20,7 +20,6 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
@@ -93,19 +92,19 @@ public class BlockGroup<T extends Block> {
 	public static BlockGroup makeStairsSlabWall(Block base) {
 		return new BlockGroup(new BlockEntry[] { REGISTRATE.block(getRegistryName(base).getPath().replace("_block", "").replace("bricks", "brick") + "_stairs", p -> new StairBlock(() -> base.defaultBlockState(), p)).properties(p -> p.copy(base)).recipe((block, provider) -> {
 			ShapedRecipeBuilder.shaped(block.get(), 4).pattern("#  ").pattern("## ").pattern("###").define('#', base).unlockedBy("has_block", provider.has(base)).save(provider);
-			if (base != Blocks.SCULK) {
-				SingleItemRecipeBuilder.stonecutting(Ingredient.of(base), block.get()).unlockedBy("has_block", provider.has(base)).save(provider, MissingLinksMod.rL(block.getName() + "_from_stonecutting"));
-			}
+//			if (base != Blocks.SCULK) {
+			SingleItemRecipeBuilder.stonecutting(Ingredient.of(base), block.get()).unlockedBy("has_block", provider.has(base)).save(provider, MissingLinksMod.rL(block.getName() + "_from_stonecutting"));
+//			}
 		}).blockstate((block, provider) -> provider.stairsBlock(block.get(), new ResourceLocation(getRegistryName(base).getNamespace(), "block/" + getRegistryName(base).getPath()))).tag(BlockTags.STAIRS, BlockTags.MINEABLE_WITH_PICKAXE).simpleItem().register(), REGISTRATE.block(getRegistryName(base).getPath().replace("_block", "").replace("bricks", "brick") + "_slab", SlabBlock::new).properties(p -> p.copy(base)).recipe((block, provider) -> {
 			ShapedRecipeBuilder.shaped(block.get(), 6).pattern("###").define('#', base).unlockedBy("has_block", provider.has(base)).save(provider);
-			if (base != Blocks.SCULK) {
-				SingleItemRecipeBuilder.stonecutting(Ingredient.of(base), block.get(), 2).unlockedBy("has_block", provider.has(base)).save(provider, MissingLinksMod.rL(block.getName() + "_from_stonecutting"));
-			}
+//			if (base != Blocks.SCULK) {
+			SingleItemRecipeBuilder.stonecutting(Ingredient.of(base), block.get(), 2).unlockedBy("has_block", provider.has(base)).save(provider, MissingLinksMod.rL(block.getName() + "_from_stonecutting"));
+//			}
 		}).blockstate((block, provider) -> provider.slabBlock(block.get(), new ResourceLocation(getRegistryName(base).getNamespace(), "block/" + getRegistryName(base).getPath()), new ResourceLocation(getRegistryName(base).getNamespace(), "block/" + getRegistryName(base).getPath()))).tag(BlockTags.SLABS, BlockTags.MINEABLE_WITH_PICKAXE).simpleItem().register(), REGISTRATE.block(getRegistryName(base).getPath().replace("_block", "").replace("bricks", "brick") + "_wall", WallBlock::new).properties(p -> p.copy(base)).recipe((block, provider) -> {
 			ShapedRecipeBuilder.shaped(block.get(), 6).pattern("###").pattern("###").define('#', base).unlockedBy("has_block", provider.has(base)).save(provider);
-			if (base != Blocks.SCULK) {
-				SingleItemRecipeBuilder.stonecutting(Ingredient.of(base), block.get()).unlockedBy("has_block", provider.has(base)).save(provider, MissingLinksMod.rL(block.getName() + "_from_stonecutting"));
-			}
+//			if (base != Blocks.SCULK) {
+			SingleItemRecipeBuilder.stonecutting(Ingredient.of(base), block.get()).unlockedBy("has_block", provider.has(base)).save(provider, MissingLinksMod.rL(block.getName() + "_from_stonecutting"));
+//			}
 		}).blockstate((block, provider) -> provider.wallBlock(block.get(), new ResourceLocation(getRegistryName(base).getNamespace(), "block/" + getRegistryName(base).getPath()))).tag(BlockTags.WALLS, BlockTags.MINEABLE_WITH_PICKAXE).item().model((item, provider) -> provider.withExistingParent(item.getName(), new ResourceLocation("block/wall_inventory")).texture("wall", new ResourceLocation(getRegistryName(base).getNamespace(), "block/" + getRegistryName(base).getPath()))).tab(() -> CreativeModeTab.TAB_DECORATIONS).build().register() });
 	}
 
