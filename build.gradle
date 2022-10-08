@@ -1,16 +1,7 @@
-buildscript {
-    repositories {
-        maven { url = 'https://maven.minecraftforge.net' }
-        mavenCentral()
-    }
-    dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: "${forgegradle_version}", changing: true
-    }
-}
-
 plugins {
     id 'eclipse'
     id 'maven-publish'
+    id 'net.minecraftforge.gradle' version "${forgegradle_version}"
 	id 'com.github.johnrengelman.shadow' version "${shadow_version}"
 }
 
@@ -67,7 +58,7 @@ configurations {
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     
-    def registrate = "com.tterrag.registrate:Registrate:MC${minecraft_version}-${registrate_version}"
+    def registrate = "com.tterrag.registrate:Registrate:MC${major_version}-${registrate_version}"
 	implementation fg.deobf(registrate)
 	shade registrate
 }

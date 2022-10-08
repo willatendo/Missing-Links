@@ -67,8 +67,8 @@ public class MissingLinksBlocks {
 	public static final BlockGroup NETHER_BRICKS = new BlockGroup(new BlockEntry[] { REGISTRATE.block("nether_brick_fence_gate", FenceGateBlock::new).properties(properties -> properties.copy(Blocks.NETHER_BRICKS)).recipe((block, provider) -> {
 		ShapedRecipeBuilder.shaped(block.get(), 6).pattern("@#@").pattern("@#@").define('@', Items.NETHER_BRICK).define('#', Blocks.NETHER_BRICKS).unlockedBy("has_block", RecipeProvider.has(Blocks.NETHER_BRICKS)).save(provider);
 	}).blockstate((block, provider) -> provider.fenceGateBlock(block.get(), new ResourceLocation(BlockGroup.getRegistryName(Blocks.NETHER_BRICKS).getNamespace(), "block/" + BlockGroup.getRegistryName(Blocks.NETHER_BRICKS).getPath()))).item().tab(() -> CreativeModeTab.TAB_REDSTONE).build().register() });
-//	public static final BlockGroup PACKED_MUDS = BlockGroup.makeStairsSlabWall(Blocks.PACKED_MUD);
-//	public static final BlockGroup SCULKS = BlockGroup.makeStairsSlabWall(Blocks.SCULK);
+	public static final BlockGroup PACKED_MUDS = BlockGroup.makeStairsSlabWall(Blocks.PACKED_MUD);
+	public static final BlockGroup SCULKS = BlockGroup.makeStairsSlabWall(Blocks.SCULK);
 
 	public static void init() {
 	}
