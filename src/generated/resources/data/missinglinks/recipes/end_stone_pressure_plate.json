@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##"
+  ],
   "key": {
     "#": {
       "item": "minecraft:end_stone"
     }
   },
-  "pattern": [
-    "##"
-  ],
   "result": {
     "item": "missinglinks:end_stone_pressure_plate"
   }

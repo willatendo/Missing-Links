@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "minecraft:orange_concrete"
   },
-  "result": "missinglinks:orange_concrete_wall"
+  "result": "missinglinks:orange_concrete_wall",
+  "count": 1
 }

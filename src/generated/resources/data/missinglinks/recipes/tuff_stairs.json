@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "#": {
-      "item": "minecraft:tuff"
-    }
-  },
   "pattern": [
     "#  ",
     "## ",
     "###"
   ],
+  "key": {
+    "#": {
+      "item": "minecraft:tuff"
+    }
+  },
   "result": {
-    "count": 4,
-    "item": "missinglinks:tuff_stairs"
+    "item": "missinglinks:tuff_stairs",
+    "count": 4
   }
 }

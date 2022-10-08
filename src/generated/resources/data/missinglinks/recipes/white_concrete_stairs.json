@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "#": {
-      "item": "minecraft:white_concrete"
-    }
-  },
   "pattern": [
     "#  ",
     "## ",
     "###"
   ],
+  "key": {
+    "#": {
+      "item": "minecraft:white_concrete"
+    }
+  },
   "result": {
-    "count": 4,
-    "item": "missinglinks:white_concrete_stairs"
+    "item": "missinglinks:white_concrete_stairs",
+    "count": 4
   }
 }

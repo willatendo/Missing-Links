@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "minecraft:calcite"
   },
-  "result": "missinglinks:calcite_wall"
+  "result": "missinglinks:calcite_wall",
+  "count": 1
 }

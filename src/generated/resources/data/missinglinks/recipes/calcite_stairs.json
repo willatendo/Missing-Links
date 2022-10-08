@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "#": {
-      "item": "minecraft:calcite"
-    }
-  },
   "pattern": [
     "#  ",
     "## ",
     "###"
   ],
+  "key": {
+    "#": {
+      "item": "minecraft:calcite"
+    }
+  },
   "result": {
-    "count": 4,
-    "item": "missinglinks:calcite_stairs"
+    "item": "missinglinks:calcite_stairs",
+    "count": 4
   }
 }

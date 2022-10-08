@@ -1,8 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "count": 1,
   "ingredient": {
     "item": "minecraft:smooth_stone"
   },
-  "result": "missinglinks:smooth_stone_wall"
+  "result": "missinglinks:smooth_stone_wall",
+  "count": 1
 }

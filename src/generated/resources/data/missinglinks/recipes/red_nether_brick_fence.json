@@ -1,19 +1,19 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "#": {
-      "item": "minecraft:red_nether_bricks"
-    },
-    "@": {
-      "item": "minecraft:nether_brick"
-    }
-  },
   "pattern": [
     "#@#",
     "#@#"
   ],
+  "key": {
+    "@": {
+      "item": "minecraft:nether_brick"
+    },
+    "#": {
+      "item": "minecraft:red_nether_bricks"
+    }
+  },
   "result": {
-    "count": 6,
-    "item": "missinglinks:red_nether_brick_fence"
+    "item": "missinglinks:red_nether_brick_fence",
+    "count": 6
   }
 }

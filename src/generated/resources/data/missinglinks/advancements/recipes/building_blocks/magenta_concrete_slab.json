@@ -1,7 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "missinglinks:magenta_concrete_slab"
+    ]
+  },
   "criteria": {
     "has_block": {
+      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
@@ -10,14 +16,13 @@
             ]
           }
         ]
-      },
-      "trigger": "minecraft:inventory_changed"
+      }
     },
     "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
       "conditions": {
         "recipe": "missinglinks:magenta_concrete_slab"
-      },
-      "trigger": "minecraft:recipe_unlocked"
+      }
     }
   },
   "requirements": [
@@ -25,10 +30,5 @@
       "has_block",
       "has_the_recipe"
     ]
-  ],
-  "rewards": {
-    "recipes": [
-      "missinglinks:magenta_concrete_slab"
-    ]
-  }
+  ]
 }

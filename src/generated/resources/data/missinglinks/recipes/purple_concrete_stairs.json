@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "#": {
-      "item": "minecraft:purple_concrete"
-    }
-  },
   "pattern": [
     "#  ",
     "## ",
     "###"
   ],
+  "key": {
+    "#": {
+      "item": "minecraft:purple_concrete"
+    }
+  },
   "result": {
-    "count": 4,
-    "item": "missinglinks:purple_concrete_stairs"
+    "item": "missinglinks:purple_concrete_stairs",
+    "count": 4
   }
 }

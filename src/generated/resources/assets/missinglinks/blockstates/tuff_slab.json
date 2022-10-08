@@ -1,13 +1,13 @@
 {
   "variants": {
+    "type=top": {
+      "model": "missinglinks:block/tuff_slab_top"
+    },
     "type=bottom": {
       "model": "missinglinks:block/tuff_slab"
     },
     "type=double": {
       "model": "minecraft:block/tuff"
-    },
-    "type=top": {
-      "model": "missinglinks:block/tuff_slab_top"
     }
   }
 }

@@ -1,4 +1,5 @@
 {
+  "replace": false,
   "values": [
     "missinglinks:white_concrete_wall",
     "missinglinks:orange_concrete_wall",
@@ -26,8 +27,6 @@
     "missinglinks:smooth_quartz_wall",
     "missinglinks:smooth_red_sandstone_wall",
     "missinglinks:smooth_sandstone_wall",
-    "missinglinks:smooth_stone_wall",
-    "missinglinks:packed_mud_wall",
-    "missinglinks:sculk_wall"
+    "missinglinks:smooth_stone_wall"
   ]
 }

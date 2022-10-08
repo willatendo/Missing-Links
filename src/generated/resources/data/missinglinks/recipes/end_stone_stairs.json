@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "#": {
-      "item": "minecraft:end_stone"
-    }
-  },
   "pattern": [
     "#  ",
     "## ",
     "###"
   ],
+  "key": {
+    "#": {
+      "item": "minecraft:end_stone"
+    }
+  },
   "result": {
-    "count": 4,
-    "item": "missinglinks:end_stone_stairs"
+    "item": "missinglinks:end_stone_stairs",
+    "count": 4
   }
 }

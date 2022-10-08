@@ -1,13 +1,13 @@
 {
   "variants": {
+    "type=top": {
+      "model": "missinglinks:block/calcite_slab_top"
+    },
     "type=bottom": {
       "model": "missinglinks:block/calcite_slab"
     },
     "type=double": {
       "model": "minecraft:block/calcite"
-    },
-    "type=top": {
-      "model": "missinglinks:block/calcite_slab_top"
     }
   }
 }

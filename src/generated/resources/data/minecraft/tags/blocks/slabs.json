@@ -1,4 +1,5 @@
 {
+  "replace": false,
   "values": [
     "missinglinks:white_concrete_slab",
     "missinglinks:orange_concrete_slab",
@@ -21,8 +22,6 @@
     "missinglinks:dripstone_slab",
     "missinglinks:smooth_basalt_slab",
     "missinglinks:end_stone_slab",
-    "missinglinks:quartz_brick_slab",
-    "missinglinks:packed_mud_slab",
-    "missinglinks:sculk_slab"
+    "missinglinks:quartz_brick_slab"
   ]
 }

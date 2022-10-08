@@ -1,4 +1,5 @@
 {
+  "replace": false,
   "values": [
     "missinglinks:white_concrete_stairs",
     "missinglinks:orange_concrete_stairs",
@@ -21,8 +22,6 @@
     "missinglinks:dripstone_stairs",
     "missinglinks:smooth_basalt_stairs",
     "missinglinks:end_stone_stairs",
-    "missinglinks:quartz_brick_stairs",
-    "missinglinks:packed_mud_stairs",
-    "missinglinks:sculk_stairs"
+    "missinglinks:quartz_brick_stairs"
   ]
 }

@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##"
+  ],
   "key": {
     "#": {
       "item": "minecraft:diorite"
     }
   },
-  "pattern": [
-    "##"
-  ],
   "result": {
     "item": "missinglinks:diorite_pressure_plate"
   }
