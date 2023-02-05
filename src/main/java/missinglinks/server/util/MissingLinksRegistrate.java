@@ -11,17 +11,19 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 public class MissingLinksRegistrate extends AbstractRegistrate<MissingLinksRegistrate> {
 	public MissingLinksRegistrate(String modid) {
 		super(modid);
-		this.copyBlockTags();
+		this.copyBlockTagsAndItemGroupName();
 	}
 
 	public static NonNullSupplier<MissingLinksRegistrate> lazy(String modid) {
 		return NonNullSupplier.lazy(() -> new MissingLinksRegistrate(modid).registerEventListeners(FMLJavaModLoadingContext.get().getModEventBus()));
 	}
 
-	public void copyBlockTags() {
+	public void copyBlockTagsAndItemGroupName() {
 		this.addDataGenerator(ProviderType.ITEM_TAGS, provider -> provider.copy(BlockTags.FENCES, ItemTags.FENCES));
 		this.addDataGenerator(ProviderType.ITEM_TAGS, provider -> provider.copy(BlockTags.WALLS, ItemTags.WALLS));
 		this.addDataGenerator(ProviderType.ITEM_TAGS, provider -> provider.copy(BlockTags.STAIRS, ItemTags.STAIRS));
 		this.addDataGenerator(ProviderType.ITEM_TAGS, provider -> provider.copy(BlockTags.SLABS, ItemTags.SLABS));
+
+		this.addDataGenerator(ProviderType.LANG, provider -> provider.add("itemGroup.missinglinks.missing_links", "Missing Links"));
 	}
 }

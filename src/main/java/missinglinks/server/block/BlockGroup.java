@@ -18,7 +18,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.StringRepresentable;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
@@ -69,7 +68,7 @@ public class BlockGroup<T extends Block> {
 			ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.get(), 6).pattern("###").pattern("###").define('#', rawBlock).unlockedBy("has_block", provider.has(rawBlock)).save(provider);
 			SingleItemRecipeBuilder.stonecutting(Ingredient.of(base.get()), RecipeCategory.DECORATIONS, block.get()).unlockedBy("has_block", provider.has(base.get())).save(provider, MissingLinksMod.rL(block.getName() + "_from_stone_stonecutting"));
 			SingleItemRecipeBuilder.stonecutting(Ingredient.of(rawBlock), RecipeCategory.DECORATIONS, block.get()).unlockedBy("has_block", provider.has(rawBlock)).save(provider, MissingLinksMod.rL(block.getName() + "_from_stonecutting"));
-		}).blockstate((block, provider) -> provider.wallBlock(block.get(), new ResourceLocation(getRegistryName(base.get()).getNamespace(), "block/" + name))).tag(BlockTags.WALLS, BlockTags.MINEABLE_WITH_PICKAXE).item().model((item, provider) -> provider.withExistingParent(item.getName(), new ResourceLocation("block/wall_inventory")).texture("wall", MissingLinksMod.rL("block/" + name))).tab(() -> CreativeModeTabs.BUILDING_BLOCKS).build().register();
+		}).blockstate((block, provider) -> provider.wallBlock(block.get(), new ResourceLocation(getRegistryName(base.get()).getNamespace(), "block/" + name))).tag(BlockTags.WALLS, BlockTags.MINEABLE_WITH_PICKAXE).item().model((item, provider) -> provider.withExistingParent(item.getName(), new ResourceLocation("block/wall_inventory")).texture("wall", MissingLinksMod.rL("block/" + name))).build().register();
 
 		return new BlockGroup(new BlockEntry[] { base, stairs, slab, wall });
 	}
@@ -77,7 +76,7 @@ public class BlockGroup<T extends Block> {
 	public static <T extends StringRepresentable> List<BlockGroup> makeStairsSlabWallForEnumValues(String name, T[] enumValues) {
 		ArrayList<BlockGroup> items = Lists.newArrayList();
 		for (int i = 0; i < enumValues.length; i++) {
-			Block base = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(enumValues[i].getSerializedName() + "_concrete"));
+			Block base = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(enumValues[i].getSerializedName() + "_" + name));
 			items.add(new BlockGroup(new BlockEntry[] { REGISTRATE.block(enumValues[i].getSerializedName() + "_" + name + "_stairs", p -> new StairBlock(() -> base.defaultBlockState(), p)).properties(p -> p.copy(base)).recipe((block, provider) -> {
 				ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, block.get(), 4).pattern("#  ").pattern("## ").pattern("###").define('#', base).unlockedBy("has_block", provider.has(base)).save(provider);
 				SingleItemRecipeBuilder.stonecutting(Ingredient.of(base), RecipeCategory.BUILDING_BLOCKS, block.get()).unlockedBy("has_block", provider.has(base)).save(provider, MissingLinksMod.rL(block.getName() + "_from_stonecutting"));
@@ -87,7 +86,7 @@ public class BlockGroup<T extends Block> {
 			}).blockstate((block, provider) -> provider.slabBlock(block.get(), new ResourceLocation(getRegistryName(base).getNamespace(), "block/" + getRegistryName(base).getPath()), new ResourceLocation(getRegistryName(base).getNamespace(), "block/" + getRegistryName(base).getPath()))).tag(BlockTags.SLABS, BlockTags.MINEABLE_WITH_PICKAXE).simpleItem().register(), REGISTRATE.block(enumValues[i].getSerializedName() + "_" + name + "_wall", WallBlock::new).properties(p -> p.copy(base)).recipe((block, provider) -> {
 				ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, block.get(), 6).pattern("###").pattern("###").define('#', base).unlockedBy("has_block", provider.has(base)).save(provider);
 				SingleItemRecipeBuilder.stonecutting(Ingredient.of(base), RecipeCategory.BUILDING_BLOCKS, block.get()).unlockedBy("has_block", provider.has(base)).save(provider, MissingLinksMod.rL(block.getName() + "_from_stonecutting"));
-			}).blockstate((block, provider) -> provider.wallBlock(block.get(), new ResourceLocation(getRegistryName(base).getNamespace(), "block/" + getRegistryName(base).getPath()))).tag(BlockTags.WALLS, BlockTags.MINEABLE_WITH_PICKAXE).item().model((item, provider) -> provider.withExistingParent(item.getName(), new ResourceLocation("block/wall_inventory")).texture("wall", new ResourceLocation(getRegistryName(base).getNamespace(), "block/" + getRegistryName(base).getPath()))).tab(() -> CreativeModeTabs.COLORED_BLOCKS).build().register() }));
+			}).blockstate((block, provider) -> provider.wallBlock(block.get(), new ResourceLocation(getRegistryName(base).getNamespace(), "block/" + getRegistryName(base).getPath()))).tag(BlockTags.WALLS, BlockTags.MINEABLE_WITH_PICKAXE).item().model((item, provider) -> provider.withExistingParent(item.getName(), new ResourceLocation("block/wall_inventory")).texture("wall", new ResourceLocation(getRegistryName(base).getNamespace(), "block/" + getRegistryName(base).getPath()))).build().register() }));
 		}
 		return items;
 	}
@@ -108,7 +107,7 @@ public class BlockGroup<T extends Block> {
 			if (base != Blocks.SCULK) {
 				SingleItemRecipeBuilder.stonecutting(Ingredient.of(base), RecipeCategory.DECORATIONS, block.get()).unlockedBy("has_block", provider.has(base)).save(provider, MissingLinksMod.rL(block.getName() + "_from_stonecutting"));
 			}
-		}).blockstate((block, provider) -> provider.wallBlock(block.get(), new ResourceLocation(getRegistryName(base).getNamespace(), "block/" + getRegistryName(base).getPath()))).tag(BlockTags.WALLS, BlockTags.MINEABLE_WITH_PICKAXE).item().model((item, provider) -> provider.withExistingParent(item.getName(), new ResourceLocation("block/wall_inventory")).texture("wall", new ResourceLocation(getRegistryName(base).getNamespace(), "block/" + getRegistryName(base).getPath()))).tab(() -> CreativeModeTabs.BUILDING_BLOCKS).build().register() });
+		}).blockstate((block, provider) -> provider.wallBlock(block.get(), new ResourceLocation(getRegistryName(base).getNamespace(), "block/" + getRegistryName(base).getPath()))).tag(BlockTags.WALLS, BlockTags.MINEABLE_WITH_PICKAXE).item().model((item, provider) -> provider.withExistingParent(item.getName(), new ResourceLocation("block/wall_inventory")).texture("wall", new ResourceLocation(getRegistryName(base).getNamespace(), "block/" + getRegistryName(base).getPath()))).build().register() });
 	}
 
 	public static BlockGroup makeFencesFenceGates(Block base) {

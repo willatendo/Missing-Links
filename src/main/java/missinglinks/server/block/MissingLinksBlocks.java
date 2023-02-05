@@ -10,10 +10,10 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.SingleItemRecipeBuilder;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -23,7 +23,7 @@ import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
 
 public class MissingLinksBlocks {
-	public static final MissingLinksRegistrate REGISTRATE = MissingLinksMod.getRegistrate().creativeModeTab(() -> CreativeModeTabs.BUILDING_BLOCKS);
+	public static final MissingLinksRegistrate REGISTRATE = MissingLinksMod.getRegistrate().creativeModeTab("missing_links", builder -> builder.icon(() -> MissingLinksBlocks.CALCITE.blocks()[0].asStack()).title(Component.translatable("itemGroup.missinglinks.missing_links")).withSearchBar().build());
 
 	public static final BlockGroup ANDESITE = BlockGroup.makeButtonPressurePlate(Blocks.ANDESITE);
 	public static final BlockGroup DIORITE = BlockGroup.makeButtonPressurePlate(Blocks.DIORITE);
@@ -35,12 +35,17 @@ public class MissingLinksBlocks {
 	public static final BlockGroup END_STONE_REDSTONE = BlockGroup.makeButtonPressurePlate(Blocks.END_STONE);
 
 	public static final List<BlockGroup> CONCRETE = BlockGroup.makeStairsSlabWallForEnumValues("concrete", DyeColor.values());
+	public static final List<BlockGroup> TERRACOTTA = BlockGroup.makeStairsSlabWallForEnumValues("terracotta", DyeColor.values());
+	public static final List<BlockGroup> GLAZED_TERRACOTTA = BlockGroup.makeStairsSlabWallForEnumValues("glazed_terracotta", DyeColor.values());
+	public static final List<BlockGroup> WOOL = BlockGroup.makeStairsSlabWallForEnumValues("wool", DyeColor.values());
 
 	public static final BlockGroup CALCITE = BlockGroup.makeStairsSlabWall(Blocks.CALCITE);
 	public static final BlockGroup TUFF = BlockGroup.makeStairsSlabWall(Blocks.TUFF);
 	public static final BlockGroup DRIPSTONE_BLOCK = BlockGroup.makeStairsSlabWall(Blocks.DRIPSTONE_BLOCK);
 	public static final BlockGroup SMOOTH_BASALT = BlockGroup.makeStairsSlabWall(Blocks.SMOOTH_BASALT);
 	public static final BlockGroup END_STONE = BlockGroup.makeStairsSlabWall(Blocks.END_STONE);
+	public static final BlockGroup OBSIDIAN = BlockGroup.makeStairsSlabWall(Blocks.OBSIDIAN);
+	public static final BlockGroup CRYING_OBSIDIAN = BlockGroup.makeStairsSlabWall(Blocks.CRYING_OBSIDIAN);
 	public static final BlockGroup QUARTZ_BRICKS = BlockGroup.makeStairsSlabWall(Blocks.QUARTZ_BRICKS);
 	public static final BlockGroup QUARTZ_BLOCK = new BlockGroup(new BlockEntry[] { REGISTRATE.block("quartz_wall", WallBlock::new).properties(properties -> properties.copy(Blocks.QUARTZ_BLOCK)).recipe((block, provider) -> {
 		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.get(), 6).pattern("###").pattern("###").define('#', Blocks.QUARTZ_BLOCK).unlockedBy("has_block", provider.has(Blocks.QUARTZ_BLOCK)).save(provider);
