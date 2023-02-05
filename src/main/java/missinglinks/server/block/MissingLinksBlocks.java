@@ -23,7 +23,7 @@ import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
 
 public class MissingLinksBlocks {
-	public static final MissingLinksRegistrate REGISTRATE = MissingLinksMod.getRegistrate().creativeModeTab("missing_links", builder -> builder.icon(() -> MissingLinksBlocks.CALCITE.blocks()[0].asStack()).title(Component.translatable("itemGroup.missinglinks.missing_links")).withSearchBar().build());
+	public static final MissingLinksRegistrate REGISTRATE = MissingLinksMod.getRegistrate().creativeModeTab("missing_links", builder -> builder.icon(() -> MissingLinksBlocks.CALCITE.blocks()[0].asStack()).title(Component.translatable("itemGroup.missinglinks.missing_links")).withSearchBar().build(), "Missing Links");
 
 	public static final BlockGroup ANDESITE = BlockGroup.makeButtonPressurePlate(Blocks.ANDESITE);
 	public static final BlockGroup DIORITE = BlockGroup.makeButtonPressurePlate(Blocks.DIORITE);

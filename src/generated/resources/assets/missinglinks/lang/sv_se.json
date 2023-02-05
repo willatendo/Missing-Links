@@ -245,5 +245,6 @@
   "block.missinglinks.yellow_terracotta_wall": "Gul terrakottamur",
   "block.missinglinks.yellow_wool_slab": "Gul ullplatta",
   "block.missinglinks.yellow_wool_stairs": "Gul ulltrappa",
-  "block.missinglinks.yellow_wool_wall": "Gul ullmur"
+  "block.missinglinks.yellow_wool_wall": "Gul ullmur",
+  "itemGroup.missinglinks.missing_links": "Försvunnen Länkar"
 }

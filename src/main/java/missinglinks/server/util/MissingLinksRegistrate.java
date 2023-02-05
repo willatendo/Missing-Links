@@ -23,7 +23,5 @@ public class MissingLinksRegistrate extends AbstractRegistrate<MissingLinksRegis
 		this.addDataGenerator(ProviderType.ITEM_TAGS, provider -> provider.copy(BlockTags.WALLS, ItemTags.WALLS));
 		this.addDataGenerator(ProviderType.ITEM_TAGS, provider -> provider.copy(BlockTags.STAIRS, ItemTags.STAIRS));
 		this.addDataGenerator(ProviderType.ITEM_TAGS, provider -> provider.copy(BlockTags.SLABS, ItemTags.SLABS));
-
-		this.addDataGenerator(ProviderType.LANG, provider -> provider.add("itemGroup.missinglinks.missing_links", "Missing Links"));
 	}
 }
