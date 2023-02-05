@@ -6,6 +6,7 @@ import missinglinks.data.MissingLinksTranslationLanguageProvider;
 import missinglinks.server.block.MissingLinksBlocks;
 import missinglinks.server.util.MissingLinksRegistrate;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -27,7 +28,8 @@ public class MissingLinksMod {
 
 	private void dataSetup(GatherDataEvent event) {
 		DataGenerator dataGenerator = event.getGenerator();
-		dataGenerator.addProvider(true, new MissingLinksTranslationLanguageProvider(dataGenerator, "sv_se", provider -> {
+		PackOutput packOutput = dataGenerator.getPackOutput();
+		dataGenerator.addProvider(true, new MissingLinksTranslationLanguageProvider(packOutput, "sv_se", provider -> {
 			provider.addBlock(MissingLinksBlocks.ANDESITE.blocks()[0], "Andesittryckplatta");
 			provider.addBlock(MissingLinksBlocks.ANDESITE.blocks()[1], "Andesitknapp");
 			provider.addBlock(MissingLinksBlocks.DIORITE.blocks()[0], "Diorittryckplatta");

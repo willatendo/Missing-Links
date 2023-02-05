@@ -3,7 +3,7 @@ package missinglinks.data;
 import java.util.function.Supplier;
 
 import missinglinks.MissingLinksMod;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.RecordItem;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -11,8 +11,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class MissingLinksTranslationLanguageProvider extends LanguageProvider {
 	private final AddTranslations translations;
 
-	public MissingLinksTranslationLanguageProvider(DataGenerator dataGenerator, String local, AddTranslations addTranslations) {
-		super(dataGenerator, MissingLinksMod.ID, local);
+	public MissingLinksTranslationLanguageProvider(PackOutput packOutput, String local, AddTranslations addTranslations) {
+		super(packOutput, MissingLinksMod.ID, local);
 		this.translations = addTranslations;
 	}
 
