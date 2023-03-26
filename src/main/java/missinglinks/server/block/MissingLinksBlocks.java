@@ -3,6 +3,7 @@ package missinglinks.server.block;
 import java.util.List;
 
 import com.tterrag.registrate.util.entry.BlockEntry;
+import com.tterrag.registrate.util.entry.ItemEntry;
 
 import missinglinks.MissingLinksMod;
 import missinglinks.server.util.MissingLinksRegistrate;
@@ -15,6 +16,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
@@ -27,6 +29,8 @@ import net.minecraftforge.client.model.generators.ConfiguredModel;
 
 public class MissingLinksBlocks {
 	public static final MissingLinksRegistrate REGISTRATE = MissingLinksMod.getRegistrate();
+
+	public static final ItemEntry<Item> ICON = REGISTRATE.item("icon", Item::new).model(null).register();
 
 	public static final BlockEntry<LeverBlock> ANDESITE_LEVER = REGISTRATE.block("andesite_lever", properties -> new LeverBlock(properties)).properties(properties -> properties.copy(Blocks.LEVER)).recipe((block, provider) -> ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.get()).pattern("#").pattern("%").define('#', Items.STICK).define('%', Blocks.ANDESITE).unlockedBy("has_item", provider.has(Blocks.ANDESITE)).save(provider)).blockstate((block, provider) -> provider.getVariantBuilder(block.get()).forAllStates(state -> {
 		Direction facing = state.getValue(LeverBlock.FACING);
