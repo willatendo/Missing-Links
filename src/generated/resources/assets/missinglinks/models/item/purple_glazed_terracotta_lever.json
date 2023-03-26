@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "missinglinks:block/purple_glazed_terracotta_lever"
+  }
+}

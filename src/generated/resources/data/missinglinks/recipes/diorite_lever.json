@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "%": {
+      "item": "minecraft:diorite"
+    }
+  },
+  "pattern": [
+    "#",
+    "%"
+  ],
+  "result": {
+    "item": "missinglinks:diorite_lever"
+  }
+}

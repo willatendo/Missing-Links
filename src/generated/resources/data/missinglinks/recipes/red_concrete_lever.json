@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "%": {
+      "item": "minecraft:red_concrete"
+    }
+  },
+  "pattern": [
+    "#",
+    "%"
+  ],
+  "result": {
+    "item": "missinglinks:red_concrete_lever"
+  }
+}

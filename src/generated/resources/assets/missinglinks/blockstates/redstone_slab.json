@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "missinglinks:block/redstone_slab"
+    },
+    "type=double": {
+      "model": "minecraft:block/redstone_block"
+    },
+    "type=top": {
+      "model": "missinglinks:block/redstone_slab_top"
+    }
+  }
+}

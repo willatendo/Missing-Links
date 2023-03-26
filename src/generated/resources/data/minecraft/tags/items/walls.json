@@ -1,5 +1,15 @@
 {
   "values": [
+    "missinglinks:terracotta_wall",
+    "missinglinks:clay_wall",
+    "missinglinks:coal_wall",
+    "missinglinks:iron_wall",
+    "missinglinks:gold_wall",
+    "missinglinks:redstone_wall",
+    "missinglinks:emerald_wall",
+    "missinglinks:lapis_wall",
+    "missinglinks:diamond_wall",
+    "missinglinks:netherite_wall",
     "missinglinks:white_concrete_wall",
     "missinglinks:orange_concrete_wall",
     "missinglinks:magenta_concrete_wall",

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/lever",
+  "textures": {
+    "base": "minecraft:block/red_glazed_terracotta",
+    "lever": "missinglinks:block/red_glazed_terracotta_lever",
+    "particle": "minecraft:block/red_glazed_terracotta"
+  }
+}

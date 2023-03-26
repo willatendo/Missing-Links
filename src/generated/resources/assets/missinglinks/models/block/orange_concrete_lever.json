@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/lever",
+  "textures": {
+    "base": "minecraft:block/orange_concrete",
+    "lever": "missinglinks:block/orange_concrete_lever",
+    "particle": "minecraft:block/orange_concrete"
+  }
+}

@@ -9,6 +9,7 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 
 import missinglinks.MissingLinksMod;
 import missinglinks.server.util.MissingLinksRegistrate;
+import net.minecraft.core.Direction;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
@@ -25,12 +26,15 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.LeverBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.PressurePlateBlock.Sensitivity;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.AttachFace;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class BlockGroup<T extends Block> {
@@ -87,6 +91,24 @@ public class BlockGroup<T extends Block> {
 				ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, block.get(), 6).pattern("###").pattern("###").define('#', base).unlockedBy("has_block", provider.has(base)).save(provider);
 				SingleItemRecipeBuilder.stonecutting(Ingredient.of(base), RecipeCategory.BUILDING_BLOCKS, block.get()).unlockedBy("has_block", provider.has(base)).save(provider, MissingLinksMod.rL(block.getName() + "_from_stonecutting"));
 			}).blockstate((block, provider) -> provider.wallBlock(block.get(), new ResourceLocation(getRegistryName(base).getNamespace(), "block/" + getRegistryName(base).getPath()))).tag(BlockTags.WALLS, BlockTags.MINEABLE_WITH_PICKAXE).item().model((item, provider) -> provider.withExistingParent(item.getName(), new ResourceLocation("block/wall_inventory")).texture("wall", new ResourceLocation(getRegistryName(base).getNamespace(), "block/" + getRegistryName(base).getPath()))).build().register() }));
+		}
+		return items;
+	}
+
+	public static <T extends StringRepresentable> List<BlockGroup> makeRedstoneForEnumValues(String name, T[] enumValues) {
+		ArrayList<BlockGroup> items = Lists.newArrayList();
+		for (int i = 0; i < enumValues.length; i++) {
+			Block base = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(enumValues[i].getSerializedName() + "_" + name));
+			items.add(new BlockGroup(new BlockEntry[] { REGISTRATE.block(getRegistryName(base).getPath().replace("_block", "").replace("bricks", "brick") + "_pressure_plate", properties -> new PressurePlateBlock(Sensitivity.MOBS, properties, SoundEvents.STONE_PRESSURE_PLATE_CLICK_OFF, SoundEvents.STONE_PRESSURE_PLATE_CLICK_ON)).properties(p -> p.copy(base).noCollission().noOcclusion()).recipe((block, provider) -> {
+				ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, block.get()).pattern("##").define('#', base).unlockedBy("has_block", RecipeProvider.has(base)).save(provider);
+			}).blockstate((block, provider) -> provider.pressurePlateBlock(block.get(), new ResourceLocation(getRegistryName(base).getNamespace(), "block/" + getRegistryName(base).getPath()))).tag(BlockTags.PRESSURE_PLATES, BlockTags.MINEABLE_WITH_PICKAXE).item().build().register(), REGISTRATE.block(getRegistryName(base).getPath().replace("_block", "").replace("bricks", "brick") + "_button", p -> new ButtonBlock(p, 20, false, SoundEvents.STONE_BUTTON_CLICK_OFF, SoundEvents.STONE_BUTTON_CLICK_ON)).properties(p -> p.copy(base)).recipe((block, provider) -> {
+				ShapelessRecipeBuilder.shapeless(RecipeCategory.REDSTONE, block.get()).requires(Ingredient.of(base)).unlockedBy("has_block", RecipeProvider.has(base)).save(provider);
+			}).blockstate((block, provider) -> provider.buttonBlock(block.get(), new ResourceLocation(getRegistryName(base).getNamespace(), "block/" + getRegistryName(base).getPath()))).tag(BlockTags.BUTTONS, BlockTags.MINEABLE_WITH_PICKAXE).item().model((item, provider) -> provider.buttonInventory(item.getName(), new ResourceLocation(getRegistryName(base).getNamespace(), "block/" + getRegistryName(base).getPath()))).build().register(), REGISTRATE.block(getRegistryName(base).getPath() + "_lever", properties -> new LeverBlock(properties)).properties(properties -> properties.copy(Blocks.LEVER)).recipe((block, provider) -> ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.get()).pattern("#").pattern("%").define('#', Items.STICK).define('%', base).unlockedBy("has_item", provider.has(base)).save(provider)).blockstate((block, provider) -> provider.getVariantBuilder(block.get()).forAllStates(state -> {
+				Direction facing = state.getValue(LeverBlock.FACING);
+				AttachFace face = state.getValue(LeverBlock.FACE);
+				boolean powered = state.getValue(LeverBlock.POWERED);
+				return ConfiguredModel.builder().modelFile(powered ? provider.models().withExistingParent(block.getName() + "_on", provider.mcLoc("block/lever_on")).texture("particle", provider.mcLoc("block/" + getRegistryName(base).getPath())).texture("base", provider.mcLoc("block/" + getRegistryName(base).getPath())).texture("lever", provider.modLoc("block/" + getRegistryName(base).getPath() + "_lever")) : provider.models().withExistingParent(block.getName(), provider.mcLoc("block/lever")).texture("particle", provider.mcLoc("block/" + getRegistryName(base).getPath())).texture("base", provider.mcLoc("block/" + getRegistryName(base).getPath())).texture("lever", provider.modLoc("block/" + getRegistryName(base).getPath() + "_lever"))).rotationX(face == AttachFace.FLOOR ? 0 : (face == AttachFace.WALL ? 90 : 180)).rotationY((int) (face == AttachFace.CEILING ? facing : facing.getOpposite()).toYRot()).build();
+			})).item().model((item, provider) -> provider.generated(item, provider.modLoc("block/" + getRegistryName(base).getPath() + "_lever"))).build().register() }));
 		}
 		return items;
 	}

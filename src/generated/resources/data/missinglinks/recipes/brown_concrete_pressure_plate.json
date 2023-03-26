@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": {
+      "item": "minecraft:brown_concrete"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "item": "missinglinks:brown_concrete_pressure_plate"
+  }
+}

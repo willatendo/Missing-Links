@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "%": {
+      "item": "minecraft:brown_terracotta"
+    }
+  },
+  "pattern": [
+    "#",
+    "%"
+  ],
+  "result": {
+    "item": "missinglinks:brown_terracotta_lever"
+  }
+}

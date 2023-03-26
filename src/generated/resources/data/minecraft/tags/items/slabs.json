@@ -1,5 +1,15 @@
 {
   "values": [
+    "missinglinks:terracotta_slab",
+    "missinglinks:clay_slab",
+    "missinglinks:coal_slab",
+    "missinglinks:iron_slab",
+    "missinglinks:gold_slab",
+    "missinglinks:redstone_slab",
+    "missinglinks:emerald_slab",
+    "missinglinks:lapis_slab",
+    "missinglinks:diamond_slab",
+    "missinglinks:netherite_slab",
     "missinglinks:white_concrete_slab",
     "missinglinks:orange_concrete_slab",
     "missinglinks:magenta_concrete_slab",
