@@ -30,7 +30,7 @@ import net.minecraftforge.client.model.generators.ConfiguredModel;
 public class MissingLinksBlocks {
 	public static final MissingLinksRegistrate REGISTRATE = MissingLinksMod.getRegistrate();
 
-	public static final ItemEntry<Item> ICON = REGISTRATE.item("icon", Item::new).model(null).register();
+	public static final ItemEntry<Item> ICON = REGISTRATE.item("icon", Item::new).model((item, provider) -> provider.withExistingParent(item.getName(), provider.modLoc("block/icon"))).register();
 
 	public static final BlockEntry<LeverBlock> ANDESITE_LEVER = REGISTRATE.block("andesite_lever", properties -> new LeverBlock(properties)).properties(properties -> properties.copy(Blocks.LEVER)).recipe((block, provider) -> ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.get()).pattern("#").pattern("%").define('#', Items.STICK).define('%', Blocks.ANDESITE).unlockedBy("has_item", provider.has(Blocks.ANDESITE)).save(provider)).blockstate((block, provider) -> provider.getVariantBuilder(block.get()).forAllStates(state -> {
 		Direction facing = state.getValue(LeverBlock.FACING);

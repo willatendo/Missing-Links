@@ -246,5 +246,6 @@
   "block.missinglinks.yellow_wool_slab": "Keltainen villalaatta",
   "block.missinglinks.yellow_wool_stairs": "Keltainen villaportaat",
   "block.missinglinks.yellow_wool_wall": "Keltainen villamuuri",
-  "itemGroup.missinglinks.missing_links": "Puuttuvat linkit"
+  "itemGroup.missinglinks.missing_links": "Puuttuvat linkit",
+  "itemGroup.missinglinks.missing_links_palettes": "Paletter"
 }

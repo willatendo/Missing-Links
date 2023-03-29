@@ -432,6 +432,7 @@
   "block.missinglinks.yellow_wool_slab": "Yellow Wool Slab",
   "block.missinglinks.yellow_wool_stairs": "Yellow Wool Stairs",
   "block.missinglinks.yellow_wool_wall": "Yellow Wool Wall",
+  "item.missinglinks.icon": "Icon",
   "itemGroup.missinglinks.missing_links": "Missing Links",
   "itemGroup.missinglinks.missing_links_palettes": "Palettes"
 }
