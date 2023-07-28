@@ -1,26 +1,19 @@
 package missinglinks;
 
-import com.tterrag.registrate.util.nullness.NonNullSupplier;
-
+import missinglinks.server.MissingLinksCreativeModeTabs;
 import missinglinks.server.block.MissingLinksBlocks;
-import missinglinks.server.util.MissingLinksRegistrate;
-import net.minecraft.resources.ResourceLocation;
+import missinglinks.server.item.MissingLinksItems;
+import missinglinks.server.util.MissingLinksUtils;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import willatendo.simplelibrary.server.util.SimpleUtils;
 
-@Mod(MissingLinksMod.ID)
+@Mod(MissingLinksUtils.ID)
 public class MissingLinksMod {
-	public static final String ID = "missinglinks";
-	private static final NonNullSupplier<MissingLinksRegistrate> REGISTRATE = MissingLinksRegistrate.lazy(ID);
-
 	public MissingLinksMod() {
-		MissingLinksBlocks.init();
-	}
+		IEventBus iEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-	public static MissingLinksRegistrate getRegistrate() {
-		return REGISTRATE.get();
-	}
-
-	public static ResourceLocation rL(String path) {
-		return new ResourceLocation(ID, path);
+		SimpleUtils.registerAll(iEventBus, MissingLinksItems.ITEMS, MissingLinksBlocks.BLOCKS, MissingLinksCreativeModeTabs.CREATIVE_MODE_TABS);
 	}
 }

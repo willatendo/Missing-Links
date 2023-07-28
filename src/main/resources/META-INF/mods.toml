@@ -1,11 +1,11 @@
 modLoader="javafml"
-loaderVersion="[44,)"
-license="https://github.com/willatendo/Willatendos-Licensing"
+loaderVersion="[47,)"
+license="MIT"
 issueTrackerURL="https://github.com/willatendo/Missing-Links/issues"
 
 [[mods]]
 modId="missinglinks" 
-version="4.1.0"
+version="5.0.0"
 displayName="Missing Links"
 updateJSONURL="https://github.com/willatendo/Missing-Links/raw/main/updates.json"
 displayURL="https://github.com/willatendo/Missing-Links"
@@ -18,13 +18,13 @@ Adds some weird oversites that Mojang forgot about!
 [[dependencies.missinglinks]] 
     modId="forge" 
     mandatory=true 
-    versionRange="[44,)" 
+    versionRange="[47,)" 
     ordering="NONE"
     side="BOTH"
     
 [[dependencies.missinglinks]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19.3,1.20)"
+    versionRange="[1.20.1,1.21)"
     ordering="NONE"
     side="BOTH"

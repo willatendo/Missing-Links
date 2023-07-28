@@ -1,174 +1,143 @@
 package missinglinks.server.block;
 
-import java.util.List;
-
-import com.tterrag.registrate.util.entry.BlockEntry;
-import com.tterrag.registrate.util.entry.ItemEntry;
-
-import missinglinks.MissingLinksMod;
-import missinglinks.server.util.MissingLinksRegistrate;
-import net.minecraft.core.Direction;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.data.recipes.SingleItemRecipeBuilder;
-import net.minecraft.resources.ResourceLocation;
+import missinglinks.server.util.MissingLinksUtils;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ButtonBlock;
+import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.LeverBlock;
+import net.minecraft.world.level.block.PressurePlateBlock;
+import net.minecraft.world.level.block.PressurePlateBlock.Sensitivity;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
-import net.minecraft.world.level.block.state.properties.AttachFace;
-import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class MissingLinksBlocks {
-	public static final MissingLinksRegistrate REGISTRATE = MissingLinksMod.getRegistrate();
+	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MissingLinksUtils.ID);
 
-	public static final ItemEntry<Item> ICON = REGISTRATE.item("icon", Item::new).model((item, provider) -> provider.withExistingParent(item.getName(), provider.modLoc("block/icon"))).register();
+	public static final RegistryObject<ButtonBlock> ANDESITE_BUTTON = BLOCKS.register("andesite_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.STONE, 20, false));
+	public static final RegistryObject<PressurePlateBlock> ANDESITE_PRESSURE_PLATE = BLOCKS.register("andesite_pressure_plate", () -> new PressurePlateBlock(Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final RegistryObject<LeverBlock> ANDESITE_LEVER = BLOCKS.register("andesite_lever", () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
+	public static final RegistryObject<ButtonBlock> DIORITE_BUTTON = BLOCKS.register("diorite_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.STONE, 20, false));
+	public static final RegistryObject<PressurePlateBlock> DIORITE_PRESSURE_PLATE = BLOCKS.register("diorite_pressure_plate", () -> new PressurePlateBlock(Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final RegistryObject<LeverBlock> DIORITE_LEVER = BLOCKS.register("diorite_lever", () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
+	public static final RegistryObject<ButtonBlock> GRANITE_BUTTON = BLOCKS.register("granite_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.STONE, 20, false));
+	public static final RegistryObject<PressurePlateBlock> GRANITE_PRESSURE_PLATE = BLOCKS.register("granite_pressure_plate", () -> new PressurePlateBlock(Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final RegistryObject<LeverBlock> GRANITE_LEVER = BLOCKS.register("granite_lever", () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
+	public static final RegistryObject<ButtonBlock> COBBLED_DEEPSLATE_BUTTON = BLOCKS.register("cobbled_deepslate_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.STONE, 20, false));
+	public static final RegistryObject<PressurePlateBlock> COBBLED_DEEPSLATE_PRESSURE_PLATE = BLOCKS.register("cobbled_deepslate_pressure_plate", () -> new PressurePlateBlock(Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final RegistryObject<LeverBlock> COBBLED_DEEPSLATE_LEVER = BLOCKS.register("cobbled_deepslate_lever", () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
+	public static final RegistryObject<StairBlock> CALCITE_STAIRS = BLOCKS.register("calcite_stairs", () -> new StairBlock(() -> Blocks.CALCITE.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.CALCITE)));
+	public static final RegistryObject<SlabBlock> CALCITE_SLAB = BLOCKS.register("calcite_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.CALCITE)));
+	public static final RegistryObject<WallBlock> CALCITE_WALL = BLOCKS.register("calcite_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.CALCITE)));
+	public static final RegistryObject<ButtonBlock> CALCITE_BUTTON = BLOCKS.register("calcite_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.STONE, 20, false));
+	public static final RegistryObject<PressurePlateBlock> CALCITE_PRESSURE_PLATE = BLOCKS.register("calcite_pressure_plate", () -> new PressurePlateBlock(Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final RegistryObject<LeverBlock> CALCITE_LEVER = BLOCKS.register("calcite_lever", () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
+	public static final RegistryObject<StairBlock> TUFF_STAIRS = BLOCKS.register("tuff_stairs", () -> new StairBlock(() -> Blocks.TUFF.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.TUFF)));
+	public static final RegistryObject<SlabBlock> TUFF_SLAB = BLOCKS.register("tuff_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.TUFF)));
+	public static final RegistryObject<WallBlock> TUFF_WALL = BLOCKS.register("tuff_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.TUFF)));
+	public static final RegistryObject<ButtonBlock> TUFF_BUTTON = BLOCKS.register("tuff_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.STONE, 20, false));
+	public static final RegistryObject<PressurePlateBlock> TUFF_PRESSURE_PLATE = BLOCKS.register("tuff_pressure_plate", () -> new PressurePlateBlock(Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final RegistryObject<LeverBlock> TUFF_LEVER = BLOCKS.register("tuff_lever", () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
+	public static final RegistryObject<StairBlock> DRIPSTONE_STAIRS = BLOCKS.register("dripstone_stairs", () -> new StairBlock(() -> Blocks.DRIPSTONE_BLOCK.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.DRIPSTONE_BLOCK)));
+	public static final RegistryObject<SlabBlock> DRIPSTONE_SLAB = BLOCKS.register("dripstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.DRIPSTONE_BLOCK)));
+	public static final RegistryObject<WallBlock> DRIPSTONE_WALL = BLOCKS.register("dripstone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.DRIPSTONE_BLOCK)));
+	public static final RegistryObject<ButtonBlock> DRIPSTONE_BUTTON = BLOCKS.register("dripstone_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.STONE, 20, false));
+	public static final RegistryObject<PressurePlateBlock> DRIPSTONE_PRESSURE_PLATE = BLOCKS.register("dripstone_pressure_plate", () -> new PressurePlateBlock(Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final RegistryObject<LeverBlock> DRIPSTONE_LEVER = BLOCKS.register("dripstone_lever", () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
+	public static final RegistryObject<StairBlock> SMOOTH_BASALT_STAIRS = BLOCKS.register("smooth_basalt_stairs", () -> new StairBlock(() -> Blocks.SMOOTH_BASALT.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.SMOOTH_BASALT)));
+	public static final RegistryObject<SlabBlock> SMOOTH_BASALT_SLAB = BLOCKS.register("smooth_basalt_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_BASALT)));
+	public static final RegistryObject<WallBlock> SMOOTH_BASALT_WALL = BLOCKS.register("smooth_basalt_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_BASALT)));
+	public static final RegistryObject<ButtonBlock> SMOOTH_BASALT_BUTTON = BLOCKS.register("smooth_basalt_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.STONE, 20, false));
+	public static final RegistryObject<PressurePlateBlock> SMOOTH_BASALT_PRESSURE_PLATE = BLOCKS.register("smooth_basalt_pressure_plate", () -> new PressurePlateBlock(Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final RegistryObject<LeverBlock> SMOOTH_BASALT_LEVER = BLOCKS.register("smooth_basalt_lever", () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
+	public static final RegistryObject<StairBlock> END_STONE_STAIRS = BLOCKS.register("end_stone_stairs", () -> new StairBlock(() -> Blocks.END_STONE.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+	public static final RegistryObject<SlabBlock> END_STONE_SLAB = BLOCKS.register("end_stone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+	public static final RegistryObject<WallBlock> END_STONE_WALL = BLOCKS.register("end_stone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE)));
+	public static final RegistryObject<ButtonBlock> END_STONE_BUTTON = BLOCKS.register("end_stone_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.STONE, 20, false));
+	public static final RegistryObject<PressurePlateBlock> END_STONE_PRESSURE_PLATE = BLOCKS.register("end_stone_pressure_plate", () -> new PressurePlateBlock(Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final RegistryObject<LeverBlock> END_STONE_LEVER = BLOCKS.register("end_stone_lever", () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
+	public static final RegistryObject<StairBlock> OBSIDIAN_STAIRS = BLOCKS.register("obsidian_stairs", () -> new StairBlock(() -> Blocks.OBSIDIAN.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OBSIDIAN)));
+	public static final RegistryObject<SlabBlock> OBSIDIAN_SLAB = BLOCKS.register("obsidian_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN)));
+	public static final RegistryObject<WallBlock> OBSIDIAN_WALL = BLOCKS.register("obsidian_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN)));
+	public static final RegistryObject<ButtonBlock> OBSIDIAN_BUTTON = BLOCKS.register("obsidian_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.STONE, 20, false));
+	public static final RegistryObject<PressurePlateBlock> OBSIDIAN_PRESSURE_PLATE = BLOCKS.register("obsidian_pressure_plate", () -> new PressurePlateBlock(Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final RegistryObject<LeverBlock> OBSIDIAN_LEVER = BLOCKS.register("obsidian_lever", () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
+	public static final RegistryObject<StairBlock> CRYING_OBSIDIAN_STAIRS = BLOCKS.register("crying_obsidian_stairs", () -> new StairBlock(() -> Blocks.CRYING_OBSIDIAN.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.CRYING_OBSIDIAN)));
+	public static final RegistryObject<SlabBlock> CRYING_OBSIDIAN_SLAB = BLOCKS.register("crying_obsidian_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.CRYING_OBSIDIAN)));
+	public static final RegistryObject<WallBlock> CRYING_OBSIDIAN_WALL = BLOCKS.register("crying_obsidian_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.CRYING_OBSIDIAN)));
+	public static final RegistryObject<ButtonBlock> CRYING_OBSIDIAN_BUTTON = BLOCKS.register("crying_obsidian_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.STONE, 20, false));
+	public static final RegistryObject<PressurePlateBlock> CRYING_OBSIDIAN_PRESSURE_PLATE = BLOCKS.register("crying_obsidian_pressure_plate", () -> new PressurePlateBlock(Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final RegistryObject<LeverBlock> CRYING_OBSIDIAN_LEVER = BLOCKS.register("crying_obsidian_lever", () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
+	public static final RegistryObject<StairBlock> QUARTZ_BRICK_STAIRS = BLOCKS.register("quartz_brick_stairs", () -> new StairBlock(() -> Blocks.QUARTZ_BRICKS.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.QUARTZ_BRICKS)));
+	public static final RegistryObject<SlabBlock> QUARTZ_BRICK_SLAB = BLOCKS.register("quartz_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.QUARTZ_BRICKS)));
+	public static final RegistryObject<WallBlock> QUARTZ_BRICK_WALL = BLOCKS.register("quartz_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.QUARTZ_BRICKS)));
+	public static final RegistryObject<ButtonBlock> QUARTZ_BRICK_BUTTON = BLOCKS.register("quartz_brick_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.STONE, 20, false));
+	public static final RegistryObject<PressurePlateBlock> QUARTZ_BRICK_PRESSURE_PLATE = BLOCKS.register("quartz_brick_pressure_plate", () -> new PressurePlateBlock(Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final RegistryObject<LeverBlock> QUARTZ_BRICK_LEVER = BLOCKS.register("quartz_brick_lever", () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
+	public static final RegistryObject<StairBlock> TERRACOTTA_STAIRS = BLOCKS.register("terracotta_stairs", () -> new StairBlock(() -> Blocks.TERRACOTTA.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.TERRACOTTA)));
+	public static final RegistryObject<SlabBlock> TERRACOTTA_SLAB = BLOCKS.register("terracotta_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.TERRACOTTA)));
+	public static final RegistryObject<WallBlock> TERRACOTTA_WALL = BLOCKS.register("terracotta_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.TERRACOTTA)));
+	public static final RegistryObject<ButtonBlock> TERRACOTTA_BUTTON = BLOCKS.register("terracotta_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.STONE, 20, false));
+	public static final RegistryObject<PressurePlateBlock> TERRACOTTA_PRESSURE_PLATE = BLOCKS.register("terracotta_pressure_plate", () -> new PressurePlateBlock(Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final RegistryObject<LeverBlock> TERRACOTTA_LEVER = BLOCKS.register("terracotta_lever", () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
 
-	public static final BlockEntry<LeverBlock> ANDESITE_LEVER = REGISTRATE.block("andesite_lever", properties -> new LeverBlock(properties)).properties(properties -> properties.copy(Blocks.LEVER)).recipe((block, provider) -> ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.get()).pattern("#").pattern("%").define('#', Items.STICK).define('%', Blocks.ANDESITE).unlockedBy("has_item", provider.has(Blocks.ANDESITE)).save(provider)).blockstate((block, provider) -> provider.getVariantBuilder(block.get()).forAllStates(state -> {
-		Direction facing = state.getValue(LeverBlock.FACING);
-		AttachFace face = state.getValue(LeverBlock.FACE);
-		boolean powered = state.getValue(LeverBlock.POWERED);
-		return ConfiguredModel.builder().modelFile(powered ? provider.models().withExistingParent(block.getName(), provider.mcLoc("block/lever")).texture("particle", provider.mcLoc("block/andesite")).texture("base", provider.mcLoc("block/andesite")).texture("lever", provider.modLoc("block/andesite_lever")) : provider.models().withExistingParent(block.getName() + "_on", provider.mcLoc("block/lever_on")).texture("particle", provider.mcLoc("block/andesite")).texture("base", provider.mcLoc("block/andesite")).texture("lever", provider.modLoc("block/andesite_lever"))).rotationX(face == AttachFace.FLOOR ? 0 : (face == AttachFace.WALL ? 90 : 180)).rotationY((int) (face == AttachFace.CEILING ? facing : facing.getOpposite()).toYRot()).build();
-	})).item().model((item, provider) -> provider.generated(item, provider.modLoc("block/andesite_lever"))).build().register();
-	public static final BlockEntry<LeverBlock> DIORITE_LEVER = REGISTRATE.block("diorite_lever", properties -> new LeverBlock(properties)).properties(properties -> properties.copy(Blocks.LEVER)).recipe((block, provider) -> ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.get()).pattern("#").pattern("%").define('#', Items.STICK).define('%', Blocks.DIORITE).unlockedBy("has_item", provider.has(Blocks.DIORITE)).save(provider)).blockstate((block, provider) -> provider.getVariantBuilder(block.get()).forAllStates(state -> {
-		Direction facing = state.getValue(LeverBlock.FACING);
-		AttachFace face = state.getValue(LeverBlock.FACE);
-		boolean powered = state.getValue(LeverBlock.POWERED);
-		return ConfiguredModel.builder().modelFile(powered ? provider.models().withExistingParent(block.getName(), provider.mcLoc("block/lever")).texture("particle", provider.mcLoc("block/diorite")).texture("base", provider.mcLoc("block/diorite")).texture("lever", provider.modLoc("block/diorite_lever")) : provider.models().withExistingParent(block.getName() + "_on", provider.mcLoc("block/lever_on")).texture("particle", provider.mcLoc("block/diorite")).texture("base", provider.mcLoc("block/diorite")).texture("lever", provider.modLoc("block/diorite_lever"))).rotationX(face == AttachFace.FLOOR ? 0 : (face == AttachFace.WALL ? 90 : 180)).rotationY((int) (face == AttachFace.CEILING ? facing : facing.getOpposite()).toYRot()).build();
-	})).item().model((item, provider) -> provider.generated(item, provider.modLoc("block/diorite_lever"))).build().register();
-	public static final BlockEntry<LeverBlock> GRANITE_LEVER = REGISTRATE.block("granite_lever", properties -> new LeverBlock(properties)).properties(properties -> properties.copy(Blocks.LEVER)).recipe((block, provider) -> ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.get()).pattern("#").pattern("%").define('#', Items.STICK).define('%', Blocks.GRANITE).unlockedBy("has_item", provider.has(Blocks.GRANITE)).save(provider)).blockstate((block, provider) -> provider.getVariantBuilder(block.get()).forAllStates(state -> {
-		Direction facing = state.getValue(LeverBlock.FACING);
-		AttachFace face = state.getValue(LeverBlock.FACE);
-		boolean powered = state.getValue(LeverBlock.POWERED);
-		return ConfiguredModel.builder().modelFile(powered ? provider.models().withExistingParent(block.getName(), provider.mcLoc("block/lever")).texture("particle", provider.mcLoc("block/granite")).texture("base", provider.mcLoc("block/granite")).texture("lever", provider.modLoc("block/granite_lever")) : provider.models().withExistingParent(block.getName() + "_on", provider.mcLoc("block/lever_on")).texture("particle", provider.mcLoc("block/granite")).texture("base", provider.mcLoc("block/granite")).texture("lever", provider.modLoc("block/granite_lever"))).rotationX(face == AttachFace.FLOOR ? 0 : (face == AttachFace.WALL ? 90 : 180)).rotationY((int) (face == AttachFace.CEILING ? facing : facing.getOpposite()).toYRot()).build();
-	})).item().model((item, provider) -> provider.generated(item, provider.modLoc("block/granite_lever"))).build().register();
-	public static final BlockEntry<LeverBlock> COBBLED_DEEPSLATE_LEVER = REGISTRATE.block("cobbled_deepslate_lever", properties -> new LeverBlock(properties)).properties(properties -> properties.copy(Blocks.LEVER)).recipe((block, provider) -> ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.get()).pattern("#").pattern("%").define('#', Items.STICK).define('%', Blocks.COBBLED_DEEPSLATE).unlockedBy("has_item", provider.has(Blocks.COBBLED_DEEPSLATE)).save(provider)).blockstate((block, provider) -> provider.getVariantBuilder(block.get()).forAllStates(state -> {
-		Direction facing = state.getValue(LeverBlock.FACING);
-		AttachFace face = state.getValue(LeverBlock.FACE);
-		boolean powered = state.getValue(LeverBlock.POWERED);
-		return ConfiguredModel.builder().modelFile(powered ? provider.models().withExistingParent(block.getName(), provider.mcLoc("block/lever")).texture("particle", provider.mcLoc("block/cobbled_deepslate")).texture("base", provider.mcLoc("block/cobbled_deepslate")).texture("lever", provider.modLoc("block/cobbled_deepslate_lever")) : provider.models().withExistingParent(block.getName() + "_on", provider.mcLoc("block/lever_on")).texture("particle", provider.mcLoc("block/cobbled_deepslate")).texture("base", provider.mcLoc("block/cobbled_deepslate")).texture("lever", provider.modLoc("block/cobbled_deepslate_lever"))).rotationX(face == AttachFace.FLOOR ? 0 : (face == AttachFace.WALL ? 90 : 180)).rotationY((int) (face == AttachFace.CEILING ? facing : facing.getOpposite()).toYRot()).build();
-	})).item().model((item, provider) -> provider.generated(item, provider.modLoc("block/cobbled_deepslate_lever"))).build().register();
-	public static final BlockEntry<LeverBlock> CALCITE_LEVER = REGISTRATE.block("calcite_lever", properties -> new LeverBlock(properties)).properties(properties -> properties.copy(Blocks.LEVER)).recipe((block, provider) -> ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.get()).pattern("#").pattern("%").define('#', Items.STICK).define('%', Blocks.CALCITE).unlockedBy("has_item", provider.has(Blocks.CALCITE)).save(provider)).blockstate((block, provider) -> provider.getVariantBuilder(block.get()).forAllStates(state -> {
-		Direction facing = state.getValue(LeverBlock.FACING);
-		AttachFace face = state.getValue(LeverBlock.FACE);
-		boolean powered = state.getValue(LeverBlock.POWERED);
-		return ConfiguredModel.builder().modelFile(powered ? provider.models().withExistingParent(block.getName(), provider.mcLoc("block/lever")).texture("particle", provider.mcLoc("block/calcite")).texture("base", provider.mcLoc("block/calcite")).texture("lever", provider.modLoc("block/calcite_lever")) : provider.models().withExistingParent(block.getName() + "_on", provider.mcLoc("block/lever_on")).texture("particle", provider.mcLoc("block/calcite")).texture("base", provider.mcLoc("block/calcite")).texture("lever", provider.modLoc("block/calcite_lever"))).rotationX(face == AttachFace.FLOOR ? 0 : (face == AttachFace.WALL ? 90 : 180)).rotationY((int) (face == AttachFace.CEILING ? facing : facing.getOpposite()).toYRot()).build();
-	})).item().model((item, provider) -> provider.generated(item, provider.modLoc("block/calcite_lever"))).build().register();
-	public static final BlockEntry<LeverBlock> TUFF_LEVER = REGISTRATE.block("tuff_lever", properties -> new LeverBlock(properties)).properties(properties -> properties.copy(Blocks.LEVER)).recipe((block, provider) -> ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.get()).pattern("#").pattern("%").define('#', Items.STICK).define('%', Blocks.TUFF).unlockedBy("has_item", provider.has(Blocks.TUFF)).save(provider)).blockstate((block, provider) -> provider.getVariantBuilder(block.get()).forAllStates(state -> {
-		Direction facing = state.getValue(LeverBlock.FACING);
-		AttachFace face = state.getValue(LeverBlock.FACE);
-		boolean powered = state.getValue(LeverBlock.POWERED);
-		return ConfiguredModel.builder().modelFile(powered ? provider.models().withExistingParent(block.getName(), provider.mcLoc("block/lever")).texture("particle", provider.mcLoc("block/tuff")).texture("base", provider.mcLoc("block/tuff")).texture("lever", provider.modLoc("block/tuff_lever")) : provider.models().withExistingParent(block.getName() + "_on", provider.mcLoc("block/lever_on")).texture("particle", provider.mcLoc("block/tuff")).texture("base", provider.mcLoc("block/tuff")).texture("lever", provider.modLoc("block/tuff_lever"))).rotationX(face == AttachFace.FLOOR ? 0 : (face == AttachFace.WALL ? 90 : 180)).rotationY((int) (face == AttachFace.CEILING ? facing : facing.getOpposite()).toYRot()).build();
-	})).item().model((item, provider) -> provider.generated(item, provider.modLoc("block/tuff_lever"))).build().register();
-	public static final BlockEntry<LeverBlock> DRIPSTONE_LEVER = REGISTRATE.block("dripstone_lever", properties -> new LeverBlock(properties)).properties(properties -> properties.copy(Blocks.LEVER)).recipe((block, provider) -> ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.get()).pattern("#").pattern("%").define('#', Items.STICK).define('%', Blocks.DRIPSTONE_BLOCK).unlockedBy("has_item", provider.has(Blocks.DRIPSTONE_BLOCK)).save(provider)).blockstate((block, provider) -> provider.getVariantBuilder(block.get()).forAllStates(state -> {
-		Direction facing = state.getValue(LeverBlock.FACING);
-		AttachFace face = state.getValue(LeverBlock.FACE);
-		boolean powered = state.getValue(LeverBlock.POWERED);
-		return ConfiguredModel.builder().modelFile(powered ? provider.models().withExistingParent(block.getName(), provider.mcLoc("block/lever")).texture("particle", provider.mcLoc("block/dripstone_block")).texture("base", provider.mcLoc("block/dripstone_block")).texture("lever", provider.modLoc("block/dripstone_lever")) : provider.models().withExistingParent(block.getName() + "_on", provider.mcLoc("block/lever_on")).texture("particle", provider.mcLoc("block/dripstone_block")).texture("base", provider.mcLoc("block/dripstone_block")).texture("lever", provider.modLoc("block/dripstone_lever"))).rotationX(face == AttachFace.FLOOR ? 0 : (face == AttachFace.WALL ? 90 : 180)).rotationY((int) (face == AttachFace.CEILING ? facing : facing.getOpposite()).toYRot()).build();
-	})).item().model((item, provider) -> provider.generated(item, provider.modLoc("block/dripstone_lever"))).build().register();
-	public static final BlockEntry<LeverBlock> SMOOTH_BASALT_LEVER = REGISTRATE.block("smooth_basalt_lever", properties -> new LeverBlock(properties)).properties(properties -> properties.copy(Blocks.LEVER)).recipe((block, provider) -> ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.get()).pattern("#").pattern("%").define('#', Items.STICK).define('%', Blocks.SMOOTH_BASALT).unlockedBy("has_item", provider.has(Blocks.SMOOTH_BASALT)).save(provider)).blockstate((block, provider) -> provider.getVariantBuilder(block.get()).forAllStates(state -> {
-		Direction facing = state.getValue(LeverBlock.FACING);
-		AttachFace face = state.getValue(LeverBlock.FACE);
-		boolean powered = state.getValue(LeverBlock.POWERED);
-		return ConfiguredModel.builder().modelFile(powered ? provider.models().withExistingParent(block.getName(), provider.mcLoc("block/lever")).texture("particle", provider.mcLoc("block/smooth_basalt")).texture("base", provider.mcLoc("block/smooth_basalt")).texture("lever", provider.modLoc("block/smooth_basalt_lever")) : provider.models().withExistingParent(block.getName() + "_on", provider.mcLoc("block/lever_on")).texture("particle", provider.mcLoc("block/smooth_basalt")).texture("base", provider.mcLoc("block/smooth_basalt")).texture("lever", provider.modLoc("block/smooth_basalt_lever"))).rotationX(face == AttachFace.FLOOR ? 0 : (face == AttachFace.WALL ? 90 : 180)).rotationY((int) (face == AttachFace.CEILING ? facing : facing.getOpposite()).toYRot()).build();
-	})).item().model((item, provider) -> provider.generated(item, provider.modLoc("block/smooth_basalt_lever"))).build().register();
-	public static final BlockEntry<LeverBlock> END_STONE_LEVER = REGISTRATE.block("end_stone_lever", properties -> new LeverBlock(properties)).properties(properties -> properties.copy(Blocks.LEVER)).recipe((block, provider) -> ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.get()).pattern("#").pattern("%").define('#', Items.STICK).define('%', Blocks.END_STONE).unlockedBy("has_item", provider.has(Blocks.END_STONE)).save(provider)).blockstate((block, provider) -> provider.getVariantBuilder(block.get()).forAllStates(state -> {
-		Direction facing = state.getValue(LeverBlock.FACING);
-		AttachFace face = state.getValue(LeverBlock.FACE);
-		boolean powered = state.getValue(LeverBlock.POWERED);
-		return ConfiguredModel.builder().modelFile(powered ? provider.models().withExistingParent(block.getName(), provider.mcLoc("block/lever")).texture("particle", provider.mcLoc("block/end_stone")).texture("base", provider.mcLoc("block/end_stone")).texture("lever", provider.modLoc("block/end_stone_lever")) : provider.models().withExistingParent(block.getName() + "_on", provider.mcLoc("block/lever_on")).texture("particle", provider.mcLoc("block/end_stone")).texture("base", provider.mcLoc("block/end_stone")).texture("lever", provider.modLoc("block/end_stone_lever"))).rotationX(face == AttachFace.FLOOR ? 0 : (face == AttachFace.WALL ? 90 : 180)).rotationY((int) (face == AttachFace.CEILING ? facing : facing.getOpposite()).toYRot()).build();
-	})).item().model((item, provider) -> provider.generated(item, provider.modLoc("block/end_stone_lever"))).build().register();
-	public static final BlockEntry<LeverBlock> TERRACOTTA_LEVER = REGISTRATE.block("terracotta_lever", properties -> new LeverBlock(properties)).properties(properties -> properties.copy(Blocks.LEVER)).recipe((block, provider) -> ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.get()).pattern("#").pattern("%").define('#', Items.STICK).define('%', Blocks.TERRACOTTA).unlockedBy("has_item", provider.has(Blocks.TERRACOTTA)).save(provider)).blockstate((block, provider) -> provider.getVariantBuilder(block.get()).forAllStates(state -> {
-		Direction facing = state.getValue(LeverBlock.FACING);
-		AttachFace face = state.getValue(LeverBlock.FACE);
-		boolean powered = state.getValue(LeverBlock.POWERED);
-		return ConfiguredModel.builder().modelFile(powered ? provider.models().withExistingParent(block.getName(), provider.mcLoc("block/lever")).texture("particle", provider.mcLoc("block/terracotta")).texture("base", provider.mcLoc("block/terracotta")).texture("lever", provider.modLoc("block/terracotta_lever")) : provider.models().withExistingParent(block.getName() + "_on", provider.mcLoc("block/lever_on")).texture("particle", provider.mcLoc("block/terracotta")).texture("base", provider.mcLoc("block/terracotta")).texture("lever", provider.modLoc("block/terracotta_lever"))).rotationX(face == AttachFace.FLOOR ? 0 : (face == AttachFace.WALL ? 90 : 180)).rotationY((int) (face == AttachFace.CEILING ? facing : facing.getOpposite()).toYRot()).build();
-	})).item().model((item, provider) -> provider.generated(item, provider.modLoc("block/terracotta_lever"))).build().register();
+	public static final RegistryObject<StairBlock> CLAY_STAIRS = BLOCKS.register("clay_stairs", () -> new StairBlock(() -> Blocks.CLAY.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.CLAY)));
+	public static final RegistryObject<SlabBlock> CLAY_SLAB = BLOCKS.register("clay_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.CLAY)));
+	public static final RegistryObject<WallBlock> CLAY_WALL = BLOCKS.register("clay_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.CLAY)));
+	public static final RegistryObject<StairBlock> PACKED_MUD_STAIRS = BLOCKS.register("packed_mud_stairs", () -> new StairBlock(() -> Blocks.PACKED_MUD.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.PACKED_MUD)));
+	public static final RegistryObject<SlabBlock> PACKED_MUD_SLAB = BLOCKS.register("packed_mud_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.PACKED_MUD)));
+	public static final RegistryObject<WallBlock> PACKED_MUD_WALL = BLOCKS.register("packed_mud_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.PACKED_MUD)));
+	public static final RegistryObject<StairBlock> SCULK_STAIRS = BLOCKS.register("sculk_stairs", () -> new StairBlock(() -> Blocks.SCULK.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.SCULK)));
+	public static final RegistryObject<SlabBlock> SCULK_SLAB = BLOCKS.register("sculk_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SCULK)));
+	public static final RegistryObject<WallBlock> SCULK_WALL = BLOCKS.register("sculk_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.SCULK)));
+	public static final RegistryObject<StairBlock> COAL_STAIRS = BLOCKS.register("coal_stairs", () -> new StairBlock(() -> Blocks.COAL_BLOCK.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.COAL_BLOCK)));
+	public static final RegistryObject<SlabBlock> COAL_SLAB = BLOCKS.register("coal_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.COAL_BLOCK)));
+	public static final RegistryObject<WallBlock> COAL_WALL = BLOCKS.register("coal_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COAL_BLOCK)));
+	public static final RegistryObject<StairBlock> IRON_STAIRS = BLOCKS.register("iron_stairs", () -> new StairBlock(() -> Blocks.IRON_BLOCK.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+	public static final RegistryObject<SlabBlock> IRON_SLAB = BLOCKS.register("iron_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+	public static final RegistryObject<WallBlock> IRON_WALL = BLOCKS.register("iron_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+	public static final RegistryObject<StairBlock> GOLD_STAIRS = BLOCKS.register("gold_stairs", () -> new StairBlock(() -> Blocks.GOLD_BLOCK.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK)));
+	public static final RegistryObject<SlabBlock> GOLD_SLAB = BLOCKS.register("gold_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK)));
+	public static final RegistryObject<WallBlock> GOLD_WALL = BLOCKS.register("gold_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK)));
+	public static final RegistryObject<StairBlock> REDSTONE_STAIRS = BLOCKS.register("redstone_stairs", () -> new PoweredStairBlock(() -> Blocks.REDSTONE_BLOCK.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.REDSTONE_BLOCK)));
+	public static final RegistryObject<SlabBlock> REDSTONE_SLAB = BLOCKS.register("redstone_slab", () -> new PoweredSlabBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_BLOCK)));
+	public static final RegistryObject<WallBlock> REDSTONE_WALL = BLOCKS.register("redstone_wall", () -> new PoweredWallBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_BLOCK)));
+	public static final RegistryObject<StairBlock> EMERALD_STAIRS = BLOCKS.register("emerald_stairs", () -> new StairBlock(() -> Blocks.EMERALD_BLOCK.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK)));
+	public static final RegistryObject<SlabBlock> EMERALD_SLAB = BLOCKS.register("emerald_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK)));
+	public static final RegistryObject<WallBlock> EMERALD_WALL = BLOCKS.register("emerald_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.EMERALD_BLOCK)));
+	public static final RegistryObject<StairBlock> LAPIS_STAIRS = BLOCKS.register("lapis_stairs", () -> new StairBlock(() -> Blocks.LAPIS_BLOCK.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.LAPIS_BLOCK)));
+	public static final RegistryObject<SlabBlock> LAPIS_SLAB = BLOCKS.register("lapis_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.LAPIS_BLOCK)));
+	public static final RegistryObject<WallBlock> LAPIS_WALL = BLOCKS.register("lapis_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.LAPIS_BLOCK)));
+	public static final RegistryObject<StairBlock> DIAMOND_STAIRS = BLOCKS.register("diamond_stairs", () -> new StairBlock(() -> Blocks.DIAMOND_BLOCK.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK)));
+	public static final RegistryObject<SlabBlock> DIAMOND_SLAB = BLOCKS.register("diamond_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK)));
+	public static final RegistryObject<WallBlock> DIAMOND_WALL = BLOCKS.register("diamond_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK)));
+	public static final RegistryObject<StairBlock> NETHERITE_STAIRS = BLOCKS.register("netherite_stairs", () -> new StairBlock(() -> Blocks.NETHERITE_BLOCK.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)));
+	public static final RegistryObject<SlabBlock> NETHERITE_SLAB = BLOCKS.register("netherite_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)));
+	public static final RegistryObject<WallBlock> NETHERITE_WALL = BLOCKS.register("netherite_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)));
 
-	public static final BlockGroup ANDESITE = BlockGroup.makeButtonPressurePlate(Blocks.ANDESITE);
-	public static final BlockGroup DIORITE = BlockGroup.makeButtonPressurePlate(Blocks.DIORITE);
-	public static final BlockGroup GRANITE = BlockGroup.makeButtonPressurePlate(Blocks.GRANITE);
-	public static final BlockGroup CALCITE_REDSTONE = BlockGroup.makeButtonPressurePlate(Blocks.CALCITE);
-	public static final BlockGroup TUFF_REDSTONE = BlockGroup.makeButtonPressurePlate(Blocks.TUFF);
-	public static final BlockGroup DRIPSTONE_BLOCK_REDSTONE = BlockGroup.makeButtonPressurePlate(Blocks.DRIPSTONE_BLOCK);
-	public static final BlockGroup SMOOTH_BASALT_REDSTONE = BlockGroup.makeButtonPressurePlate(Blocks.SMOOTH_BASALT);
-	public static final BlockGroup END_STONE_REDSTONE = BlockGroup.makeButtonPressurePlate(Blocks.END_STONE);
-	public static final BlockGroup BASE_TERRACOTTA = BlockGroup.makeStairsSlabWall(Blocks.TERRACOTTA);
-	public static final BlockGroup BASE_TERRACOTTA_REDSTONE = BlockGroup.makeButtonPressurePlate(Blocks.TERRACOTTA);
-	public static final BlockGroup CLAY = BlockGroup.makeStairsSlabWall(Blocks.CLAY);
-	public static final BlockGroup COAL_BLOCK = BlockGroup.makeStairsSlabWall(Blocks.COAL_BLOCK);
-	public static final BlockGroup IRON_BLOCK = BlockGroup.makeStairsSlabWall(Blocks.IRON_BLOCK);
-	public static final BlockGroup GOLD_BLOCK = BlockGroup.makeStairsSlabWall(Blocks.GOLD_BLOCK);
-	public static final BlockGroup REDSTONE_BLOCK = new BlockGroup(new BlockEntry[] { REGISTRATE.block("redstone_stairs", p -> new PoweredStairBlock(() -> Blocks.REDSTONE_BLOCK.defaultBlockState(), p)).properties(p -> p.copy(Blocks.REDSTONE_BLOCK)).recipe((block, provider) -> {
-		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, block.get(), 4).pattern("#  ").pattern("## ").pattern("###").define('#', Blocks.REDSTONE_BLOCK).unlockedBy("has_block", provider.has(Blocks.REDSTONE_BLOCK)).save(provider);
-		SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.REDSTONE_BLOCK), RecipeCategory.BUILDING_BLOCKS, block.get()).unlockedBy("has_block", provider.has(Blocks.REDSTONE_BLOCK)).save(provider, MissingLinksMod.rL(block.getName() + "_from_stonecutting"));
-	}).blockstate((block, provider) -> provider.stairsBlock(block.get(), new ResourceLocation("block/redstone_block"))).tag(BlockTags.STAIRS, BlockTags.MINEABLE_WITH_PICKAXE).simpleItem().register(), REGISTRATE.block("redstone_slab", PoweredSlabBlock::new).properties(p -> p.copy(Blocks.REDSTONE_BLOCK)).recipe((block, provider) -> {
-		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, block.get(), 6).pattern("###").define('#', Blocks.REDSTONE_BLOCK).unlockedBy("has_block", provider.has(Blocks.REDSTONE_BLOCK)).save(provider);
-		SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.REDSTONE_BLOCK), RecipeCategory.BUILDING_BLOCKS, block.get(), 2).unlockedBy("has_block", provider.has(Blocks.REDSTONE_BLOCK)).save(provider, MissingLinksMod.rL(block.getName() + "_from_stonecutting"));
-	}).blockstate((block, provider) -> provider.slabBlock(block.get(), new ResourceLocation("block/redstone_block"), new ResourceLocation("block/redstone_block"))).tag(BlockTags.SLABS, BlockTags.MINEABLE_WITH_PICKAXE).simpleItem().register(), REGISTRATE.block("redstone_wall", PoweredWallBlock::new).properties(p -> p.copy(Blocks.REDSTONE_BLOCK)).recipe((block, provider) -> {
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.get(), 6).pattern("###").pattern("###").define('#', Blocks.REDSTONE_BLOCK).unlockedBy("has_block", provider.has(Blocks.REDSTONE_BLOCK)).save(provider);
-		SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.REDSTONE_BLOCK), RecipeCategory.DECORATIONS, block.get()).unlockedBy("has_block", provider.has(Blocks.REDSTONE_BLOCK)).save(provider, MissingLinksMod.rL(block.getName() + "_from_stonecutting"));
+//	public static final List<BlockGroup> CONCRETE = BlockGroup.makeStairsSlabWallForEnumValues("concrete", DyeColor.values());
+//	public static final List<BlockGroup> TERRACOTTA = BlockGroup.makeStairsSlabWallForEnumValues("terracotta", DyeColor.values());
+//	public static final List<BlockGroup> GLAZED_TERRACOTTA = BlockGroup.makeStairsSlabWallForEnumValues("glazed_terracotta", DyeColor.values());
+//	public static final List<BlockGroup> WOOL = BlockGroup.makeStairsSlabWallForEnumValues("wool", DyeColor.values());
+//	public static final List<BlockGroup> CONCRETE_REDSTONE = BlockGroup.makeRedstoneForEnumValues("concrete", DyeColor.values());
+//	public static final List<BlockGroup> TERRACOTTA_REDSTONE = BlockGroup.makeRedstoneForEnumValues("terracotta", DyeColor.values());
+//	public static final List<BlockGroup> GLAZED_TERRACOTTA_REDSTONE = BlockGroup.makeRedstoneForEnumValues("glazed_terracotta", DyeColor.values());
 
-	}).blockstate((block, provider) -> provider.wallBlock(block.get(), new ResourceLocation("block/redstone_block"))).tag(BlockTags.WALLS, BlockTags.MINEABLE_WITH_PICKAXE).item().model((item, provider) -> provider.withExistingParent(item.getName(), new ResourceLocation("block/wall_inventory")).texture("wall", new ResourceLocation("block/redstone_block"))).build().register() });
-	public static final BlockGroup EMERALD_BLOCK = BlockGroup.makeStairsSlabWall(Blocks.EMERALD_BLOCK);
-	public static final BlockGroup LAPIS_BLOCK = BlockGroup.makeStairsSlabWall(Blocks.LAPIS_BLOCK);
-	public static final BlockGroup DIAMOND_BLOCK = BlockGroup.makeStairsSlabWall(Blocks.DIAMOND_BLOCK);
-	public static final BlockGroup NETHERITE_BLOCK = BlockGroup.makeStairsSlabWall(Blocks.NETHERITE_BLOCK);
-
-	public static final List<BlockGroup> CONCRETE = BlockGroup.makeStairsSlabWallForEnumValues("concrete", DyeColor.values());
-	public static final List<BlockGroup> TERRACOTTA = BlockGroup.makeStairsSlabWallForEnumValues("terracotta", DyeColor.values());
-	public static final List<BlockGroup> GLAZED_TERRACOTTA = BlockGroup.makeStairsSlabWallForEnumValues("glazed_terracotta", DyeColor.values());
-	public static final List<BlockGroup> WOOL = BlockGroup.makeStairsSlabWallForEnumValues("wool", DyeColor.values());
-	public static final List<BlockGroup> CONCRETE_REDSTONE = BlockGroup.makeRedstoneForEnumValues("concrete", DyeColor.values());
-	public static final List<BlockGroup> TERRACOTTA_REDSTONE = BlockGroup.makeRedstoneForEnumValues("terracotta", DyeColor.values());
-	public static final List<BlockGroup> GLAZED_TERRACOTTA_REDSTONE = BlockGroup.makeRedstoneForEnumValues("glazed_terracotta", DyeColor.values());
-
-	public static final BlockGroup CALCITE = BlockGroup.makeStairsSlabWall(Blocks.CALCITE);
-	public static final BlockGroup TUFF = BlockGroup.makeStairsSlabWall(Blocks.TUFF);
-	public static final BlockGroup DRIPSTONE_BLOCK = BlockGroup.makeStairsSlabWall(Blocks.DRIPSTONE_BLOCK);
-	public static final BlockGroup SMOOTH_BASALT = BlockGroup.makeStairsSlabWall(Blocks.SMOOTH_BASALT);
-	public static final BlockGroup END_STONE = BlockGroup.makeStairsSlabWall(Blocks.END_STONE);
-	public static final BlockGroup OBSIDIAN = BlockGroup.makeStairsSlabWall(Blocks.OBSIDIAN);
-	public static final BlockGroup CRYING_OBSIDIAN = BlockGroup.makeStairsSlabWall(Blocks.CRYING_OBSIDIAN);
-	public static final BlockGroup QUARTZ_BRICKS = BlockGroup.makeStairsSlabWall(Blocks.QUARTZ_BRICKS);
-	public static final BlockGroup QUARTZ_BLOCK = new BlockGroup(new BlockEntry[] { REGISTRATE.block("quartz_wall", WallBlock::new).properties(properties -> properties.copy(Blocks.QUARTZ_BLOCK)).recipe((block, provider) -> {
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.get(), 6).pattern("###").pattern("###").define('#', Blocks.QUARTZ_BLOCK).unlockedBy("has_block", provider.has(Blocks.QUARTZ_BLOCK)).save(provider);
-		SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.QUARTZ_BLOCK), RecipeCategory.DECORATIONS, block.get()).unlockedBy("has_block", provider.has(Blocks.QUARTZ_BLOCK)).save(provider, MissingLinksMod.rL(block.getName() + "_from_stonecutting"));
-	}).blockstate((block, provider) -> provider.wallBlock(block.get(), new ResourceLocation(BlockGroup.getRegistryName(Blocks.QUARTZ_BLOCK).getNamespace(), "block/" + BlockGroup.getRegistryName(Blocks.QUARTZ_BLOCK).getPath() + "_side"))).tag(BlockTags.WALLS).item().model((item, provider) -> provider.withExistingParent(item.getName(), new ResourceLocation("block/wall_inventory")).texture("wall", new ResourceLocation(BlockGroup.getRegistryName(Blocks.QUARTZ_BLOCK).getNamespace(), "block/" + BlockGroup.getRegistryName(Blocks.QUARTZ_BLOCK).getPath() + "_side"))).build().register() });
-	public static final BlockGroup SMOOTH_QUARTZ = new BlockGroup(new BlockEntry[] { REGISTRATE.block("smooth_quartz_wall", WallBlock::new).properties(properties -> properties.copy(Blocks.SMOOTH_QUARTZ)).recipe((block, provider) -> {
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.get(), 6).pattern("###").pattern("###").define('#', Blocks.SMOOTH_QUARTZ).unlockedBy("has_block", provider.has(Blocks.SMOOTH_QUARTZ)).save(provider);
-		SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.SMOOTH_QUARTZ), RecipeCategory.DECORATIONS, block.get()).unlockedBy("has_block", provider.has(Blocks.SMOOTH_QUARTZ)).save(provider, MissingLinksMod.rL(block.getName() + "_from_stonecutting"));
-	}).blockstate((block, provider) -> provider.wallBlock(block.get(), new ResourceLocation(BlockGroup.getRegistryName(Blocks.SMOOTH_QUARTZ).getNamespace(), "block/" + BlockGroup.getRegistryName(Blocks.QUARTZ_BLOCK).getPath() + "_bottom"))).tag(BlockTags.WALLS).item().model((item, provider) -> provider.withExistingParent(item.getName(), new ResourceLocation("block/wall_inventory")).texture("wall", new ResourceLocation(BlockGroup.getRegistryName(Blocks.SMOOTH_QUARTZ).getNamespace(), "block/" + BlockGroup.getRegistryName(Blocks.QUARTZ_BLOCK).getPath() + "_bottom"))).build().register() });
-	public static final BlockGroup SMOOTH_RED_SANDSTONE = new BlockGroup(new BlockEntry[] { REGISTRATE.block("smooth_red_sandstone_wall", WallBlock::new).properties(properties -> properties.copy(Blocks.SMOOTH_RED_SANDSTONE)).recipe((block, provider) -> {
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.get(), 6).pattern("###").pattern("###").define('#', Blocks.SMOOTH_RED_SANDSTONE).unlockedBy("has_block", provider.has(Blocks.SMOOTH_RED_SANDSTONE)).save(provider);
-		SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.SMOOTH_RED_SANDSTONE), RecipeCategory.DECORATIONS, block.get()).unlockedBy("has_block", provider.has(Blocks.SMOOTH_RED_SANDSTONE)).save(provider, MissingLinksMod.rL(block.getName() + "_from_stonecutting"));
-	}).blockstate((block, provider) -> provider.wallBlock(block.get(), new ResourceLocation(BlockGroup.getRegistryName(Blocks.SMOOTH_RED_SANDSTONE).getNamespace(), "block/" + BlockGroup.getRegistryName(Blocks.RED_SANDSTONE).getPath() + "_top"))).tag(BlockTags.WALLS).item().model((item, provider) -> provider.withExistingParent(item.getName(), new ResourceLocation("block/wall_inventory")).texture("wall", new ResourceLocation(BlockGroup.getRegistryName(Blocks.SMOOTH_RED_SANDSTONE).getNamespace(), "block/" + BlockGroup.getRegistryName(Blocks.RED_SANDSTONE).getPath() + "_top"))).build().register() });
-	public static final BlockGroup SMOOTH_SANDSTONE = new BlockGroup(new BlockEntry[] { REGISTRATE.block("smooth_sandstone_wall", WallBlock::new).properties(properties -> properties.copy(Blocks.SMOOTH_SANDSTONE)).recipe((block, provider) -> {
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.get(), 6).pattern("###").pattern("###").define('#', Blocks.SMOOTH_SANDSTONE).unlockedBy("has_block", provider.has(Blocks.SMOOTH_SANDSTONE)).save(provider);
-		SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.SMOOTH_SANDSTONE), RecipeCategory.DECORATIONS, block.get()).unlockedBy("has_block", provider.has(Blocks.SMOOTH_SANDSTONE)).save(provider, MissingLinksMod.rL(block.getName() + "_from_stonecutting"));
-	}).blockstate((block, provider) -> provider.wallBlock(block.get(), new ResourceLocation(BlockGroup.getRegistryName(Blocks.SMOOTH_SANDSTONE).getNamespace(), "block/" + BlockGroup.getRegistryName(Blocks.SANDSTONE).getPath() + "_top"))).tag(BlockTags.WALLS).item().model((item, provider) -> provider.withExistingParent(item.getName(), new ResourceLocation("block/wall_inventory")).texture("wall", new ResourceLocation(BlockGroup.getRegistryName(Blocks.SMOOTH_SANDSTONE).getNamespace(), "block/" + BlockGroup.getRegistryName(Blocks.SANDSTONE).getPath() + "_top"))).build().register() });
-	public static final BlockGroup SMOOTH_STONE = new BlockGroup(new BlockEntry[] { REGISTRATE.block("smooth_stone_stairs", properties -> new StairBlock(() -> Blocks.SMOOTH_STONE.defaultBlockState(), properties)).properties(properties -> properties.copy(Blocks.SMOOTH_STONE)).recipe((block, provider) -> {
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.get(), 4).pattern("#  ").pattern("## ").pattern("###").define('#', Blocks.SMOOTH_STONE).unlockedBy("has_block", provider.has(Blocks.SMOOTH_STONE)).save(provider);
-		SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.SMOOTH_STONE), RecipeCategory.DECORATIONS, block.get()).unlockedBy("has_block", provider.has(Blocks.SMOOTH_STONE)).save(provider, MissingLinksMod.rL(block.getName() + "_from_stonecutting"));
-	}).blockstate((block, provider) -> provider.stairsBlock(block.get(), new ResourceLocation(BlockGroup.getRegistryName(Blocks.SMOOTH_STONE).getNamespace(), "block/" + BlockGroup.getRegistryName(Blocks.SMOOTH_STONE).getPath()))).simpleItem().register(), REGISTRATE.block("smooth_stone_wall", WallBlock::new).properties(properties -> properties.copy(Blocks.SMOOTH_STONE)).recipe((block, provider) -> {
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.get(), 6).pattern("###").pattern("###").define('#', Blocks.SMOOTH_STONE).unlockedBy("has_block", provider.has(Blocks.SMOOTH_STONE)).save(provider);
-		SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.SMOOTH_STONE), RecipeCategory.DECORATIONS, block.get()).unlockedBy("has_block", provider.has(Blocks.SMOOTH_STONE)).save(provider, MissingLinksMod.rL(block.getName() + "_from_stonecutting"));
-	}).blockstate((block, provider) -> provider.wallBlock(block.get(), new ResourceLocation(BlockGroup.getRegistryName(Blocks.SMOOTH_STONE).getNamespace(), "block/" + BlockGroup.getRegistryName(Blocks.SMOOTH_STONE).getPath()))).tag(BlockTags.WALLS).item().model((item, provider) -> provider.withExistingParent(item.getName(), new ResourceLocation("block/wall_inventory")).texture("wall", new ResourceLocation(BlockGroup.getRegistryName(Blocks.SMOOTH_STONE).getNamespace(), "block/" + BlockGroup.getRegistryName(Blocks.SMOOTH_STONE).getPath()))).build().register() });
-	public static final BlockGroup RED_NETHER_BRICKS = BlockGroup.makeFencesFenceGates(Blocks.RED_NETHER_BRICKS);
-	public static final BlockGroup NETHER_BRICKS = new BlockGroup(new BlockEntry[] { REGISTRATE.block("nether_brick_fence_gate", p -> new FenceGateBlock(p, SoundEvents.FENCE_GATE_CLOSE, SoundEvents.FENCE_GATE_OPEN)).properties(properties -> properties.copy(Blocks.NETHER_BRICKS)).recipe((block, provider) -> {
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.get(), 6).pattern("@#@").pattern("@#@").define('@', Items.NETHER_BRICK).define('#', Blocks.NETHER_BRICKS).unlockedBy("has_block", RecipeProvider.has(Blocks.NETHER_BRICKS)).save(provider);
-	}).blockstate((block, provider) -> provider.fenceGateBlock(block.get(), new ResourceLocation(BlockGroup.getRegistryName(Blocks.NETHER_BRICKS).getNamespace(), "block/" + BlockGroup.getRegistryName(Blocks.NETHER_BRICKS).getPath()))).item().build().register() });
-	public static final BlockGroup PACKED_MUDS = BlockGroup.makeStairsSlabWall(Blocks.PACKED_MUD);
-	public static final BlockGroup SCULKS = BlockGroup.makeStairsSlabWall(Blocks.SCULK);
-
-	public static void init() {
-	}
+	public static final RegistryObject<WallBlock> QUARTZ_WALL = BLOCKS.register("quartz_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.QUARTZ_BLOCK)));
+	public static final RegistryObject<WallBlock> SMOOTH_QUARTZ = BLOCKS.register("smooth_quartz_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_QUARTZ)));
+	public static final RegistryObject<WallBlock> SMOOTH_RED_SANDSTONE = BLOCKS.register("smooth_red_sandstone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_RED_SANDSTONE)));
+	public static final RegistryObject<WallBlock> SMOOTH_SANDSTONE = BLOCKS.register("smooth_sandstone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_SANDSTONE)));
+	public static final RegistryObject<StairBlock> SMOOTH_STONE_STAIRS = BLOCKS.register("smooth_stone_stairs", () -> new StairBlock(() -> Blocks.SMOOTH_STONE.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.SMOOTH_STONE)));
+	public static final RegistryObject<WallBlock> SMOOTH_STONE_WALL = BLOCKS.register("smooth_stone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_STONE)));
+	public static final RegistryObject<FenceBlock> RED_NETHER_BRICK_FENCE = BLOCKS.register("red_nether_brick_fence", () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.RED_NETHER_BRICKS)));
+	public static final RegistryObject<FenceGateBlock> RED_NETHER_BRICK_FENCE_GATE = BLOCKS.register("red_nether_brick_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.RED_NETHER_BRICKS), SoundEvents.IRON_DOOR_CLOSE, SoundEvents.IRON_DOOR_OPEN));
+	public static final RegistryObject<FenceGateBlock> NETHER_BRICK_FENCE_GATE = BLOCKS.register("nether_brick_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_BRICKS), SoundEvents.IRON_DOOR_CLOSE, SoundEvents.IRON_DOOR_OPEN));
 }
