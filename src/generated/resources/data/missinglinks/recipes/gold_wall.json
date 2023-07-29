@@ -11,7 +11,7 @@
     "###"
   ],
   "result": {
-    "count": 6,
     "item": "missinglinks:gold_wall"
-  }
+  },
+  "show_notification": true
 }

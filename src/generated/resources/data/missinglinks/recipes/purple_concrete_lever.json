@@ -15,5 +15,6 @@
   ],
   "result": {
     "item": "missinglinks:purple_concrete_lever"
-  }
+  },
+  "show_notification": true
 }

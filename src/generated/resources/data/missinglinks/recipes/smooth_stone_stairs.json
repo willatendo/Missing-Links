@@ -12,7 +12,7 @@
     "###"
   ],
   "result": {
-    "count": 4,
     "item": "missinglinks:smooth_stone_stairs"
-  }
+  },
+  "show_notification": true
 }

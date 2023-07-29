@@ -15,5 +15,6 @@
   ],
   "result": {
     "item": "missinglinks:smooth_basalt_lever"
-  }
+  },
+  "show_notification": true
 }

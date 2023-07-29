@@ -5,16 +5,16 @@
     "#": {
       "item": "minecraft:nether_bricks"
     },
-    "@": {
+    "%": {
       "item": "minecraft:nether_brick"
     }
   },
   "pattern": [
-    "@#@",
-    "@#@"
+    "%#%",
+    "%#%"
   ],
   "result": {
-    "count": 6,
     "item": "missinglinks:nether_brick_fence_gate"
-  }
+  },
+  "show_notification": true
 }

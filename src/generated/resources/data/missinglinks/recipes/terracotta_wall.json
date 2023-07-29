@@ -11,7 +11,7 @@
     "###"
   ],
   "result": {
-    "count": 6,
     "item": "missinglinks:terracotta_wall"
-  }
+  },
+  "show_notification": true
 }

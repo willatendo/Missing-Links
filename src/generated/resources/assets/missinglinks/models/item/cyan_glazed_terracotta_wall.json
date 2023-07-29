@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:block/wall_inventory",
-  "textures": {
-    "wall": "minecraft:block/cyan_glazed_terracotta"
-  }
+  "parent": "missinglinks:block/cyan_glazed_terracotta_wall"
 }

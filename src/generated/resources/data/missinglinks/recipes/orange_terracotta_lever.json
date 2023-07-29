@@ -15,5 +15,6 @@
   ],
   "result": {
     "item": "missinglinks:orange_terracotta_lever"
-  }
+  },
+  "show_notification": true
 }

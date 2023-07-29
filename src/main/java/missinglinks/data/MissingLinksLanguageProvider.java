@@ -1,8 +1,11 @@
 package missinglinks.data;
 
+import missinglinks.server.MissingLinksCreativeModeTabs;
 import missinglinks.server.block.MissingLinksBlocks;
 import missinglinks.server.item.MissingLinksItems;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.level.block.Block;
+import net.minecraftforge.registries.RegistryObject;
 import willatendo.simplelibrary.data.SimpleLanguageProvider;
 
 public class MissingLinksLanguageProvider extends SimpleLanguageProvider {
@@ -14,15 +17,11 @@ public class MissingLinksLanguageProvider extends SimpleLanguageProvider {
 	protected void addTranslations() {
 		this.add(MissingLinksItems.ICON.get());
 
-		this.add(MissingLinksBlocks.ANDESITE_LEVER.get());
-		this.add(MissingLinksBlocks.DIORITE_LEVER.get());
-		this.add(MissingLinksBlocks.GRANITE_LEVER.get());
-		this.add(MissingLinksBlocks.COBBLED_DEEPSLATE_LEVER.get());
-		this.add(MissingLinksBlocks.CALCITE_LEVER.get());
-		this.add(MissingLinksBlocks.TUFF_LEVER.get());
-		this.add(MissingLinksBlocks.DRIPSTONE_LEVER.get());
-		this.add(MissingLinksBlocks.SMOOTH_BASALT_LEVER.get());
-		this.add(MissingLinksBlocks.END_STONE_LEVER.get());
-		this.add(MissingLinksBlocks.TERRACOTTA_LEVER.get());
+		for (RegistryObject<Block> blocks : MissingLinksBlocks.BLOCKS.getEntries()) {
+			this.add(blocks.get());
+		}
+
+		this.add(MissingLinksCreativeModeTabs.MISSING_LINKS_BLOCKS.get(), "Missing Links: Blocks");
+		this.add(MissingLinksCreativeModeTabs.MISSING_LINKS_PALETTES.get(), "Missing Links: Palettes");
 	}
 }

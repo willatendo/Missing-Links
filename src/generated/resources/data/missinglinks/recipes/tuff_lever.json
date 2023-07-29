@@ -15,5 +15,6 @@
   ],
   "result": {
     "item": "missinglinks:tuff_lever"
-  }
+  },
+  "show_notification": true
 }

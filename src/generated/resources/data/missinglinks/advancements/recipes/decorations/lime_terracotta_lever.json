@@ -30,5 +30,6 @@
     "recipes": [
       "missinglinks:lime_terracotta_lever"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

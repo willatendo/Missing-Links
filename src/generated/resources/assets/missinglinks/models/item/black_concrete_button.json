@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:block/button_inventory",
-  "textures": {
-    "texture": "minecraft:block/black_concrete"
-  }
+  "parent": "missinglinks:block/black_concrete_button"
 }

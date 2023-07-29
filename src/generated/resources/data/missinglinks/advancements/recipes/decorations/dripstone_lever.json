@@ -30,5 +30,6 @@
     "recipes": [
       "missinglinks:dripstone_lever"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

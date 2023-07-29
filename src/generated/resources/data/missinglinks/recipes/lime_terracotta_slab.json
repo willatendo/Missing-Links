@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
+  "category": "misc",
   "key": {
     "#": {
       "item": "minecraft:lime_terracotta"
@@ -10,7 +10,7 @@
     "###"
   ],
   "result": {
-    "count": 6,
     "item": "missinglinks:lime_terracotta_slab"
-  }
+  },
+  "show_notification": true
 }

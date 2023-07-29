@@ -30,5 +30,6 @@
     "recipes": [
       "missinglinks:cobbled_deepslate_lever"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

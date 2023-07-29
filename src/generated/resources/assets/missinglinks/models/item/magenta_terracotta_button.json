@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:block/button_inventory",
-  "textures": {
-    "texture": "minecraft:block/magenta_terracotta"
-  }
+  "parent": "missinglinks:block/magenta_terracotta_button"
 }

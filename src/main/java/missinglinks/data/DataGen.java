@@ -10,7 +10,7 @@ import willatendo.simplelibrary.data.DataHelper;
 @EventBusSubscriber(bus = Bus.MOD, modid = MissingLinksUtils.ID)
 public class DataGen {
 	@SubscribeEvent
-	public static void translations(GatherDataEvent event) {
-		DataHelper.collectAllData(MissingLinksUtils.ID, event, MissingLinksLanguageProvider::new).addItemModelProvider(MissingLinksItemModelProvider::new).addBlockStateProvider(MissingLinksBlockStateProvider::new).addRecipeProvider(MissingLinksRecipeProvider::new);
+	public static void gatherData(GatherDataEvent event) {
+		DataHelper.collectAllData(MissingLinksUtils.ID, event, MissingLinksLanguageProvider::new).addItemModelProvider(MissingLinksItemModelProvider::new).addBlockStateProvider(MissingLinksBlockStateProvider::new).addRecipeProvider(MissingLinksRecipeProvider::new).addLootProvider(MissingLinksLootTableProvider::create);
 	}
 }

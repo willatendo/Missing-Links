@@ -11,7 +11,7 @@
     "###"
   ],
   "result": {
-    "count": 6,
     "item": "missinglinks:calcite_wall"
-  }
+  },
+  "show_notification": true
 }

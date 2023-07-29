@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
+  "category": "misc",
   "key": {
     "#": {
       "item": "minecraft:pink_glazed_terracotta"
@@ -11,7 +11,7 @@
     "###"
   ],
   "result": {
-    "count": 6,
     "item": "missinglinks:pink_glazed_terracotta_wall"
-  }
+  },
+  "show_notification": true
 }

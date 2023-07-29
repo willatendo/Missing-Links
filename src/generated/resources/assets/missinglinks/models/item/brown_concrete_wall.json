@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:block/wall_inventory",
-  "textures": {
-    "wall": "minecraft:block/brown_concrete"
-  }
+  "parent": "missinglinks:block/brown_concrete_wall"
 }

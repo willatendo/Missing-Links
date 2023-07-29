@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:block/button_inventory",
-  "textures": {
-    "texture": "minecraft:block/andesite"
-  }
+  "parent": "missinglinks:block/andesite_button"
 }

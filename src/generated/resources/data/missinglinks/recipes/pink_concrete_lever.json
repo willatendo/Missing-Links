@@ -15,5 +15,6 @@
   ],
   "result": {
     "item": "missinglinks:pink_concrete_lever"
-  }
+  },
+  "show_notification": true
 }

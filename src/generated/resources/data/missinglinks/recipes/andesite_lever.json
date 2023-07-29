@@ -15,5 +15,6 @@
   ],
   "result": {
     "item": "missinglinks:andesite_lever"
-  }
+  },
+  "show_notification": true
 }

@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
+  "category": "misc",
   "key": {
     "#": {
       "item": "minecraft:coal_block"
@@ -10,7 +10,7 @@
     "###"
   ],
   "result": {
-    "count": 6,
     "item": "missinglinks:coal_slab"
-  }
+  },
+  "show_notification": true
 }

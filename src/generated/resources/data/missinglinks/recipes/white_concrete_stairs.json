@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
+  "category": "misc",
   "key": {
     "#": {
       "item": "minecraft:white_concrete"
@@ -12,7 +12,7 @@
     "###"
   ],
   "result": {
-    "count": 4,
     "item": "missinglinks:white_concrete_stairs"
-  }
+  },
+  "show_notification": true
 }

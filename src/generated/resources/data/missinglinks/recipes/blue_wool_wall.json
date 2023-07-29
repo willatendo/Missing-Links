@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
+  "category": "misc",
   "key": {
     "#": {
       "item": "minecraft:blue_wool"
@@ -11,7 +11,7 @@
     "###"
   ],
   "result": {
-    "count": 6,
     "item": "missinglinks:blue_wool_wall"
-  }
+  },
+  "show_notification": true
 }

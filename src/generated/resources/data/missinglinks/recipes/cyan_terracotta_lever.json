@@ -15,5 +15,6 @@
   ],
   "result": {
     "item": "missinglinks:cyan_terracotta_lever"
-  }
+  },
+  "show_notification": true
 }

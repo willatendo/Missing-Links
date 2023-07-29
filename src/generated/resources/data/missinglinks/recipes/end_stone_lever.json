@@ -15,5 +15,6 @@
   ],
   "result": {
     "item": "missinglinks:end_stone_lever"
-  }
+  },
+  "show_notification": true
 }

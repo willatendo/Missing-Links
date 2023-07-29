@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:block/wall_inventory",
-  "textures": {
-    "wall": "minecraft:block/quartz_block_bottom"
-  }
+  "parent": "missinglinks:block/smooth_quartz_wall"
 }

@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
+  "category": "misc",
   "key": {
     "#": {
       "item": "minecraft:emerald_block"
@@ -12,7 +12,7 @@
     "###"
   ],
   "result": {
-    "count": 4,
     "item": "missinglinks:emerald_stairs"
-  }
+  },
+  "show_notification": true
 }

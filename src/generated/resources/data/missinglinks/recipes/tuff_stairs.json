@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
+  "category": "misc",
   "key": {
     "#": {
       "item": "minecraft:tuff"
@@ -12,7 +12,7 @@
     "###"
   ],
   "result": {
-    "count": 4,
     "item": "missinglinks:tuff_stairs"
-  }
+  },
+  "show_notification": true
 }

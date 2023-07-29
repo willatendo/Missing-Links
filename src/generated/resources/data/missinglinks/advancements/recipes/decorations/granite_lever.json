@@ -30,5 +30,6 @@
     "recipes": [
       "missinglinks:granite_lever"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

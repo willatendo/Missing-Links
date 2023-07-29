@@ -30,5 +30,6 @@
     "recipes": [
       "missinglinks:light_blue_concrete_lever"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

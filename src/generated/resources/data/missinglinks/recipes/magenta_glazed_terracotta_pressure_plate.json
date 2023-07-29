@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "redstone",
+  "category": "misc",
   "key": {
     "#": {
       "item": "minecraft:magenta_glazed_terracotta"
@@ -11,5 +11,6 @@
   ],
   "result": {
     "item": "missinglinks:magenta_glazed_terracotta_pressure_plate"
-  }
+  },
+  "show_notification": true
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "missinglinks:andesite_lever"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

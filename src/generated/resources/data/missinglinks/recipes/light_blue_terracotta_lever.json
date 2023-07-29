@@ -15,5 +15,6 @@
   ],
   "result": {
     "item": "missinglinks:light_blue_terracotta_lever"
-  }
+  },
+  "show_notification": true
 }

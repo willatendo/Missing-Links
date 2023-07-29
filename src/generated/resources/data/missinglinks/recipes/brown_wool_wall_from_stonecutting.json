@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "minecraft:brown_wool"
-  },
-  "result": "missinglinks:brown_wool_wall"
-}

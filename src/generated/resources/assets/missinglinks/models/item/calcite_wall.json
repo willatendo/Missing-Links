@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:block/wall_inventory",
-  "textures": {
-    "wall": "minecraft:block/calcite"
-  }
+  "parent": "missinglinks:block/calcite_wall"
 }

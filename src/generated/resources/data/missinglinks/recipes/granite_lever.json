@@ -15,5 +15,6 @@
   ],
   "result": {
     "item": "missinglinks:granite_lever"
-  }
+  },
+  "show_notification": true
 }
