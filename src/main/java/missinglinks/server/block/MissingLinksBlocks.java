@@ -283,7 +283,7 @@ public class MissingLinksBlocks {
 	public static final RegistryObject<LeverBlock> RED_GLAZED_TERRACOTTA_LEVER = BLOCKS.register("red_glazed_terracotta_lever", () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
 	public static final RegistryObject<StairBlock> BLACK_GLAZED_TERRACOTTA_STAIRS = BLOCKS.register("black_glazed_terracotta_stairs", () -> new StairBlock(() -> Blocks.BLACK_GLAZED_TERRACOTTA.defaultBlockState(), GLAZED_TERRACOTTA_PROPERTIES));
 	public static final RegistryObject<SlabBlock> BLACK_GLAZED_TERRACOTTA_SLAB = BLOCKS.register("black_glazed_terracotta_slab", () -> new SlabBlock(GLAZED_TERRACOTTA_PROPERTIES));
-	public static final RegistryObject<WallBlock> BLACK_RED_GLAZED_TERRACOTTA_WALL = BLOCKS.register("black_glazed_terracotta_wall", () -> new WallBlock(GLAZED_TERRACOTTA_PROPERTIES));
+	public static final RegistryObject<WallBlock> BLACK_GLAZED_TERRACOTTA_WALL = BLOCKS.register("black_glazed_terracotta_wall", () -> new WallBlock(GLAZED_TERRACOTTA_PROPERTIES));
 	public static final RegistryObject<ButtonBlock> BLACK_GLAZED_TERRACOTTA_BUTTON = BLOCKS.register("black_glazed_terracotta_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.STONE, 20, false));
 	public static final RegistryObject<PressurePlateBlock> BLACK_GLAZED_TERRACOTTA_PRESSURE_PLATE = BLOCKS.register("black_glazed_terracotta_pressure_plate", () -> new PressurePlateBlock(Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
 	public static final RegistryObject<LeverBlock> BLACK_GLAZED_TERRACOTTA_LEVER = BLOCKS.register("black_glazed_terracotta_lever", () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
@@ -304,7 +304,7 @@ public class MissingLinksBlocks {
 	public static final RegistryObject<SlabBlock> MAGENTA_CONCRETE_SLAB = BLOCKS.register("magenta_concrete_slab", () -> new SlabBlock(CONCRETE_PROPERTIES));
 	public static final RegistryObject<WallBlock> MAGENTA_CONCRETE_WALL = BLOCKS.register("magenta_concrete_wall", () -> new WallBlock(CONCRETE_PROPERTIES));
 	public static final RegistryObject<ButtonBlock> MAGENTA_CONCRETE_BUTTON = BLOCKS.register("magenta_concrete_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.STONE, 20, false));
-	public static final RegistryObject<PressurePlateBlock> TMAGENTA_ERRACOTTA_PRESSURE_PLATE = BLOCKS.register("magenta_concrete_pressure_plate", () -> new PressurePlateBlock(Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final RegistryObject<PressurePlateBlock> MAGENTA_CONCRETE_PRESSURE_PLATE = BLOCKS.register("magenta_concrete_pressure_plate", () -> new PressurePlateBlock(Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
 	public static final RegistryObject<LeverBlock> MAGENTA_CONCRETE_LEVER = BLOCKS.register("magenta_concrete_lever", () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
 	public static final RegistryObject<StairBlock> LIGHT_BLUE_CONCRETE_STAIRS = BLOCKS.register("light_blue_concrete_stairs", () -> new StairBlock(() -> Blocks.LIGHT_BLUE_CONCRETE.defaultBlockState(), CONCRETE_PROPERTIES));
 	public static final RegistryObject<SlabBlock> LIGHT_BLUE_CONCRETE_SLAB = BLOCKS.register("light_blue_concrete_slab", () -> new SlabBlock(CONCRETE_PROPERTIES));
@@ -380,7 +380,7 @@ public class MissingLinksBlocks {
 	public static final RegistryObject<LeverBlock> RED_CONCRETE_LEVER = BLOCKS.register("red_concrete_lever", () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
 	public static final RegistryObject<StairBlock> BLACK_CONCRETE_STAIRS = BLOCKS.register("black_concrete_stairs", () -> new StairBlock(() -> Blocks.BLACK_CONCRETE.defaultBlockState(), CONCRETE_PROPERTIES));
 	public static final RegistryObject<SlabBlock> BLACK_CONCRETE_SLAB = BLOCKS.register("black_concrete_slab", () -> new SlabBlock(CONCRETE_PROPERTIES));
-	public static final RegistryObject<WallBlock> BLACK_RED_CONCRETE_WALL = BLOCKS.register("black_concrete_wall", () -> new WallBlock(CONCRETE_PROPERTIES));
+	public static final RegistryObject<WallBlock> BLACK_CONCRETE_WALL = BLOCKS.register("black_concrete_wall", () -> new WallBlock(CONCRETE_PROPERTIES));
 	public static final RegistryObject<ButtonBlock> BLACK_CONCRETE_BUTTON = BLOCKS.register("black_concrete_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.STONE, 20, false));
 	public static final RegistryObject<PressurePlateBlock> BLACK_CONCRETE_PRESSURE_PLATE = BLOCKS.register("black_concrete_pressure_plate", () -> new PressurePlateBlock(Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
 	public static final RegistryObject<LeverBlock> BLACK_CONCRETE_LEVER = BLOCKS.register("black_concrete_lever", () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
@@ -467,7 +467,13 @@ public class MissingLinksBlocks {
 	public static final RegistryObject<SlabBlock> NETHERITE_SLAB = BLOCKS.register("netherite_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)));
 	public static final RegistryObject<WallBlock> NETHERITE_WALL = BLOCKS.register("netherite_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)));
 	public static final RegistryObject<WallBlock> QUARTZ_WALL = BLOCKS.register("quartz_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.QUARTZ_BLOCK)));
+	public static final RegistryObject<ButtonBlock> QUARTZ_BUTTON = BLOCKS.register("quartz_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.STONE, 20, false));
+	public static final RegistryObject<PressurePlateBlock> QUARTZ_PRESSURE_PLATE = BLOCKS.register("quartz_pressure_plate", () -> new PressurePlateBlock(Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final RegistryObject<LeverBlock> QUARTZ_LEVER = BLOCKS.register("quartz_lever", () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
 	public static final RegistryObject<WallBlock> SMOOTH_QUARTZ_WALL = BLOCKS.register("smooth_quartz_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_QUARTZ)));
+	public static final RegistryObject<ButtonBlock> SMOOTH_QUARTZ_BUTTON = BLOCKS.register("smooth_quartz_button", () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.STONE, 20, false));
+	public static final RegistryObject<PressurePlateBlock> SMOOTH_QUARTZ_PRESSURE_PLATE = BLOCKS.register("smooth_quartz_pressure_plate", () -> new PressurePlateBlock(Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final RegistryObject<LeverBlock> SMOOTH_QUARTZ_LEVER = BLOCKS.register("smooth_quartz_lever", () -> new LeverBlock(BlockBehaviour.Properties.copy(Blocks.LEVER)));
 	public static final RegistryObject<WallBlock> SMOOTH_RED_SANDSTONE_WALL = BLOCKS.register("smooth_red_sandstone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_RED_SANDSTONE)));
 	public static final RegistryObject<WallBlock> SMOOTH_SANDSTONE_WALL = BLOCKS.register("smooth_sandstone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_SANDSTONE)));
 	public static final RegistryObject<StairBlock> SMOOTH_STONE_STAIRS = BLOCKS.register("smooth_stone_stairs", () -> new StairBlock(() -> Blocks.SMOOTH_STONE.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.SMOOTH_STONE)));

@@ -280,7 +280,7 @@ public class MissingLinksBlockStateProvider extends BlockStateProvider {
 		this.lever(MissingLinksBlocks.RED_GLAZED_TERRACOTTA_LEVER.get(), Blocks.RED_GLAZED_TERRACOTTA);
 		this.stair(MissingLinksBlocks.BLACK_GLAZED_TERRACOTTA_STAIRS.get(), Blocks.BLACK_GLAZED_TERRACOTTA);
 		this.slab(MissingLinksBlocks.BLACK_GLAZED_TERRACOTTA_SLAB.get(), Blocks.BLACK_GLAZED_TERRACOTTA);
-		this.wall(MissingLinksBlocks.BLACK_RED_GLAZED_TERRACOTTA_WALL.get(), Blocks.BLACK_GLAZED_TERRACOTTA);
+		this.wall(MissingLinksBlocks.BLACK_GLAZED_TERRACOTTA_WALL.get(), Blocks.BLACK_GLAZED_TERRACOTTA);
 		this.button(MissingLinksBlocks.BLACK_GLAZED_TERRACOTTA_BUTTON.get(), Blocks.BLACK_GLAZED_TERRACOTTA);
 		this.pressurePlate(MissingLinksBlocks.BLACK_GLAZED_TERRACOTTA_PRESSURE_PLATE.get(), Blocks.BLACK_GLAZED_TERRACOTTA);
 		this.lever(MissingLinksBlocks.BLACK_GLAZED_TERRACOTTA_LEVER.get(), Blocks.BLACK_GLAZED_TERRACOTTA);
@@ -300,7 +300,7 @@ public class MissingLinksBlockStateProvider extends BlockStateProvider {
 		this.slab(MissingLinksBlocks.MAGENTA_CONCRETE_SLAB.get(), Blocks.MAGENTA_CONCRETE);
 		this.wall(MissingLinksBlocks.MAGENTA_CONCRETE_WALL.get(), Blocks.MAGENTA_CONCRETE);
 		this.button(MissingLinksBlocks.MAGENTA_CONCRETE_BUTTON.get(), Blocks.MAGENTA_CONCRETE);
-		this.pressurePlate(MissingLinksBlocks.TMAGENTA_ERRACOTTA_PRESSURE_PLATE.get(), Blocks.MAGENTA_CONCRETE);
+		this.pressurePlate(MissingLinksBlocks.MAGENTA_CONCRETE_PRESSURE_PLATE.get(), Blocks.MAGENTA_CONCRETE);
 		this.lever(MissingLinksBlocks.MAGENTA_CONCRETE_LEVER.get(), Blocks.MAGENTA_CONCRETE);
 		this.stair(MissingLinksBlocks.LIGHT_BLUE_CONCRETE_STAIRS.get(), Blocks.LIGHT_BLUE_CONCRETE);
 		this.slab(MissingLinksBlocks.LIGHT_BLUE_CONCRETE_SLAB.get(), Blocks.LIGHT_BLUE_CONCRETE);
@@ -376,7 +376,7 @@ public class MissingLinksBlockStateProvider extends BlockStateProvider {
 		this.lever(MissingLinksBlocks.RED_CONCRETE_LEVER.get(), Blocks.RED_CONCRETE);
 		this.stair(MissingLinksBlocks.BLACK_CONCRETE_STAIRS.get(), Blocks.BLACK_CONCRETE);
 		this.slab(MissingLinksBlocks.BLACK_CONCRETE_SLAB.get(), Blocks.BLACK_CONCRETE);
-		this.wall(MissingLinksBlocks.BLACK_RED_CONCRETE_WALL.get(), Blocks.BLACK_CONCRETE);
+		this.wall(MissingLinksBlocks.BLACK_CONCRETE_WALL.get(), Blocks.BLACK_CONCRETE);
 		this.button(MissingLinksBlocks.BLACK_CONCRETE_BUTTON.get(), Blocks.BLACK_CONCRETE);
 		this.pressurePlate(MissingLinksBlocks.BLACK_CONCRETE_PRESSURE_PLATE.get(), Blocks.BLACK_CONCRETE);
 		this.lever(MissingLinksBlocks.BLACK_CONCRETE_LEVER.get(), Blocks.BLACK_CONCRETE);
@@ -462,7 +462,13 @@ public class MissingLinksBlockStateProvider extends BlockStateProvider {
 		this.slab(MissingLinksBlocks.NETHERITE_SLAB.get(), Blocks.NETHERITE_BLOCK);
 		this.wall(MissingLinksBlocks.NETHERITE_WALL.get(), Blocks.NETHERITE_BLOCK);
 		this.wall(MissingLinksBlocks.QUARTZ_WALL.get(), "quartz_block_side");
+		this.button(MissingLinksBlocks.QUARTZ_BUTTON.get(), "quartz_block_side");
+		this.pressurePlate(MissingLinksBlocks.QUARTZ_PRESSURE_PLATE.get(), "quartz_block_side");
+		this.lever(MissingLinksBlocks.QUARTZ_LEVER.get(), "quartz_block_side", "quartz_lever");
 		this.wall(MissingLinksBlocks.SMOOTH_QUARTZ_WALL.get(), "quartz_block_bottom");
+		this.button(MissingLinksBlocks.SMOOTH_QUARTZ_BUTTON.get(), "quartz_block_bottom");
+		this.pressurePlate(MissingLinksBlocks.SMOOTH_QUARTZ_PRESSURE_PLATE.get(), "quartz_block_bottom");
+		this.lever(MissingLinksBlocks.SMOOTH_QUARTZ_LEVER.get(), "quartz_block_bottom", "smooth_quartz_lever");
 		this.wall(MissingLinksBlocks.SMOOTH_RED_SANDSTONE_WALL.get(), "red_sandstone_top");
 		this.wall(MissingLinksBlocks.SMOOTH_SANDSTONE_WALL.get(), "sandstone_top");
 		this.stair(MissingLinksBlocks.SMOOTH_STONE_STAIRS.get(), Blocks.SMOOTH_STONE);
@@ -486,22 +492,35 @@ public class MissingLinksBlockStateProvider extends BlockStateProvider {
 
 	public void wall(WallBlock wallBlock, Block stone) {
 		this.wallBlock(wallBlock, this.mcLoc("block/" + ForgeRegistries.BLOCKS.getKey(stone).getPath()));
+		this.itemModels().withExistingParent("block/" + ForgeRegistries.BLOCKS.getKey(wallBlock).getPath() + "_inventory", this.mcLoc("block/wall_inventory")).texture("wall", this.mcLoc("block/" + ForgeRegistries.BLOCKS.getKey(stone).getPath()));
 	}
 
 	public void wall(WallBlock wallBlock, String stone) {
 		this.wallBlock(wallBlock, this.mcLoc("block/" + stone));
+		this.itemModels().withExistingParent("block/" + ForgeRegistries.BLOCKS.getKey(wallBlock).getPath() + "_inventory", this.mcLoc("block/wall_inventory")).texture("wall", this.mcLoc("block/" + stone));
 	}
 
 	public void button(ButtonBlock buttonBlock, Block stone) {
 		this.buttonBlock(buttonBlock, this.mcLoc("block/" + ForgeRegistries.BLOCKS.getKey(stone).getPath()));
+		this.itemModels().withExistingParent("block/" + ForgeRegistries.BLOCKS.getKey(buttonBlock).getPath() + "_inventory", this.mcLoc("block/button_inventory")).texture("texture", this.mcLoc("block/" + ForgeRegistries.BLOCKS.getKey(stone).getPath()));
+	}
+
+	public void button(ButtonBlock buttonBlock, String stone) {
+		this.buttonBlock(buttonBlock, this.mcLoc("block/" + stone));
+		this.itemModels().withExistingParent("block/" + ForgeRegistries.BLOCKS.getKey(buttonBlock).getPath() + "_inventory", this.mcLoc("block/button_inventory")).texture("texture", this.mcLoc("block/" + stone));
 	}
 
 	public void pressurePlate(PressurePlateBlock pressurePlateBlock, Block stone) {
 		this.pressurePlateBlock(pressurePlateBlock, this.mcLoc("block/" + ForgeRegistries.BLOCKS.getKey(stone).getPath()));
 	}
 
+	public void pressurePlate(PressurePlateBlock pressurePlateBlock, String stone) {
+		this.pressurePlateBlock(pressurePlateBlock, this.mcLoc("block/" + stone));
+	}
+
 	public void fence(FenceBlock fenceBlock, Block stone) {
 		this.fenceBlock(fenceBlock, this.mcLoc("block/" + ForgeRegistries.BLOCKS.getKey(stone).getPath()));
+		this.itemModels().withExistingParent("block/" + ForgeRegistries.BLOCKS.getKey(fenceBlock).getPath() + "_inventory", this.mcLoc("block/fence_inventory")).texture("texture", this.mcLoc("block/" + ForgeRegistries.BLOCKS.getKey(stone).getPath()));
 	}
 
 	public void fenceGate(FenceGateBlock fenceGateBlock, Block stone) {
@@ -516,6 +535,16 @@ public class MissingLinksBlockStateProvider extends BlockStateProvider {
 			AttachFace face = blockState.getValue(LeverBlock.FACE);
 			boolean powered = blockState.getValue(LeverBlock.POWERED);
 			return ConfiguredModel.builder().modelFile(powered ? this.models().withExistingParent(name, this.mcLoc("block/lever")).texture("particle", this.mcLoc("block/" + stoneId)).texture("base", this.mcLoc("block/" + stoneId)).texture("lever", this.modLoc("block/" + stoneId + "_lever")) : this.models().withExistingParent(name + "_on", this.mcLoc("block/lever_on")).texture("particle", this.mcLoc("block/" + stoneId)).texture("base", this.mcLoc("block/" + stoneId)).texture("lever", this.modLoc("block/" + stoneId + "_lever"))).rotationX(face == AttachFace.FLOOR ? 0 : (face == AttachFace.WALL ? 90 : 180)).rotationY((int) (face == AttachFace.CEILING ? facing : facing.getOpposite()).toYRot()).build();
+		});
+	}
+
+	public void lever(LeverBlock leverBlock, String stone, String lever) {
+		this.getVariantBuilder(leverBlock).forAllStates(blockState -> {
+			String name = ForgeRegistries.BLOCKS.getKey(leverBlock).getPath();
+			Direction facing = blockState.getValue(LeverBlock.FACING);
+			AttachFace face = blockState.getValue(LeverBlock.FACE);
+			boolean powered = blockState.getValue(LeverBlock.POWERED);
+			return ConfiguredModel.builder().modelFile(powered ? this.models().withExistingParent(name, this.mcLoc("block/lever")).texture("particle", this.mcLoc("block/" + stone)).texture("base", this.mcLoc("block/" + stone)).texture("lever", this.modLoc("block/" + lever)) : this.models().withExistingParent(name + "_on", this.mcLoc("block/lever_on")).texture("particle", this.mcLoc("block/" + stone)).texture("base", this.mcLoc("block/" + stone)).texture("lever", this.modLoc("block/" + lever))).rotationX(face == AttachFace.FLOOR ? 0 : (face == AttachFace.WALL ? 90 : 180)).rotationY((int) (face == AttachFace.CEILING ? facing : facing.getOpposite()).toYRot()).build();
 		});
 	}
 

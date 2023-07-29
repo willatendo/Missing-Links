@@ -11,7 +11,7 @@ import willatendo.simplelibrary.server.util.SimpleUtils;
 public class MissingLinksItems {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MissingLinksUtils.ID);
 
-	public static final RegistryObject<Item> ICON = ITEMS.register("icon", () -> new Item(new Item.Properties()));
+	public static final RegistryObject<Item> ICON = ITEMS.register("icon", () -> new IconItem(new Item.Properties()));
 
 	static {
 		SimpleUtils.registerAllItems(MissingLinksItems.ITEMS, MissingLinksBlocks.BLOCKS);

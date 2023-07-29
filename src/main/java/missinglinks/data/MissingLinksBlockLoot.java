@@ -272,7 +272,7 @@ public class MissingLinksBlockLoot extends BlockLootSubProvider {
 		this.dropSelf(MissingLinksBlocks.RED_GLAZED_TERRACOTTA_LEVER.get());
 		this.dropSelf(MissingLinksBlocks.BLACK_GLAZED_TERRACOTTA_STAIRS.get());
 		this.slab(MissingLinksBlocks.BLACK_GLAZED_TERRACOTTA_SLAB.get());
-		this.dropSelf(MissingLinksBlocks.BLACK_RED_GLAZED_TERRACOTTA_WALL.get());
+		this.dropSelf(MissingLinksBlocks.BLACK_GLAZED_TERRACOTTA_WALL.get());
 		this.dropSelf(MissingLinksBlocks.BLACK_GLAZED_TERRACOTTA_BUTTON.get());
 		this.dropSelf(MissingLinksBlocks.BLACK_GLAZED_TERRACOTTA_PRESSURE_PLATE.get());
 		this.dropSelf(MissingLinksBlocks.BLACK_GLAZED_TERRACOTTA_LEVER.get());
@@ -292,7 +292,7 @@ public class MissingLinksBlockLoot extends BlockLootSubProvider {
 		this.slab(MissingLinksBlocks.MAGENTA_CONCRETE_SLAB.get());
 		this.dropSelf(MissingLinksBlocks.MAGENTA_CONCRETE_WALL.get());
 		this.dropSelf(MissingLinksBlocks.MAGENTA_CONCRETE_BUTTON.get());
-		this.dropSelf(MissingLinksBlocks.TMAGENTA_ERRACOTTA_PRESSURE_PLATE.get());
+		this.dropSelf(MissingLinksBlocks.MAGENTA_CONCRETE_PRESSURE_PLATE.get());
 		this.dropSelf(MissingLinksBlocks.MAGENTA_CONCRETE_LEVER.get());
 		this.dropSelf(MissingLinksBlocks.LIGHT_BLUE_CONCRETE_STAIRS.get());
 		this.slab(MissingLinksBlocks.LIGHT_BLUE_CONCRETE_SLAB.get());
@@ -368,7 +368,7 @@ public class MissingLinksBlockLoot extends BlockLootSubProvider {
 		this.dropSelf(MissingLinksBlocks.RED_CONCRETE_LEVER.get());
 		this.dropSelf(MissingLinksBlocks.BLACK_CONCRETE_STAIRS.get());
 		this.slab(MissingLinksBlocks.BLACK_CONCRETE_SLAB.get());
-		this.dropSelf(MissingLinksBlocks.BLACK_RED_CONCRETE_WALL.get());
+		this.dropSelf(MissingLinksBlocks.BLACK_CONCRETE_WALL.get());
 		this.dropSelf(MissingLinksBlocks.BLACK_CONCRETE_BUTTON.get());
 		this.dropSelf(MissingLinksBlocks.BLACK_CONCRETE_PRESSURE_PLATE.get());
 		this.dropSelf(MissingLinksBlocks.BLACK_CONCRETE_LEVER.get());
@@ -454,7 +454,13 @@ public class MissingLinksBlockLoot extends BlockLootSubProvider {
 		this.slab(MissingLinksBlocks.NETHERITE_SLAB.get());
 		this.dropSelf(MissingLinksBlocks.NETHERITE_WALL.get());
 		this.dropSelf(MissingLinksBlocks.QUARTZ_WALL.get());
+		this.dropSelf(MissingLinksBlocks.QUARTZ_BUTTON.get());
+		this.dropSelf(MissingLinksBlocks.QUARTZ_PRESSURE_PLATE.get());
+		this.dropSelf(MissingLinksBlocks.QUARTZ_LEVER.get());
 		this.dropSelf(MissingLinksBlocks.SMOOTH_QUARTZ_WALL.get());
+		this.dropSelf(MissingLinksBlocks.SMOOTH_QUARTZ_BUTTON.get());
+		this.dropSelf(MissingLinksBlocks.SMOOTH_QUARTZ_PRESSURE_PLATE.get());
+		this.dropSelf(MissingLinksBlocks.SMOOTH_QUARTZ_LEVER.get());
 		this.dropSelf(MissingLinksBlocks.SMOOTH_RED_SANDSTONE_WALL.get());
 		this.dropSelf(MissingLinksBlocks.SMOOTH_SANDSTONE_WALL.get());
 		this.dropSelf(MissingLinksBlocks.SMOOTH_STONE_STAIRS.get());

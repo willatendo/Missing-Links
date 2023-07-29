@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/lever_on",
+  "textures": {
+    "base": "minecraft:block/quartz_block_bottom",
+    "lever": "missinglinks:block/smooth_quartz_lever",
+    "particle": "minecraft:block/quartz_block_bottom"
+  }
+}

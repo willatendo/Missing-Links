@@ -11,6 +11,6 @@ import willatendo.simplelibrary.data.DataHelper;
 public class DataGen {
 	@SubscribeEvent
 	public static void gatherData(GatherDataEvent event) {
-		DataHelper.collectAllData(MissingLinksUtils.ID, event, MissingLinksLanguageProvider::new).addItemModelProvider(MissingLinksItemModelProvider::new).addBlockStateProvider(MissingLinksBlockStateProvider::new).addRecipeProvider(MissingLinksRecipeProvider::new).addLootProvider(MissingLinksLootTableProvider::create);
+		DataHelper.collectAllData(MissingLinksUtils.ID, event, MissingLinksLanguageProvider::new).addItemModelProvider(MissingLinksItemModelProvider::new).addBlockStateProvider(MissingLinksBlockStateProvider::new).addRecipeProvider(MissingLinksRecipeProvider::new).addLootProvider(MissingLinksLootTableProvider::create).addBasicTagProviders(MissingLinksItemTagsProvider::new, MissingLinksBlockTagsProvider::new);
 	}
 }

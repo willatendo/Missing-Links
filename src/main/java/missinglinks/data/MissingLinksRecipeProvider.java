@@ -3,14 +3,17 @@ package missinglinks.data;
 import java.util.function.Consumer;
 
 import missinglinks.server.block.MissingLinksBlocks;
+import missinglinks.server.util.MissingLinksUtils;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.data.recipes.SingleItemRecipeBuilder;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
@@ -275,7 +278,7 @@ public class MissingLinksRecipeProvider extends RecipeProvider {
 		this.lever(MissingLinksBlocks.RED_GLAZED_TERRACOTTA_LEVER.get(), Blocks.RED_GLAZED_TERRACOTTA, finishedRecipe);
 		this.stair(MissingLinksBlocks.BLACK_GLAZED_TERRACOTTA_STAIRS.get(), Blocks.BLACK_GLAZED_TERRACOTTA, finishedRecipe);
 		this.slab(MissingLinksBlocks.BLACK_GLAZED_TERRACOTTA_SLAB.get(), Blocks.BLACK_GLAZED_TERRACOTTA, finishedRecipe);
-		this.wall(MissingLinksBlocks.BLACK_RED_GLAZED_TERRACOTTA_WALL.get(), Blocks.BLACK_GLAZED_TERRACOTTA, finishedRecipe);
+		this.wall(MissingLinksBlocks.BLACK_GLAZED_TERRACOTTA_WALL.get(), Blocks.BLACK_GLAZED_TERRACOTTA, finishedRecipe);
 		this.button(MissingLinksBlocks.BLACK_GLAZED_TERRACOTTA_BUTTON.get(), Blocks.BLACK_GLAZED_TERRACOTTA, finishedRecipe);
 		this.pressurePlate(MissingLinksBlocks.BLACK_GLAZED_TERRACOTTA_PRESSURE_PLATE.get(), Blocks.BLACK_GLAZED_TERRACOTTA, finishedRecipe);
 		this.lever(MissingLinksBlocks.BLACK_GLAZED_TERRACOTTA_LEVER.get(), Blocks.BLACK_GLAZED_TERRACOTTA, finishedRecipe);
@@ -295,7 +298,7 @@ public class MissingLinksRecipeProvider extends RecipeProvider {
 		this.slab(MissingLinksBlocks.MAGENTA_CONCRETE_SLAB.get(), Blocks.MAGENTA_CONCRETE, finishedRecipe);
 		this.wall(MissingLinksBlocks.MAGENTA_CONCRETE_WALL.get(), Blocks.MAGENTA_CONCRETE, finishedRecipe);
 		this.button(MissingLinksBlocks.MAGENTA_CONCRETE_BUTTON.get(), Blocks.MAGENTA_CONCRETE, finishedRecipe);
-		this.pressurePlate(MissingLinksBlocks.TMAGENTA_ERRACOTTA_PRESSURE_PLATE.get(), Blocks.MAGENTA_CONCRETE, finishedRecipe);
+		this.pressurePlate(MissingLinksBlocks.MAGENTA_CONCRETE_PRESSURE_PLATE.get(), Blocks.MAGENTA_CONCRETE, finishedRecipe);
 		this.lever(MissingLinksBlocks.MAGENTA_CONCRETE_LEVER.get(), Blocks.MAGENTA_CONCRETE, finishedRecipe);
 		this.stair(MissingLinksBlocks.LIGHT_BLUE_CONCRETE_STAIRS.get(), Blocks.LIGHT_BLUE_CONCRETE, finishedRecipe);
 		this.slab(MissingLinksBlocks.LIGHT_BLUE_CONCRETE_SLAB.get(), Blocks.LIGHT_BLUE_CONCRETE, finishedRecipe);
@@ -371,7 +374,7 @@ public class MissingLinksRecipeProvider extends RecipeProvider {
 		this.lever(MissingLinksBlocks.RED_CONCRETE_LEVER.get(), Blocks.RED_CONCRETE, finishedRecipe);
 		this.stair(MissingLinksBlocks.BLACK_CONCRETE_STAIRS.get(), Blocks.BLACK_CONCRETE, finishedRecipe);
 		this.slab(MissingLinksBlocks.BLACK_CONCRETE_SLAB.get(), Blocks.BLACK_CONCRETE, finishedRecipe);
-		this.wall(MissingLinksBlocks.BLACK_RED_CONCRETE_WALL.get(), Blocks.BLACK_CONCRETE, finishedRecipe);
+		this.wall(MissingLinksBlocks.BLACK_CONCRETE_WALL.get(), Blocks.BLACK_CONCRETE, finishedRecipe);
 		this.button(MissingLinksBlocks.BLACK_CONCRETE_BUTTON.get(), Blocks.BLACK_CONCRETE, finishedRecipe);
 		this.pressurePlate(MissingLinksBlocks.BLACK_CONCRETE_PRESSURE_PLATE.get(), Blocks.BLACK_CONCRETE, finishedRecipe);
 		this.lever(MissingLinksBlocks.BLACK_CONCRETE_LEVER.get(), Blocks.BLACK_CONCRETE, finishedRecipe);
@@ -457,7 +460,13 @@ public class MissingLinksRecipeProvider extends RecipeProvider {
 		this.slab(MissingLinksBlocks.NETHERITE_SLAB.get(), Blocks.NETHERITE_BLOCK, finishedRecipe);
 		this.wall(MissingLinksBlocks.NETHERITE_WALL.get(), Blocks.NETHERITE_BLOCK, finishedRecipe);
 		this.wall(MissingLinksBlocks.QUARTZ_WALL.get(), Blocks.QUARTZ_BLOCK, finishedRecipe);
+		this.button(MissingLinksBlocks.QUARTZ_BUTTON.get(), Blocks.QUARTZ_BLOCK, finishedRecipe);
+		this.pressurePlate(MissingLinksBlocks.QUARTZ_PRESSURE_PLATE.get(), Blocks.QUARTZ_BLOCK, finishedRecipe);
+		this.lever(MissingLinksBlocks.QUARTZ_LEVER.get(), Blocks.QUARTZ_BLOCK, finishedRecipe);
 		this.wall(MissingLinksBlocks.SMOOTH_QUARTZ_WALL.get(), Blocks.SMOOTH_QUARTZ, finishedRecipe);
+		this.button(MissingLinksBlocks.SMOOTH_QUARTZ_BUTTON.get(), Blocks.SMOOTH_QUARTZ, finishedRecipe);
+		this.pressurePlate(MissingLinksBlocks.SMOOTH_QUARTZ_PRESSURE_PLATE.get(), Blocks.SMOOTH_QUARTZ, finishedRecipe);
+		this.lever(MissingLinksBlocks.SMOOTH_QUARTZ_LEVER.get(), Blocks.SMOOTH_QUARTZ, finishedRecipe);
 		this.wall(MissingLinksBlocks.SMOOTH_RED_SANDSTONE_WALL.get(), Blocks.SMOOTH_RED_SANDSTONE, finishedRecipe);
 		this.wall(MissingLinksBlocks.SMOOTH_SANDSTONE_WALL.get(), Blocks.SMOOTH_SANDSTONE, finishedRecipe);
 		this.stair(MissingLinksBlocks.SMOOTH_STONE_STAIRS.get(), Blocks.SMOOTH_STONE, finishedRecipe);
@@ -468,34 +477,37 @@ public class MissingLinksRecipeProvider extends RecipeProvider {
 	}
 
 	public void lever(Block block, Block stone, Consumer<FinishedRecipe> finishedRecipe) {
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block).pattern("#").pattern("%").define('#', Items.STICK).define('%', stone).unlockedBy("has_item", has(stone)).save(finishedRecipe);
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block).pattern("#").pattern("%").define('#', Items.STICK).define('%', stone).unlockedBy(getHasName(stone), has(stone)).save(finishedRecipe);
 	}
 
 	public void wall(Block block, Block stone, Consumer<FinishedRecipe> finishedRecipe) {
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block).pattern("###").pattern("###").define('#', stone).unlockedBy("has_item", has(stone)).save(finishedRecipe);
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block).pattern("###").pattern("###").define('#', stone).unlockedBy(getHasName(stone), has(stone)).save(finishedRecipe);
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(stone), RecipeCategory.DECORATIONS, block, 1).unlockedBy(getHasName(stone), has(stone)).save(finishedRecipe, MissingLinksUtils.resource(getConversionRecipeName(block, stone) + "_stonecutting"));
 	}
 
 	public void stair(Block block, Block stone, Consumer<FinishedRecipe> finishedRecipe) {
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block).pattern("#  ").pattern("## ").pattern("###").define('#', stone).unlockedBy("has_item", has(stone)).save(finishedRecipe);
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block).pattern("#  ").pattern("## ").pattern("###").define('#', stone).unlockedBy(getHasName(stone), has(stone)).save(finishedRecipe);
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(stone), RecipeCategory.DECORATIONS, block, 1).unlockedBy(getHasName(stone), has(stone)).save(finishedRecipe, MissingLinksUtils.resource(getConversionRecipeName(block, stone) + "_stonecutting"));
 	}
 
 	public void slab(Block block, Block stone, Consumer<FinishedRecipe> finishedRecipe) {
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block).pattern("###").define('#', stone).unlockedBy("has_item", has(stone)).save(finishedRecipe);
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block).pattern("###").define('#', stone).unlockedBy(getHasName(stone), has(stone)).save(finishedRecipe);
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(stone), RecipeCategory.DECORATIONS, block, 2).unlockedBy(getHasName(stone), has(stone)).save(finishedRecipe, MissingLinksUtils.resource(getConversionRecipeName(block, stone) + "_stonecutting"));
 	}
 
 	public void button(Block block, Block stone, Consumer<FinishedRecipe> finishedRecipe) {
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, block).requires(stone).unlockedBy("has_item", has(stone)).save(finishedRecipe);
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, block).requires(stone).unlockedBy(getHasName(stone), has(stone)).save(finishedRecipe);
 	}
 
 	public void pressurePlate(Block block, Block stone, Consumer<FinishedRecipe> finishedRecipe) {
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block).pattern("##").define('#', stone).unlockedBy("has_item", has(stone)).save(finishedRecipe);
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block).pattern("##").define('#', stone).unlockedBy(getHasName(stone), has(stone)).save(finishedRecipe);
 	}
 
 	public void fence(Block block, Block stone, Item stick, Consumer<FinishedRecipe> finishedRecipe) {
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block).pattern("#%#").pattern("#%#").define('%', stick).define('#', stone).unlockedBy("has_item", has(stone)).save(finishedRecipe);
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block).pattern("#%#").pattern("#%#").define('%', stick).define('#', stone).unlockedBy(getHasName(stone), has(stone)).save(finishedRecipe);
 	}
 
 	public void fenceGate(Block block, Block stone, Item stick, Consumer<FinishedRecipe> finishedRecipe) {
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block).pattern("%#%").pattern("%#%").define('%', stick).define('#', stone).unlockedBy("has_item", has(stone)).save(finishedRecipe);
+		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block).pattern("%#%").pattern("%#%").define('%', stick).define('#', stone).unlockedBy(getHasName(stone), has(stone)).save(finishedRecipe);
 	}
 }
