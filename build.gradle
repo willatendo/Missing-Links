@@ -8,6 +8,8 @@ plugins {
 version = "5.0.0"
 group = mod_id
 
+jarJar.enable()
+
 base {
 	archivesName = mod_id
 }
@@ -53,7 +55,14 @@ dependencies {
 	minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 	
 	implementation fg.deobf("com.github.willatendo:Simple-Library:${simple_library_version}")
+	jarJar(group: 'com.github.willatendo', name: 'Simple-Library', version: "[v0.3.0-beta,v0.4.0-beta)")
 }
+
+reobf {
+    jarJar { }
+}
+
+tasks.jarJar.finalizedBy('reobfJarJar')
 
 tasks.named('jar', Jar).configure {
 	manifest {
