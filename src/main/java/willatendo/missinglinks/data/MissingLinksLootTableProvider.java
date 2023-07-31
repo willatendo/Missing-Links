@@ -1,4 +1,4 @@
-package missinglinks.data;
+package willatendo.missinglinks.data;
 
 import java.util.List;
 import java.util.Map;

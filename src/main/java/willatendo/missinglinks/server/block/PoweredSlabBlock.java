@@ -1,13 +1,13 @@
-package missinglinks.server.block;
+package willatendo.missinglinks.server.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class PoweredWallBlock extends WallBlock {
-	public PoweredWallBlock(Properties properties) {
+public class PoweredSlabBlock extends SlabBlock {
+	public PoweredSlabBlock(Properties properties) {
 		super(properties);
 	}
 

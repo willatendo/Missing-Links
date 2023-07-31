@@ -1,8 +1,7 @@
-package missinglinks.data;
+package willatendo.missinglinks.data;
 
 import java.util.concurrent.CompletableFuture;
 
-import missinglinks.server.block.MissingLinksBlocks;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -17,6 +16,7 @@ import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
+import willatendo.missinglinks.server.block.MissingLinksBlocks;
 
 public class MissingLinksBlockTagsProvider extends BlockTagsProvider {
 	public MissingLinksBlockTagsProvider(PackOutput packOutput, CompletableFuture<Provider> provider, String modid, ExistingFileHelper existingFileHelper) {

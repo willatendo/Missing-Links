@@ -1,4 +1,4 @@
-package missinglinks.server.util;
+package willatendo.missinglinks.server.util;
 
 //public class MissingLinksRegistrate extends AbstractRegistrate<MissingLinksRegistrate> {
 //	public MissingLinksRegistrate(String modid) {

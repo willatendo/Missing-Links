@@ -1,13 +1,13 @@
-package missinglinks.server;
+package willatendo.missinglinks.server;
 
-import missinglinks.server.block.MissingLinksBlocks;
-import missinglinks.server.item.MissingLinksItems;
-import missinglinks.server.util.MissingLinksUtils;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
+import willatendo.missinglinks.server.block.MissingLinksBlocks;
+import willatendo.missinglinks.server.item.MissingLinksItems;
+import willatendo.missinglinks.server.util.MissingLinksUtils;
 import willatendo.simplelibrary.server.util.SimpleUtils;
 
 public class MissingLinksCreativeModeTabs {

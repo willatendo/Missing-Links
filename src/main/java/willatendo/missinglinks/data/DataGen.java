@@ -1,10 +1,10 @@
-package missinglinks.data;
+package willatendo.missinglinks.data;
 
-import missinglinks.server.util.MissingLinksUtils;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
+import willatendo.missinglinks.server.util.MissingLinksUtils;
 import willatendo.simplelibrary.data.DataHelper;
 
 @EventBusSubscriber(bus = Bus.MOD, modid = MissingLinksUtils.ID)

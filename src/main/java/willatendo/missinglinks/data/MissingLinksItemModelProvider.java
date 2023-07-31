@@ -1,7 +1,5 @@
-package missinglinks.data;
+package willatendo.missinglinks.data;
 
-import missinglinks.server.block.MissingLinksBlocks;
-import missinglinks.server.item.MissingLinksItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ButtonBlock;
@@ -11,6 +9,8 @@ import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
+import willatendo.missinglinks.server.block.MissingLinksBlocks;
+import willatendo.missinglinks.server.item.MissingLinksItems;
 import willatendo.simplelibrary.data.SimpleItemModelProvider;
 
 public class MissingLinksItemModelProvider extends SimpleItemModelProvider {

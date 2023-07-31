@@ -1,11 +1,11 @@
-package missinglinks.data;
+package willatendo.missinglinks.data;
 
-import missinglinks.server.MissingLinksCreativeModeTabs;
-import missinglinks.server.block.MissingLinksBlocks;
-import missinglinks.server.item.MissingLinksItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.RegistryObject;
+import willatendo.missinglinks.server.MissingLinksCreativeModeTabs;
+import willatendo.missinglinks.server.block.MissingLinksBlocks;
+import willatendo.missinglinks.server.item.MissingLinksItems;
 import willatendo.simplelibrary.data.SimpleLanguageProvider;
 
 public class MissingLinksLanguageProvider extends SimpleLanguageProvider {

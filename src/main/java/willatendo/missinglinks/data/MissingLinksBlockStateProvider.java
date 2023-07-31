@@ -1,6 +1,5 @@
-package missinglinks.data;
+package willatendo.missinglinks.data;
 
-import missinglinks.server.block.MissingLinksBlocks;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
@@ -18,6 +17,7 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
+import willatendo.missinglinks.server.block.MissingLinksBlocks;
 
 public class MissingLinksBlockStateProvider extends BlockStateProvider {
 	public MissingLinksBlockStateProvider(PackOutput packOutput, String modid, ExistingFileHelper existingFileHelper) {

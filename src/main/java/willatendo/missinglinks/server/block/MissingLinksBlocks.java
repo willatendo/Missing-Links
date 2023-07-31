@@ -1,6 +1,5 @@
-package missinglinks.server.block;
+package willatendo.missinglinks.server.block;
 
-import missinglinks.server.util.MissingLinksUtils;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
@@ -23,6 +22,7 @@ import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import willatendo.missinglinks.server.util.MissingLinksUtils;
 
 public class MissingLinksBlocks {
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MissingLinksUtils.ID);

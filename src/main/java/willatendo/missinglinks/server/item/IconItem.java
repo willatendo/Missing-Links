@@ -1,4 +1,4 @@
-package missinglinks.server.item;
+package willatendo.missinglinks.server.item;
 
 import net.minecraft.world.item.CreativeModeTab.ItemDisplayParameters;
 import net.minecraft.world.item.CreativeModeTab.Output;

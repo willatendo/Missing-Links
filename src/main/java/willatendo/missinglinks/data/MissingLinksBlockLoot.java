@@ -1,15 +1,15 @@
-package missinglinks.data;
+package willatendo.missinglinks.data;
 
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import missinglinks.server.block.MissingLinksBlocks;
-import missinglinks.server.util.MissingLinksUtils;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraftforge.registries.ForgeRegistries;
+import willatendo.missinglinks.server.block.MissingLinksBlocks;
+import willatendo.missinglinks.server.util.MissingLinksUtils;
 
 public class MissingLinksBlockLoot extends BlockLootSubProvider {
 	public MissingLinksBlockLoot() {

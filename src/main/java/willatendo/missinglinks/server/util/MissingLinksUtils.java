@@ -1,4 +1,4 @@
-package missinglinks.server.util;
+package willatendo.missinglinks.server.util;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;

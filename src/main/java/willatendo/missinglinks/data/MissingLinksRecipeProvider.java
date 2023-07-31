@@ -1,9 +1,7 @@
-package missinglinks.data;
+package willatendo.missinglinks.data;
 
 import java.util.function.Consumer;
 
-import missinglinks.server.block.MissingLinksBlocks;
-import missinglinks.server.util.MissingLinksUtils;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -16,6 +14,8 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import willatendo.missinglinks.server.block.MissingLinksBlocks;
+import willatendo.missinglinks.server.util.MissingLinksUtils;
 
 public class MissingLinksRecipeProvider extends RecipeProvider {
 	public MissingLinksRecipeProvider(PackOutput packOutput) {
