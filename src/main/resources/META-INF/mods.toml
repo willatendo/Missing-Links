@@ -9,7 +9,7 @@ version="5.0.0"
 displayName="Missing Links"
 updateJSONURL="https://github.com/willatendo/Missing-Links/raw/main/updates.json"
 displayURL="https://github.com/willatendo/Missing-Links"
-logoFile="missing_links_logo.png" 
+logoFile="missing_links_icon.png" 
 authors="Willatendo"
 description='''
 Adds some weird oversites that Mojang forgot about!
