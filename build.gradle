@@ -55,7 +55,7 @@ dependencies {
 	minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 	
 	implementation fg.deobf("com.github.willatendo:Simple-Library:${simple_library_version}")
-	jarJar(group: 'com.github.willatendo', name: 'Simple-Library', version: "[v1.0.0-beta,v2.0.0-beta)")
+	jarJar(group: 'com.github.willatendo', name: 'Simple-Library', version: "[v1.0.0,v2.0.0)")
 }
 
 reobf {
