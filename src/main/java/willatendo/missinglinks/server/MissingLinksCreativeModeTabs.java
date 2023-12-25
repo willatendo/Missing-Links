@@ -1,22 +1,22 @@
 package willatendo.missinglinks.server;
 
-import net.minecraft.core.registries.Registries;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
 import willatendo.missinglinks.server.block.MissingLinksBlocks;
 import willatendo.missinglinks.server.item.MissingLinksItems;
 import willatendo.missinglinks.server.util.MissingLinksUtils;
+import willatendo.simplelibrary.server.registry.RegistryHolder;
+import willatendo.simplelibrary.server.registry.SimpleRegistry;
 import willatendo.simplelibrary.server.util.SimpleUtils;
 
 public class MissingLinksCreativeModeTabs {
-	public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MissingLinksUtils.ID);
+	public static final SimpleRegistry<CreativeModeTab> CREATIVE_MODE_TABS = SimpleRegistry.create(BuiltInRegistries.CREATIVE_MODE_TAB, MissingLinksUtils.ID);
 
-	public static final RegistryObject<CreativeModeTab> MISSING_LINKS_BLOCKS = CREATIVE_MODE_TABS.register("missing_links_blocks", () -> CreativeModeTab.builder().title(MissingLinksUtils.translation("itemGroup", MissingLinksUtils.ID)).icon(() -> MissingLinksBlocks.CALCITE_STAIRS.get().asItem().getDefaultInstance()).displayItems((itemDisplayParameters, output) -> {
+	public static final RegistryHolder<CreativeModeTab> MISSING_LINKS_BLOCKS = CREATIVE_MODE_TABS.register("missing_links_blocks", () -> SimpleUtils.create(MissingLinksUtils.ID, MissingLinksUtils.ID, () -> MissingLinksBlocks.CALCITE_STAIRS.get().asItem(), (itemDisplayParameters, output) -> {
 		SimpleUtils.fillCreativeTab(MissingLinksItems.ITEMS, itemDisplayParameters, output);
 	}).build());
-	public static final RegistryObject<CreativeModeTab> MISSING_LINKS_PALETTES = CREATIVE_MODE_TABS.register("missing_links_palettes", () -> CreativeModeTab.builder().withTabsBefore(MissingLinksCreativeModeTabs.MISSING_LINKS_BLOCKS.getKey()).title(MissingLinksUtils.translation("itemGroup", MissingLinksUtils.ID + "_palettes")).icon(() -> MissingLinksItems.ICON.get().getDefaultInstance()).displayItems((itemDisplayParameters, output) -> {
+	public static final RegistryHolder<CreativeModeTab> MISSING_LINKS_PALETTES = CREATIVE_MODE_TABS.register("missing_links_palettes", () -> SimpleUtils.create(MissingLinksUtils.ID, MissingLinksUtils.ID + "_palettes", () -> MissingLinksItems.ICON.get(), (itemDisplayParameters, output) -> {
 		output.accept(Blocks.ANDESITE);
 		output.accept(Blocks.ANDESITE_STAIRS);
 		output.accept(Blocks.ANDESITE_SLAB);
@@ -401,12 +401,12 @@ public class MissingLinksCreativeModeTabs {
 		output.accept(MissingLinksBlocks.RED_TERRACOTTA_PRESSURE_PLATE.get());
 		output.accept(MissingLinksBlocks.RED_TERRACOTTA_LEVER.get());
 		output.accept(Blocks.BLACK_TERRACOTTA);
-		output.accept(MissingLinksBlocks.TERRACOTTA_STAIRS.get());
-		output.accept(MissingLinksBlocks.TERRACOTTA_SLAB.get());
-		output.accept(MissingLinksBlocks.TERRACOTTA_WALL.get());
-		output.accept(MissingLinksBlocks.TERRACOTTA_BUTTON.get());
-		output.accept(MissingLinksBlocks.TERRACOTTA_PRESSURE_PLATE.get());
-		output.accept(MissingLinksBlocks.TERRACOTTA_LEVER.get());
+		output.accept(MissingLinksBlocks.BLACK_TERRACOTTA_STAIRS.get());
+		output.accept(MissingLinksBlocks.BLACK_TERRACOTTA_SLAB.get());
+		output.accept(MissingLinksBlocks.BLACK_TERRACOTTA_WALL.get());
+		output.accept(MissingLinksBlocks.BLACK_TERRACOTTA_BUTTON.get());
+		output.accept(MissingLinksBlocks.BLACK_TERRACOTTA_PRESSURE_PLATE.get());
+		output.accept(MissingLinksBlocks.BLACK_TERRACOTTA_LEVER.get());
 		output.accept(Blocks.WHITE_GLAZED_TERRACOTTA);
 		output.accept(MissingLinksBlocks.WHITE_GLAZED_TERRACOTTA_STAIRS.get());
 		output.accept(MissingLinksBlocks.WHITE_GLAZED_TERRACOTTA_SLAB.get());
@@ -584,4 +584,7 @@ public class MissingLinksCreativeModeTabs {
 		output.accept(MissingLinksBlocks.BLACK_WOOL_SLAB.get());
 		output.accept(MissingLinksBlocks.BLACK_WOOL_WALL.get());
 	}).build());
+
+	public static void init() {
+	}
 }

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "missinglinks:block/light_gray_terracotta_pressure_plate"
+    },
+    "powered=true": {
+      "model": "missinglinks:block/light_gray_terracotta_pressure_plate_down"
+    }
+  }
+}

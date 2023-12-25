@@ -1,15 +1,20 @@
 package willatendo.missinglinks.data;
 
+import java.util.HashSet;
+import java.util.Locale;
 import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.function.BiConsumer;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SlabBlock;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraft.world.level.storage.loot.BuiltInLootTables;
+import net.minecraft.world.level.storage.loot.LootTable;
 import willatendo.missinglinks.server.block.MissingLinksBlocks;
-import willatendo.missinglinks.server.util.MissingLinksUtils;
+import willatendo.simplelibrary.server.registry.RegistryHolder;
 
 public class MissingLinksBlockLoot extends BlockLootSubProvider {
 	public MissingLinksBlockLoot() {
@@ -17,7 +22,26 @@ public class MissingLinksBlockLoot extends BlockLootSubProvider {
 	}
 
 	@Override
-	protected void generate() {
+	public void generate(BiConsumer<ResourceLocation, LootTable.Builder> biConsumer) {
+		this.generate();
+		HashSet<ResourceLocation> set = new HashSet<ResourceLocation>();
+		for (RegistryHolder<? extends Block> block : MissingLinksBlocks.BLOCKS.getEntries()) {
+			ResourceLocation resourceLocation;
+			if (!block.get().isEnabled(this.enabledFeatures) || (resourceLocation = block.get().getLootTable()) == BuiltInLootTables.EMPTY || !set.add(resourceLocation))
+				continue;
+			LootTable.Builder builder = this.map.remove(resourceLocation);
+			if (builder == null) {
+				throw new IllegalStateException(String.format(Locale.ROOT, "Missing loottable '%s' for '%s'", resourceLocation, BuiltInRegistries.BLOCK.getKey(block.get())));
+			}
+			biConsumer.accept(resourceLocation, builder);
+		}
+		if (!this.map.isEmpty()) {
+			throw new IllegalStateException("Created block loot tables for non-blocks: " + this.map.keySet());
+		}
+	}
+
+	@Override
+	public void generate() {
 		this.dropSelf(MissingLinksBlocks.ANDESITE_BUTTON.get());
 		this.dropSelf(MissingLinksBlocks.ANDESITE_PRESSURE_PLATE.get());
 		this.dropSelf(MissingLinksBlocks.ANDESITE_LEVER.get());
@@ -176,7 +200,7 @@ public class MissingLinksBlockLoot extends BlockLootSubProvider {
 		this.dropSelf(MissingLinksBlocks.RED_TERRACOTTA_LEVER.get());
 		this.dropSelf(MissingLinksBlocks.BLACK_TERRACOTTA_STAIRS.get());
 		this.slab(MissingLinksBlocks.BLACK_TERRACOTTA_SLAB.get());
-		this.dropSelf(MissingLinksBlocks.BLACK_RED_TERRACOTTA_WALL.get());
+		this.dropSelf(MissingLinksBlocks.BLACK_TERRACOTTA_WALL.get());
 		this.dropSelf(MissingLinksBlocks.BLACK_TERRACOTTA_BUTTON.get());
 		this.dropSelf(MissingLinksBlocks.BLACK_TERRACOTTA_PRESSURE_PLATE.get());
 		this.dropSelf(MissingLinksBlocks.BLACK_TERRACOTTA_LEVER.get());
@@ -472,10 +496,5 @@ public class MissingLinksBlockLoot extends BlockLootSubProvider {
 
 	protected void slab(SlabBlock slabBlock) {
 		this.add(slabBlock, block -> this.createSlabItemTable(block));
-	}
-
-	@Override
-	protected Iterable<Block> getKnownBlocks() {
-		return ForgeRegistries.BLOCKS.getValues().stream().filter(block -> MissingLinksUtils.ID.equals(ForgeRegistries.BLOCKS.getKey(block).getNamespace())).collect(Collectors.toSet());
 	}
 }

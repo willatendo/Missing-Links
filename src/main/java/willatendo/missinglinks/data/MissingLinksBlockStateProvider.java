@@ -1,7 +1,8 @@
 package willatendo.missinglinks.data;
 
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.core.Direction;
-import net.minecraft.data.PackOutput;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ButtonBlock;
@@ -13,15 +14,14 @@ import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.properties.AttachFace;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ConfiguredModel;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.ForgeRegistries;
 import willatendo.missinglinks.server.block.MissingLinksBlocks;
+import willatendo.simplelibrary.data.SimpleBlockStateProvider;
+import willatendo.simplelibrary.data.model.ConfiguredModel;
+import willatendo.simplelibrary.data.util.ExistingFileHelper;
 
-public class MissingLinksBlockStateProvider extends BlockStateProvider {
-	public MissingLinksBlockStateProvider(PackOutput packOutput, String modid, ExistingFileHelper existingFileHelper) {
-		super(packOutput, modid, existingFileHelper);
+public class MissingLinksBlockStateProvider extends SimpleBlockStateProvider {
+	public MissingLinksBlockStateProvider(FabricDataOutput fabricDataOutput, String modid, ExistingFileHelper existingFileHelper) {
+		super(fabricDataOutput, modid, existingFileHelper);
 	}
 
 	@Override
@@ -184,7 +184,7 @@ public class MissingLinksBlockStateProvider extends BlockStateProvider {
 		this.lever(MissingLinksBlocks.RED_TERRACOTTA_LEVER.get(), Blocks.RED_TERRACOTTA);
 		this.stair(MissingLinksBlocks.BLACK_TERRACOTTA_STAIRS.get(), Blocks.BLACK_TERRACOTTA);
 		this.slab(MissingLinksBlocks.BLACK_TERRACOTTA_SLAB.get(), Blocks.BLACK_TERRACOTTA);
-		this.wall(MissingLinksBlocks.BLACK_RED_TERRACOTTA_WALL.get(), Blocks.BLACK_TERRACOTTA);
+		this.wall(MissingLinksBlocks.BLACK_TERRACOTTA_WALL.get(), Blocks.BLACK_TERRACOTTA);
 		this.button(MissingLinksBlocks.BLACK_TERRACOTTA_BUTTON.get(), Blocks.BLACK_TERRACOTTA);
 		this.pressurePlate(MissingLinksBlocks.BLACK_TERRACOTTA_PRESSURE_PLATE.get(), Blocks.BLACK_TERRACOTTA);
 		this.lever(MissingLinksBlocks.BLACK_TERRACOTTA_LEVER.get(), Blocks.BLACK_TERRACOTTA);
@@ -479,39 +479,39 @@ public class MissingLinksBlockStateProvider extends BlockStateProvider {
 	}
 
 	public void stair(StairBlock stairBlock, Block stone) {
-		this.stairsBlock(stairBlock, this.mcLoc("block/" + ForgeRegistries.BLOCKS.getKey(stone).getPath()));
+		this.stairsBlock(stairBlock, this.mcLoc("block/" + BuiltInRegistries.BLOCK.getKey(stone).getPath()));
 	}
 
 	public void slab(SlabBlock slabBlock, Block stone) {
-		if (ForgeRegistries.BLOCKS.getKey(stone).getPath().contains("quartz_block")) {
-			this.slabBlock(slabBlock, this.mcLoc("block/" + ForgeRegistries.BLOCKS.getKey(stone).getPath()), this.mcLoc("block/" + ForgeRegistries.BLOCKS.getKey(stone).getPath() + "_bottom"));
+		if (BuiltInRegistries.BLOCK.getKey(stone).getPath().contains("quartz_block")) {
+			this.slabBlock(slabBlock, this.mcLoc("block/" + BuiltInRegistries.BLOCK.getKey(stone).getPath()), this.mcLoc("block/" + BuiltInRegistries.BLOCK.getKey(stone).getPath() + "_bottom"));
 		} else {
-			this.slabBlock(slabBlock, this.mcLoc("block/" + ForgeRegistries.BLOCKS.getKey(stone).getPath()), this.mcLoc("block/" + ForgeRegistries.BLOCKS.getKey(stone).getPath()));
+			this.slabBlock(slabBlock, this.mcLoc("block/" + BuiltInRegistries.BLOCK.getKey(stone).getPath()), this.mcLoc("block/" + BuiltInRegistries.BLOCK.getKey(stone).getPath()));
 		}
 	}
 
 	public void wall(WallBlock wallBlock, Block stone) {
-		this.wallBlock(wallBlock, this.mcLoc("block/" + ForgeRegistries.BLOCKS.getKey(stone).getPath()));
-		this.itemModels().withExistingParent("block/" + ForgeRegistries.BLOCKS.getKey(wallBlock).getPath() + "_inventory", this.mcLoc("block/wall_inventory")).texture("wall", this.mcLoc("block/" + ForgeRegistries.BLOCKS.getKey(stone).getPath()));
+		this.wallBlock(wallBlock, this.mcLoc("block/" + BuiltInRegistries.BLOCK.getKey(stone).getPath()));
+		this.itemModels().withExistingParent("block/" + BuiltInRegistries.BLOCK.getKey(wallBlock).getPath() + "_inventory", this.mcLoc("block/wall_inventory")).texture("wall", this.mcLoc("block/" + BuiltInRegistries.BLOCK.getKey(stone).getPath()));
 	}
 
 	public void wall(WallBlock wallBlock, String stone) {
 		this.wallBlock(wallBlock, this.mcLoc("block/" + stone));
-		this.itemModels().withExistingParent("block/" + ForgeRegistries.BLOCKS.getKey(wallBlock).getPath() + "_inventory", this.mcLoc("block/wall_inventory")).texture("wall", this.mcLoc("block/" + stone));
+		this.itemModels().withExistingParent("block/" + BuiltInRegistries.BLOCK.getKey(wallBlock).getPath() + "_inventory", this.mcLoc("block/wall_inventory")).texture("wall", this.mcLoc("block/" + stone));
 	}
 
 	public void button(ButtonBlock buttonBlock, Block stone) {
-		this.buttonBlock(buttonBlock, this.mcLoc("block/" + ForgeRegistries.BLOCKS.getKey(stone).getPath()));
-		this.itemModels().withExistingParent("block/" + ForgeRegistries.BLOCKS.getKey(buttonBlock).getPath() + "_inventory", this.mcLoc("block/button_inventory")).texture("texture", this.mcLoc("block/" + ForgeRegistries.BLOCKS.getKey(stone).getPath()));
+		this.buttonBlock(buttonBlock, this.mcLoc("block/" + BuiltInRegistries.BLOCK.getKey(stone).getPath()));
+		this.itemModels().withExistingParent("block/" + BuiltInRegistries.BLOCK.getKey(buttonBlock).getPath() + "_inventory", this.mcLoc("block/button_inventory")).texture("texture", this.mcLoc("block/" + BuiltInRegistries.BLOCK.getKey(stone).getPath()));
 	}
 
 	public void button(ButtonBlock buttonBlock, String stone) {
 		this.buttonBlock(buttonBlock, this.mcLoc("block/" + stone));
-		this.itemModels().withExistingParent("block/" + ForgeRegistries.BLOCKS.getKey(buttonBlock).getPath() + "_inventory", this.mcLoc("block/button_inventory")).texture("texture", this.mcLoc("block/" + stone));
+		this.itemModels().withExistingParent("block/" + BuiltInRegistries.BLOCK.getKey(buttonBlock).getPath() + "_inventory", this.mcLoc("block/button_inventory")).texture("texture", this.mcLoc("block/" + stone));
 	}
 
 	public void pressurePlate(PressurePlateBlock pressurePlateBlock, Block stone) {
-		this.pressurePlateBlock(pressurePlateBlock, this.mcLoc("block/" + ForgeRegistries.BLOCKS.getKey(stone).getPath()));
+		this.pressurePlateBlock(pressurePlateBlock, this.mcLoc("block/" + BuiltInRegistries.BLOCK.getKey(stone).getPath()));
 	}
 
 	public void pressurePlate(PressurePlateBlock pressurePlateBlock, String stone) {
@@ -519,18 +519,18 @@ public class MissingLinksBlockStateProvider extends BlockStateProvider {
 	}
 
 	public void fence(FenceBlock fenceBlock, Block stone) {
-		this.fenceBlock(fenceBlock, this.mcLoc("block/" + ForgeRegistries.BLOCKS.getKey(stone).getPath()));
-		this.itemModels().withExistingParent("block/" + ForgeRegistries.BLOCKS.getKey(fenceBlock).getPath() + "_inventory", this.mcLoc("block/fence_inventory")).texture("texture", this.mcLoc("block/" + ForgeRegistries.BLOCKS.getKey(stone).getPath()));
+		this.fenceBlock(fenceBlock, this.mcLoc("block/" + BuiltInRegistries.BLOCK.getKey(stone).getPath()));
+		this.itemModels().withExistingParent("block/" + BuiltInRegistries.BLOCK.getKey(fenceBlock).getPath() + "_inventory", this.mcLoc("block/fence_inventory")).texture("texture", this.mcLoc("block/" + BuiltInRegistries.BLOCK.getKey(stone).getPath()));
 	}
 
 	public void fenceGate(FenceGateBlock fenceGateBlock, Block stone) {
-		this.fenceGateBlock(fenceGateBlock, this.mcLoc("block/" + ForgeRegistries.BLOCKS.getKey(stone).getPath()));
+		this.fenceGateBlock(fenceGateBlock, this.mcLoc("block/" + BuiltInRegistries.BLOCK.getKey(stone).getPath()));
 	}
 
 	public void lever(LeverBlock leverBlock, Block stone) {
 		this.getVariantBuilder(leverBlock).forAllStates(blockState -> {
-			String name = ForgeRegistries.BLOCKS.getKey(leverBlock).getPath();
-			String stoneId = ForgeRegistries.BLOCKS.getKey(stone).getPath();
+			String name = BuiltInRegistries.BLOCK.getKey(leverBlock).getPath();
+			String stoneId = BuiltInRegistries.BLOCK.getKey(stone).getPath();
 			Direction facing = blockState.getValue(LeverBlock.FACING);
 			AttachFace face = blockState.getValue(LeverBlock.FACE);
 			boolean powered = blockState.getValue(LeverBlock.POWERED);
@@ -540,7 +540,7 @@ public class MissingLinksBlockStateProvider extends BlockStateProvider {
 
 	public void lever(LeverBlock leverBlock, String stone, String lever) {
 		this.getVariantBuilder(leverBlock).forAllStates(blockState -> {
-			String name = ForgeRegistries.BLOCKS.getKey(leverBlock).getPath();
+			String name = BuiltInRegistries.BLOCK.getKey(leverBlock).getPath();
 			Direction facing = blockState.getValue(LeverBlock.FACING);
 			AttachFace face = blockState.getValue(LeverBlock.FACE);
 			boolean powered = blockState.getValue(LeverBlock.POWERED);
@@ -550,8 +550,8 @@ public class MissingLinksBlockStateProvider extends BlockStateProvider {
 
 	public void lever(LeverBlock leverBlock, Block stone, String lever) {
 		this.getVariantBuilder(leverBlock).forAllStates(blockState -> {
-			String name = ForgeRegistries.BLOCKS.getKey(leverBlock).getPath();
-			String stoneId = ForgeRegistries.BLOCKS.getKey(stone).getPath();
+			String name = BuiltInRegistries.BLOCK.getKey(leverBlock).getPath();
+			String stoneId = BuiltInRegistries.BLOCK.getKey(stone).getPath();
 			Direction facing = blockState.getValue(LeverBlock.FACING);
 			AttachFace face = blockState.getValue(LeverBlock.FACE);
 			boolean powered = blockState.getValue(LeverBlock.POWERED);

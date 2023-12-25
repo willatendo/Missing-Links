@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:magenta_glazed_terracotta"
+    }
+  ],
+  "result": {
+    "item": "missinglinks:magenta_glazed_terracotta_button"
+  }
+}

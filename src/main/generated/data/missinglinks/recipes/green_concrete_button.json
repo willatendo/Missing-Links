@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:green_concrete"
+    }
+  ],
+  "result": {
+    "item": "missinglinks:green_concrete_button"
+  }
+}

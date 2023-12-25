@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:brown_concrete"
+    }
+  ],
+  "result": {
+    "item": "missinglinks:brown_concrete_button"
+  }
+}

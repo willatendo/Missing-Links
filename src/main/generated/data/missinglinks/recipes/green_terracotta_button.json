@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:green_terracotta"
+    }
+  ],
+  "result": {
+    "item": "missinglinks:green_terracotta_button"
+  }
+}

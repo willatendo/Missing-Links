@@ -2,8 +2,8 @@ package willatendo.missinglinks.data;
 
 import java.util.concurrent.CompletableFuture;
 
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.core.HolderLookup.Provider;
-import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ButtonBlock;
@@ -13,19 +13,19 @@ import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
-import net.minecraftforge.common.data.BlockTagsProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.RegistryObject;
 import willatendo.missinglinks.server.block.MissingLinksBlocks;
+import willatendo.simplelibrary.data.SimpleBlockTagsProvider;
+import willatendo.simplelibrary.data.util.ExistingFileHelper;
+import willatendo.simplelibrary.server.registry.RegistryHolder;
 
-public class MissingLinksBlockTagsProvider extends BlockTagsProvider {
-	public MissingLinksBlockTagsProvider(PackOutput packOutput, CompletableFuture<Provider> provider, String modid, ExistingFileHelper existingFileHelper) {
-		super(packOutput, provider, modid, existingFileHelper);
+public class MissingLinksBlockTagsProvider extends SimpleBlockTagsProvider {
+	public MissingLinksBlockTagsProvider(FabricDataOutput fabricDataOutput, CompletableFuture<Provider> provider, String modid, ExistingFileHelper existingFileHelper) {
+		super(fabricDataOutput, provider, modid, existingFileHelper);
 	}
 
 	@Override
 	protected void addTags(Provider provider) {
-		for (RegistryObject<Block> blocks : MissingLinksBlocks.BLOCKS.getEntries()) {
+		for (RegistryHolder<? extends Block> blocks : MissingLinksBlocks.BLOCKS.getEntries()) {
 			if (blocks.get() instanceof ButtonBlock) {
 				this.tag(BlockTags.BUTTONS).add(blocks.get());
 			}

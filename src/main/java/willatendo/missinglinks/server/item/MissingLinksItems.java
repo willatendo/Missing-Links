@@ -1,19 +1,19 @@
 package willatendo.missinglinks.server.item;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 import willatendo.missinglinks.server.block.MissingLinksBlocks;
 import willatendo.missinglinks.server.util.MissingLinksUtils;
+import willatendo.simplelibrary.server.registry.RegistryHolder;
+import willatendo.simplelibrary.server.registry.SimpleRegistry;
 import willatendo.simplelibrary.server.util.SimpleUtils;
 
 public class MissingLinksItems {
-	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MissingLinksUtils.ID);
+	public static final SimpleRegistry<Item> ITEMS = SimpleRegistry.create(BuiltInRegistries.ITEM, MissingLinksUtils.ID);
 
-	public static final RegistryObject<Item> ICON = ITEMS.register("icon", () -> new IconItem(new Item.Properties()));
+	public static final RegistryHolder<IconItem> ICON = ITEMS.register("icon", () -> new IconItem(new Item.Properties()));
 
-	static {
+	public static void init() {
 		SimpleUtils.registerAllItems(MissingLinksItems.ITEMS, MissingLinksBlocks.BLOCKS);
 	}
 }

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:red_nether_bricks"
+    },
+    "%": {
+      "item": "minecraft:nether_brick"
+    }
+  },
+  "pattern": [
+    "%#%",
+    "%#%"
+  ],
+  "result": {
+    "item": "missinglinks:red_nether_brick_fence_gate"
+  }
+}

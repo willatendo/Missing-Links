@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "missinglinks:block/obsidian_slab"
+    },
+    "type=double": {
+      "model": "minecraft:block/obsidian"
+    },
+    "type=top": {
+      "model": "missinglinks:block/obsidian_slab_top"
+    }
+  }
+}

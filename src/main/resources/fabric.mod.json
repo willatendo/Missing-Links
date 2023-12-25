@@ -1,0 +1,33 @@
+{
+	"schemaVersion": 1,
+	"id": "missinglinks",
+	"version": "6.0.0",
+	"name": "Missing Links",
+	"description": "Brings the past back!",
+	"authors": [
+		"Willatendo"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/missing-links",
+		"sources": "https://github.com/willatendo/Missing-Links"
+	},
+	"license": "MIT",
+	"icon": "missing_links_icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"willatendo.missinglinks.MissingLinksMod"
+		],
+		"fabric-datagen": [
+			"willatendo.missinglinks.data.MissingLinksData"
+		]
+	},
+	"mixins": [
+	],
+	"depends": {
+		"fabricloader": ">=0.15.0",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	}
+}

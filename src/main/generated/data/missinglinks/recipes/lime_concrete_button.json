@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:lime_concrete"
+    }
+  ],
+  "result": {
+    "item": "missinglinks:lime_concrete_button"
+  }
+}

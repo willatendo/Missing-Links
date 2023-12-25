@@ -1,21 +1,21 @@
 package willatendo.missinglinks.data;
 
-import net.minecraft.data.PackOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.LeverBlock;
 import net.minecraft.world.level.block.WallBlock;
-import net.minecraftforge.client.model.generators.ModelFile;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.ForgeRegistries;
 import willatendo.missinglinks.server.block.MissingLinksBlocks;
 import willatendo.missinglinks.server.item.MissingLinksItems;
 import willatendo.simplelibrary.data.SimpleItemModelProvider;
+import willatendo.simplelibrary.data.model.ModelFile;
+import willatendo.simplelibrary.data.util.ExistingFileHelper;
 
 public class MissingLinksItemModelProvider extends SimpleItemModelProvider {
-	public MissingLinksItemModelProvider(PackOutput packOutput, String modid, ExistingFileHelper existingFileHelper) {
-		super(packOutput, modid, existingFileHelper);
+	public MissingLinksItemModelProvider(FabricDataOutput fabricDataOutput, String modid, ExistingFileHelper existingFileHelper) {
+		super(fabricDataOutput, modid, existingFileHelper);
 	}
 
 	@Override
@@ -180,7 +180,7 @@ public class MissingLinksItemModelProvider extends SimpleItemModelProvider {
 		this.lever(MissingLinksBlocks.RED_TERRACOTTA_LEVER.get());
 		this.block(MissingLinksBlocks.BLACK_TERRACOTTA_STAIRS.get());
 		this.block(MissingLinksBlocks.BLACK_TERRACOTTA_SLAB.get());
-		this.wall(MissingLinksBlocks.BLACK_RED_TERRACOTTA_WALL.get());
+		this.wall(MissingLinksBlocks.BLACK_TERRACOTTA_WALL.get());
 		this.button(MissingLinksBlocks.BLACK_TERRACOTTA_BUTTON.get());
 		this.block(MissingLinksBlocks.BLACK_TERRACOTTA_PRESSURE_PLATE.get());
 		this.lever(MissingLinksBlocks.BLACK_TERRACOTTA_LEVER.get());
@@ -475,22 +475,22 @@ public class MissingLinksItemModelProvider extends SimpleItemModelProvider {
 	}
 
 	public void block(Block block) {
-		this.getBuilder(ForgeRegistries.BLOCKS.getKey(block).getPath()).parent(new ModelFile.UncheckedModelFile(this.modLoc("block/" + ForgeRegistries.BLOCKS.getKey(block).getPath())));
+		this.getBuilder(BuiltInRegistries.BLOCK.getKey(block).getPath()).parent(new ModelFile.UncheckedModelFile(this.modLoc("block/" + BuiltInRegistries.BLOCK.getKey(block).getPath())));
 	}
 
 	public void button(ButtonBlock block) {
-		this.getBuilder(ForgeRegistries.BLOCKS.getKey(block).getPath()).parent(new ModelFile.UncheckedModelFile(this.modLoc("block/" + ForgeRegistries.BLOCKS.getKey(block).getPath() + "_inventory")));
+		this.getBuilder(BuiltInRegistries.BLOCK.getKey(block).getPath()).parent(new ModelFile.UncheckedModelFile(this.modLoc("block/" + BuiltInRegistries.BLOCK.getKey(block).getPath() + "_inventory")));
 	}
 
 	public void wall(WallBlock block) {
-		this.getBuilder(ForgeRegistries.BLOCKS.getKey(block).getPath()).parent(new ModelFile.UncheckedModelFile(this.modLoc("block/" + ForgeRegistries.BLOCKS.getKey(block).getPath() + "_inventory")));
+		this.getBuilder(BuiltInRegistries.BLOCK.getKey(block).getPath()).parent(new ModelFile.UncheckedModelFile(this.modLoc("block/" + BuiltInRegistries.BLOCK.getKey(block).getPath() + "_inventory")));
 	}
 
 	public void fence(FenceBlock block) {
-		this.getBuilder(ForgeRegistries.BLOCKS.getKey(block).getPath()).parent(new ModelFile.UncheckedModelFile(this.modLoc("block/" + ForgeRegistries.BLOCKS.getKey(block).getPath() + "_inventory")));
+		this.getBuilder(BuiltInRegistries.BLOCK.getKey(block).getPath()).parent(new ModelFile.UncheckedModelFile(this.modLoc("block/" + BuiltInRegistries.BLOCK.getKey(block).getPath() + "_inventory")));
 	}
 
 	public void lever(LeverBlock block) {
-		this.basicItem(block.asItem(), this.modLoc("block/" + ForgeRegistries.BLOCKS.getKey(block).getPath()));
+		this.basicItem(block.asItem(), this.modLoc("block/" + BuiltInRegistries.BLOCK.getKey(block).getPath()));
 	}
 }

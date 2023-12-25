@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:lime_terracotta"
+    }
+  ],
+  "result": {
+    "item": "missinglinks:lime_terracotta_button"
+  }
+}
