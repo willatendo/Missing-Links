@@ -1,0 +1,16 @@
+// 1.20.4	2024-05-24T16:47:31.9775044	Tags for minecraft:block mod id missinglinks
+1c5dfc9fcfb5049d633ff64c41d45996d4a7bbab data/minecraft/tags/blocks/buttons.json
+9f1978c37eab31ed8926d1e3727806c30650fdec data/minecraft/tags/blocks/dragon_immune.json
+5867bd96721e1050018bc6ce8eab2bfd398692da data/minecraft/tags/blocks/fences.json
+0c5cd5e8bc6ff167d673313d4002ed0cbf9328ae data/minecraft/tags/blocks/fence_gates.json
+15e299afd604075b2da90a8a76729ea7d3652412 data/minecraft/tags/blocks/guarded_by_piglins.json
+423c5561e4052ed3f895ffe98fd3a130c5be4465 data/minecraft/tags/blocks/mineable/hoe.json
+4e00f7ad118efa0e2d95ad72e88d58867b4feffa data/minecraft/tags/blocks/mineable/pickaxe.json
+0bf8e96cb177c05ba2e253172d2debfe0d5ff38f data/minecraft/tags/blocks/mineable/shovel.json
+3030419e09f299d68217d8287e640650bf09288c data/minecraft/tags/blocks/needs_diamond_tool.json
+f254832f9609a31fb272d366ff6c21613b643bb0 data/minecraft/tags/blocks/needs_iron_tool.json
+5f2eb776b33768eba2faeaaa28752b0dc1553804 data/minecraft/tags/blocks/needs_stone_tool.json
+4ee990d31276cd3bfd0256786f21c563c8575421 data/minecraft/tags/blocks/pressure_plates.json
+cdd908ddaa69ac09304044a5a7d868e9f1873917 data/minecraft/tags/blocks/slabs.json
+7142dd12a7935beeb9e50e798268479f5abf088d data/minecraft/tags/blocks/stairs.json
+faefd37d4dfd1bdd8da8c79fa3894fe1143014d9 data/minecraft/tags/blocks/walls.json

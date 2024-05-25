@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/lever",
-  "textures": {
-    "base": "minecraft:block/obsidian",
-    "lever": "missinglinks:block/obsidian_lever",
-    "particle": "minecraft:block/obsidian"
-  }
-}

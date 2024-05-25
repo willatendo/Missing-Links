@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/lever_on",
-  "textures": {
-    "base": "minecraft:block/green_concrete",
-    "lever": "missinglinks:block/green_concrete_lever",
-    "particle": "minecraft:block/green_concrete"
-  }
-}

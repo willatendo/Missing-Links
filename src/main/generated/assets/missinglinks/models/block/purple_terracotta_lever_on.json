@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/lever_on",
-  "textures": {
-    "base": "minecraft:block/purple_terracotta",
-    "lever": "missinglinks:block/purple_terracotta_lever",
-    "particle": "minecraft:block/purple_terracotta"
-  }
-}
